@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import skillArray from '../API/skills'
 import learnArray from '../API/learning'
 
-
 const Skills = () => {
+  const [htmlContent, setHtmlContent] = useState('');
+
+  useEffect(() => {
+    fetch('../python/bokeh/ExperienceChart.html')
+      .then(response => response.text())
+      .then(data => setHtmlContent(data))
+      .catch(error => console.error(error));
+  }, []);
+
   return <section className="section" id="skills">
     <section className="content">
       <div className="skills-box">
@@ -40,9 +48,9 @@ const Skills = () => {
               </div>
             })}
           </div>
+          <div dangerouslySetInnerHTML={{__html: htmlContent}}></div>
         </article>
       </div>
-
     </section>
   </section>
 }

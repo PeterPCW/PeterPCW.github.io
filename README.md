@@ -7,8 +7,8 @@ Plans:
 * ~~Get code working on 2023 stack~~
 * ~~Update content~~ to be about me (~50%)
 * ~~Restyle~~ to my liking (~33%)
-* Add linting/testing
-* Automate deploy steps
+* ~~Add~~ linting/testing (~10%)
+* ~~Automate dep~~loy steps (~50%)
 * Document code and steps to build/use
 
 Dreams:

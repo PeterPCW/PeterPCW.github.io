@@ -404,7 +404,9 @@ main {
       }
     }
     .pt-two {
+      flex: 1;
       display: flex;
+      flex-direction: row;
       justify-content: center;
       color: $orange;
       background: $davy-grey;
@@ -544,7 +546,10 @@ main {
       align-self: center;
       height: 45px;
       width: 80%;
+      border: solid $ash-grey 5px;
       border-radius: 25px 0;
+      background: $ash-grey;
+      margin-bottom: 10px;
     }
   }
 }
