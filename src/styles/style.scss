@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
 
 $roberto: 'Roboto Mono', monospace;
-$filter: invert(51%) sepia(99%) saturate(5892%) hue-rotate(324deg) brightness(100%) contrast(103%);
+$filter: invert(51%) sepia(99%) saturate(5892%) hue-rotate(33deg) brightness(100%) contrast(103%);
 $orange:  #ff6300;
 $davy-grey: #333333;
 $ash-grey: #878787;
@@ -453,7 +453,7 @@ main {
   }
   img {
     height: 80%;
-    color: $ash-grey;
+    color: $orange;
   }
 }
 .skill-box:hover {
