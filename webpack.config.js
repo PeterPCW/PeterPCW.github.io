@@ -47,5 +47,8 @@ module.exports = env => {
         publicPath: publicPath,
       }),
     ],
+    optimization: {
+      minimize: true,
+    },
   };
 };
