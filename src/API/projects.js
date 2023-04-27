@@ -38,7 +38,7 @@ const projects = [
       page: '',
       images: [
         { img: bpb, desc: 'Not the right image' }
-    ],
+      ],
       isActive: 'is-active'
     }
     /*{
