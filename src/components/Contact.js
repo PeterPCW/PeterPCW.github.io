@@ -9,7 +9,7 @@ const Contact = () => {
 
   return <section className="section" id="contact">
     <section className="content">
-      <h2><span className="green">{'//'}</span>Contact Me:</h2>
+      <h2><span className="orange">{'//'}</span>Contact Me:</h2>
       <div className="contact-box">
         <div className="column">
           <a target="_blank" rel="noreferrer" href={myMailto}>

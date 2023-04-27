@@ -82,7 +82,7 @@ const Projects = () => {
       <div className='buttons'>
         <button className='proj-button' onClick={handleLeftButton}>⁌</button>
         {projectArr.map((proj, i) => {
-          return <button value={i} className={`${proj.isActive} proj-button`} onClick={handleChangeProj} key={i}>＊</button>
+          return <button value={i} className={`${proj.isActive} proj-button`} onClick={handleChangeProj} key={i}>⌬</button>
         })}
         <button className='proj-button' onClick={handleRightButton}>⁍</button>
       </div>
@@ -121,7 +121,7 @@ const Slides = ({ project }) => {
         <a href={project.page} target="_blank" rel="noreferrer" className="page-link">
           <div className="skill-box">
             <div className="name-container" >
-              <p><span className="green">Project</span> </p>
+              <p><span className="orange">Project</span> </p>
             </div>
             <img src={linkObj.svg} alt={linkObj.name} />
           </div>
@@ -129,7 +129,7 @@ const Slides = ({ project }) => {
         <a href={project.github} target="_blank" rel="noreferrer" className="page-link">
           <div className="skill-box">
             <div className="name-container" >
-              <p><span className="green">Readme</span> </p>
+              <p><span className="orange">Readme</span> </p>
             </div>
             <img src={skillArray[3].svg} alt={skillArray[3].name} />
           </div>
@@ -224,18 +224,18 @@ const Image = ({ image }) => {
             })}
           </div>
           <div className="descbar">
-            <button onClick={handleLeftButton} ><span className="green">&#60;&#60;</span></button>
+            <button onClick={handleLeftButton} ><span className="orange">&#60;&#60;</span></button>
             <p>{imageArr[imageIndex].desc}</p>
-            <button onClick={handleRightButton}><span className="green">&#62;&#62;</span></button>
+            <button onClick={handleRightButton}><span className="orange">&#62;&#62;</span></button>
           </div>
         </div>
         : ''}
 
     </div>
     <div className="descbar">
-      <button onClick={handleLeftButton} ><span className="green">&#60;&#60;</span></button>
+      <button onClick={handleLeftButton} ><span className="orange">&#60;&#60;</span></button>
       <p>{imageArr[imageIndex].desc}</p>
-      <button onClick={handleRightButton}><span className="green">&#62;&#62;</span></button>
+      <button onClick={handleRightButton}><span className="orange">&#62;&#62;</span></button>
     </div>
   </div>
 }

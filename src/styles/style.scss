@@ -2,7 +2,7 @@
 
 $roberto: 'Roboto Mono', monospace;
 $filter: invert(51%) sepia(99%) saturate(5892%) hue-rotate(324deg) brightness(100%) contrast(103%);
-$green:  #ff6300;
+$orange:  #ff6300;
 $davy-grey: #313131;
 $ash-grey: #878787;
 
@@ -27,7 +27,7 @@ main > .section {
 }
 
 #root {
-  background-color: black;
+  background-color: $davy-grey;
 }
 
 main {
@@ -58,14 +58,14 @@ main {
   align-items: center;
   justify-content: center;
   border-radius: 20px 20px 0 0;
-  border: solid white 2px;
+  border: solid $ash-grey 2px;
 }
 
 .proj-button {
   background: none;
   border: none;
   width: 45px;
-  color: white;
+  color: $ash-grey;
   font-weight: 700;
   font-size: 35px;
 }
@@ -75,7 +75,7 @@ main {
 }
 
 .proj-button.is-active {
-  color:  $green;
+  color:  $orange;
 }
 
 #intro {
@@ -95,8 +95,8 @@ main {
     flex-direction: column;
     align-items: center;
     .profile {
-      height: 100%;
-      width: 100%;
+      height: 150%;
+      width: 150%;
     }
   }
 
@@ -106,7 +106,7 @@ main {
     padding: 20px;
     width: 65%;
     height: 400px;
-    color: white;
+    color: $ash-grey;
     display: flex;
     flex-direction: column;
     align-self: flex-start;
@@ -122,8 +122,8 @@ main {
     }
   }
 }
-.green{
-  color: $green;
+.orange{
+  color: $orange;
 }
 
 #nav {
@@ -135,7 +135,7 @@ main {
   height: 10vh;
   min-height: 50px;
   background-color: $davy-grey;
-  border:  $green 2px solid;
+  border:  $orange 2px solid;
   border-left: none;
   border-right: none;
   justify-content: center;
@@ -156,8 +156,8 @@ main {
       border-radius: 4px;
       height: 7vh;
       min-height: 50px;
-      background-color: white;
-      color: black;
+      background-color: $ash-grey;
+      color: $davy-grey;
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -170,9 +170,9 @@ main {
 }
 
 #projects {
-  background: url(../images/svg-bgs/HoneycombBorderBlack01v2.svg) no-repeat left bottom, linear-gradient(0deg, $davy-grey 20%, black 100%);
+  background: url(../images/svg-bgs/HoneycombBorderBlack01v2.svg) no-repeat left bottom, linear-gradient(0deg, $davy-grey 20%, $davy-grey 100%);
   min-height: 95vh;
-  color: white;
+  color: $ash-grey;
   .content {
     flex-direction: column;
     margin: 20px 0;
@@ -184,7 +184,7 @@ main {
     display: flex;
     flex-direction: row;
     width: 800px;
-    border: 5px white solid;
+    border: 5px $ash-grey solid;
     border-radius: 25px 0;
 
     article {
@@ -202,9 +202,9 @@ main {
         justify-content: start;
       }
       .border {
-        border: solid white 3px;
+        border: solid $ash-grey 3px;
         display: flex;
-        background-color: black;
+        background-color: $davy-grey;
         min-width:545px;
         min-height:285px;
       }
@@ -248,8 +248,8 @@ main {
             margin: 0;
           }
           button {
-            background: white;
-            border: solid white 2px;
+            background: $ash-grey;
+            border: solid $ash-grey 2px;
             border-radius: 7px;
             height: 35px;
           }
@@ -313,7 +313,7 @@ main {
   justify-content: center;
   .descbar {
     background-color: $davy-grey;
-    border: solid black 2px;
+    border: solid $davy-grey 2px;
     border-top: none;
     border-radius: 0 0 10px 10px;
   }
@@ -325,7 +325,7 @@ main {
 
 .lightbox-cont {
   background-color: $ash-grey;
-  border: solid black 3px;
+  border: solid $davy-grey 3px;
   max-height: 90vh;
   min-height: 60%;
   width: 150vh;
@@ -340,8 +340,8 @@ main {
 }
 
 #skills {
-  background: url(../images/svg-bgs/HoneycombBorderBlack01v2.svg) no-repeat left bottom, linear-gradient(0deg, $davy-grey 20%, black 100%);
-  color: #FFFF;
+  background: url(../images/svg-bgs/HoneycombBorderBlack01v2.svg) no-repeat left bottom, linear-gradient(0deg, $davy-grey 20%, $davy-grey 100%);
+  color: $ash-grey;
   min-height: 95vh;
 
   .skills-box {
@@ -407,7 +407,7 @@ main {
       padding: 10px;
       margin: 10px;
       border-radius: 25px 0px;
-      border: solid white 5px;
+      border: solid $ash-grey 5px;
     }
   }
 }
@@ -437,7 +437,7 @@ main {
     border-radius: 10px;
     transition: visibility 0s, opacity 0.25s linear;
     p {
-      color: white;
+      color: $ash-grey;
       text-align: center;
       margin-top: 90%;
       user-select: none;
@@ -458,7 +458,7 @@ main {
 }
 
 #exp {
-  background: url(../images/svg-bgs/HoneycombBorderGrey01v2.svg) no-repeat left bottom, #000;
+  background: url(../images/svg-bgs/HoneycombBorderGrey01v2.svg) no-repeat left bottom, $davy-grey;
   min-height: 60vh;
   .exp-box {
     margin: 40px 0;
@@ -467,8 +467,8 @@ main {
     justify-content: center;
     width: 800px;
     height: 280px;
-    border: solid white 5px;
-    color: white;
+    border: solid $ash-grey 5px;
+    color: $ash-grey;
     padding: 20px;
     border-radius: 25px 0;
 
@@ -486,7 +486,7 @@ main {
         align-items: center;
         justify-content: center;
         .logo {
-          background-color: white;
+          background-color: $ash-grey;
           border-radius: 5px;
           height: 155px;
           width: 155px;
@@ -544,9 +544,9 @@ main {
     justify-content: center;
     width: 800px;
     min-height: 500px;
-    border: solid white 5px;
+    border: solid $ash-grey 5px;
     border-radius: 25px 0;
-    color: white;
+    color: $ash-grey;
     .pt-one {
       width: 120px;
       display: flex;
@@ -562,8 +562,8 @@ main {
         justify-content: space-evenly;
         margin: 25px 0;
         .interest-tab.is-active {
-          background-color:  $green;
-          color: white;
+          background-color:  $orange;
+          color: $ash-grey;
         }
         .interest-tab:focus {
           outline: none;
@@ -573,17 +573,17 @@ main {
           height: 30px;
           border-radius: 10px;
           border: none;
-          background:rgb(255, 255, 255);
+          background:$ash-grey;
         }
       }
     }
     .pt-two {
-      border: white solid 1px;
+      border: $ash-grey solid 1px;
       flex: 1;
       display: flex;
       justify-content: center;
       padding: 5px;
-      background-color: black;
+      background-color: $davy-grey;
       .img-cont {
         img {
           height: 100%;
@@ -622,12 +622,12 @@ main {
 }
 
 #spacer {
-  background: url(../images/svg-bgs/HoneycombBorderWhite01v2.svg) no-repeat left bottom, linear-gradient(180deg, rgb(11,11,11) 98%, white 98%);
+  background: url(../images/svg-bgs/HoneycombBorderWhite01v2.svg) no-repeat left bottom, linear-gradient(180deg, rgb(11,11,11) 98%, $ash-grey 98%);
   height: 350px;
 }
 
 #contact {
-  background: url(../images/svg-bgs/HoneycombHalf.svg) no-repeat left bottom, linear-gradient(180deg, white 40%, rgb(150,150,150) 100%);
+  background: url(../images/svg-bgs/HoneycombHalf.svg) no-repeat left bottom, linear-gradient(180deg, $ash-grey 40%, rgb(150,150,150) 100%);
   background-size: contain, cover;
   min-height: 90vh;
 
@@ -650,23 +650,23 @@ main {
       img {
         height: 100%;
         width: 200px;
-        filter:drop-shadow(0px 0px 15px black);
+        filter:drop-shadow(0px 0px 15px $davy-grey);
         transition: 0.3s;
       }
       .abs {
         pointer-events: none;
         position: absolute;
         font-size: 200px;
-        color: black;
+        color: $davy-grey;
         transition: 0.3s;
       }
     }
     .hex-box:hover {
       img {
-        filter:drop-shadow(0px 0px 15px white) invert(100%);
+        filter:drop-shadow(0px 0px 15px $ash-grey) invert(100%);
       }
       .abs {
-        color: white;
+        color: $ash-grey;
       }
     }
   }
@@ -684,8 +684,8 @@ main {
 
 .footer {
   width: 100%;
-  background: black;
-  color: white;
+  background: $davy-grey;
+  color: $ash-grey;
   font-size: 12px;
   p {
     text-align: center;
@@ -853,8 +853,8 @@ main {
 
 @media (min-width: 1200px) {
   main {
-    border-left: solid $green 4px;
-    border-right: solid $green 4px;
+    border-left: solid $orange 4px;
+    border-right: solid $orange 4px;
   }
 }
 

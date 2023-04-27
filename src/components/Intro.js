@@ -9,26 +9,26 @@ const Intro = () => {
   return <section className="section" id="intro">
     <section className="content">
       <div className="title-container">
-        <Typing speed={80}>
-          <h1 className="title"><span className="green">{'//'}</span> Peter Williams</h1>
-          <Typing.Delay ms={500} />
-          <Typing.Speed ms={30} />
+        <Typing speed={87}>
+          <h1 className="title"><span className="orange">{'//'}</span> Peter Williams</h1>
+          <Typing.Delay ms={330} />
+          <Typing.Speed ms={33} />
           <h2>Software Engineer</h2>
-          <Typing.Delay ms={500} />
-          <Typing.Speed ms={30} />
-          <h2>Experimental Chef</h2>
-          <Typing.Delay ms={500} />
-          <Typing.Speed ms={30} />
+          <Typing.Delay ms={330} />
+          <Typing.Speed ms={33} />
           <h2>SaaS Developer</h2>
-          <Typing.Delay ms={500} />
-          <Typing.Speed ms={30} />
-          <h2>Doting Father<Typing.Speed ms={400} />...</h2><Typing.Delay ms={10000000000} />
+          <Typing.Delay ms={330} />
+          <Typing.Speed ms={33} />
+          <h2>Experimental Chef</h2>
+          <Typing.Delay ms={330} />
+          <Typing.Speed ms={33} />
+          <h2>Expert Dad Joker<Typing.Speed ms={330} />...</h2><Typing.Delay ms={10000000000} />
         </Typing>
         
         
       </div>
       <div className="image-container">
-        <img src={hexagon} alt="Profile Image" className="profile"/>
+        <img src={hexagon} alt="Me!" className="profile"/>
       </div>
     </section>
 

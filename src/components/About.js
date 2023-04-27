@@ -33,7 +33,7 @@ const About = () => {
     <section className="content">
       <div className="about-box">
         <article className="pt-one">
-          <h3><span className="green">{'//'}</span> A Little About Me</h3>
+          <h3><span className="orange">{'//'}</span> A Little About Me</h3>
           <ul className="tabs">
             {aboutMeArr.map((interest, i) => {
               return <button className={`${interest.isActive} interest-tab`} value={i} key={interest.title} onClick={handleChangeInterest}>{interest.title}</button>
@@ -47,14 +47,8 @@ const About = () => {
         </article>
         <article className="pt-three">
           <div>
-            <h3><span className="green">{'//'}</span> {currentInterest.title}</h3>
+            <h3><span className="orange">{'//'}</span> {currentInterest.title}</h3>
             <p>{currentInterest.desc}</p>
-          </div>
-          <div className="social">
-            {currentInterest.title === 'Interests' &&
-              <a className="insta-link" href="https://www.instagram.com/culinary.necromancy/" target="_blank" rel="noreferrer"><img src={instagramLogo} alt="Instagram" /></a>
-            }
-
           </div>
         </article>
       </div>
