@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
 
 $roberto: 'Roboto Mono', monospace;
-$filter: invert(65%) sepia(91%) saturate(2692%) hue-rotate(324deg) brightness(100%) contrast(109%);
 $orange:  #ff6300;
 $davy-grey: #333333;
 $ash-grey: #878787;
@@ -170,7 +169,7 @@ main {
 }
 
 #projects {
-  background: linear-gradient(0deg, $ash-grey 100%, $davy-grey 0%);
+  background: linear-gradient(0deg, $ash-grey 0%, #727272 100%);
   min-height: 95vh;
   color: $ash-grey;
   .content {
@@ -340,7 +339,7 @@ main {
 }
 
 #skills {
-  background: linear-gradient(0deg, $ash-grey 67%, $davy-grey 33%);
+  background: linear-gradient(0deg, #727272 0%, #5d5d5d 100%);
   color: $ash-grey;
   min-height: 95vh;
 
@@ -454,12 +453,12 @@ main {
   opacity: 1;
   }
   .devicon {
-    filter: $filter;
+    filter: $orange;
   }
 }
 
 #exp {
-  background: linear-gradient(0deg, $ash-grey 33%, $davy-grey 67%);
+  background: linear-gradient(0deg, #5d5d5d 0%, #484848 100%);
   min-height: 60vh;
   .exp-box {
     margin: 40px 0;
@@ -536,7 +535,7 @@ main {
 
 #about {
   padding-bottom: 0;
-  background: linear-gradient(0deg, $ash-grey 0%, $davy-grey 100%);
+  background: linear-gradient(0deg, #484848 0%, $davy-grey 100%);
   min-height: 80vh;
   .about-box {
     margin: 40px 0;
@@ -628,7 +627,7 @@ main {
 }
 
 #contact {
-  background: url(../images/svg-bgs/HoneycombHalf.svg) no-repeat left bottom, linear-gradient(180deg, $ash-grey 40%, rgb(233,233,233) 100%);
+  background: $davy-grey;
   background-size: contain, cover;
   min-height: 90vh;
 
