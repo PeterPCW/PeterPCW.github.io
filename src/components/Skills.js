@@ -6,15 +6,13 @@ import learnArray from '../API/learning'
 const Skills = () => {
   return <section className="section" id="skills">
     <section className="content">
-      <div className="sec-title">
+      <div className="skills-box">
         <article className="pt-one">
-          <div className="skills-box">
-            <div>
-              <h2><span className="orange">{'//'}</span> Skills & Experience</h2>
-              <p>I pride myself on finding the right tool for the job, which has given me a broad and slightly odd topology of languages and technologies - a sample of which are mentioned here.</p>
-              <p>The core of my experience is in React, Node, and Python, with their respective frameworks. C++ has joined the team for some professional projects, and LabVIEW will always hold fond memories as my first.</p>
-              <p>I am a scripter at heart who is always looking to automate (lest I forget how something works), but when I do require a UI, design and intuitive feel are just as important as function.</p>
-            </div>
+          <div>
+            <h2><span className="orange">{'//'}</span> Skills & Experience</h2>
+            <p>I pride myself on finding the right tool for the job, which has given me a broad and odd topology of skills - a sample of which are displayed here.</p>
+            <p>The core of my experience is in React, Node, and Python, with their respective frameworks. C++ has joined the team for some professional projects, and LabVIEW will always hold fond memories as my first.</p>
+            <p>I am a scripter at heart who is always looking to automate (lest I forget how it works), but when I do require a UI, design and intuitive feel are just as important as function. And don't forget documentation!</p>
           </div>
           <div className="learning">
             <h3><span className="orange">{'//'}</span> Learning</h3>

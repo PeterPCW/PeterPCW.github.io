@@ -81,8 +81,8 @@ main {
 #intro {
   padding: 0;
   .content {
-    width: 100%;
-    max-width: 100%;
+    width: 87%;
+    max-width: 97%;
     padding: 0 40px;
   }
   min-height: 90vh;
@@ -106,7 +106,7 @@ main {
     padding: 20px;
     width: 65%;
     height: 400px;
-    color: $ash-grey;
+    color: $orange;
     display: flex;
     flex-direction: column;
     align-self: flex-start;
