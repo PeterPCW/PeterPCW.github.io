@@ -45,6 +45,7 @@ module.exports = env => {
         filename: './index.html',
         inject: 'body',
         publicPath: publicPath,
+        scriptLoading: 'blocking',
       }),
     ],
     optimization: {
