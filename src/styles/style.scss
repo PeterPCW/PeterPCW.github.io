@@ -3,7 +3,7 @@
 $roberto: 'Roboto Mono', monospace;
 $filter: invert(65%) sepia(91%) saturate(2692%) hue-rotate(324deg) brightness(100%) contrast(109%);
 $orange:  #ff6300;
-$davy-grey: #313131;
+$davy-grey: #333333;
 $ash-grey: #878787;
 
 * {
@@ -86,7 +86,7 @@ main {
     padding: 0 40px;
   }
   min-height: 90vh;
-  background: url(../images/svg-bgs/HoneycombPage01.svg) no-repeat center center, url(../images/svg-bgs/HoneycombBorderGrey01v2.svg) no-repeat left bottom, $ash-grey;
+  background: url(../images/svg-bgs/HoneycombPage01.svg) no-repeat center center, $ash-grey;
   background-size: cover, auto, auto;
   .image-container {
     width: 400px;
@@ -170,7 +170,7 @@ main {
 }
 
 #projects {
-  background: url(../images/svg-bgs/HoneycombBorderBlack01v2.svg) no-repeat left bottom, linear-gradient(0deg, $davy-grey 20%, $davy-grey 100%);
+  background: linear-gradient(0deg, $ash-grey 100%, $davy-grey 0%);
   min-height: 95vh;
   color: $ash-grey;
   .content {
@@ -340,7 +340,7 @@ main {
 }
 
 #skills {
-  background: url(../images/svg-bgs/HoneycombBorderBlack01v2.svg) no-repeat left bottom, linear-gradient(0deg, $davy-grey 20%, $davy-grey 100%);
+  background: linear-gradient(0deg, $ash-grey 67%, $davy-grey 33%);
   color: $ash-grey;
   min-height: 95vh;
 
@@ -459,7 +459,7 @@ main {
 }
 
 #exp {
-  background: url(../images/svg-bgs/HoneycombBorderGrey01v2.svg) no-repeat left bottom, $davy-grey;
+  background: linear-gradient(0deg, $ash-grey 33%, $davy-grey 67%);
   min-height: 60vh;
   .exp-box {
     margin: 40px 0;
@@ -536,7 +536,7 @@ main {
 
 #about {
   padding-bottom: 0;
-  background:  linear-gradient(180deg, $davy-grey 20%, rgb(11,11,11) 100%);
+  background: linear-gradient(0deg, $ash-grey 0%, $davy-grey 100%);
   min-height: 80vh;
   .about-box {
     margin: 40px 0;
@@ -623,7 +623,7 @@ main {
 }
 
 #spacer {
-  background: url(../images/svg-bgs/HoneycombBorderWhite01v2.svg) no-repeat left bottom, linear-gradient(180deg, rgb(11,11,11) 98%, $ash-grey 98%);
+  background: linear-gradient(0deg, $ash-grey 100%, $davy-grey 100%);
   height: 350px;
 }
 

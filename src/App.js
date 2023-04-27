@@ -18,7 +18,7 @@ const App = () => {
     < Skills />
     < Exp />
     < About />
-    < Spacer />
+    {/*< Spacer />*/}
     < Contact />
     < Footer />
   </main>
