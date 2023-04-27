@@ -1,7 +1,7 @@
 import college from '../images/exp-logos/MST_logo.png'
-import bpb from '../images/exp-logos/ga-logo.png'
+import bpb from '../images/exp-logos/byte+bit.png'
 import ca from '../images/exp-logos/codecademy-logo.png'
-import ni from '../images/exp-logos/nationalInstuments-logo.png'
+import ni from '../images/exp-logos/nationalinstruments-logo.png'
 
 const experience = [
   {

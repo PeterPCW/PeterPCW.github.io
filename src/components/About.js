@@ -41,9 +41,9 @@ const About = () => {
           </ul>
         </article>
         <article className="pt-two">
-          <div className="img-cont">
+          {/*<div className="img-cont">
             <img src={currentInterest.image} />
-          </div>
+          </div>*/}
         </article>
         <article className="pt-three">
           <div>

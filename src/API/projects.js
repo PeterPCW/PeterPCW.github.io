@@ -1,3 +1,5 @@
+/* TODO
+
 import skillArray from './skills'
 
 import projOneOneScr from '../images/proj-imgs/proj-1/screenshot-1.png'
@@ -20,10 +22,29 @@ import projThreeFiveScr from '../images/proj-imgs/proj-3/screenshot-5.png'
 import projFourOneScr from '../images/proj-imgs/proj-4/screenshot-1.png'
 import projFourTwoScr from '../images/proj-imgs/proj-4/screenshot-2.png'
 import projFourThreeScr from '../images/proj-imgs/proj-4/screenshot-3.png'
-import projFourFourScr from '../images/proj-imgs/proj-4/screenshot-4.png'
+import projFourFourScr from '../images/proj-imgs/proj-4/screenshot-4.png'*/
 
 const projects = [
-  {
+    {
+      name: 'ChatGPT Chrome Extension',
+      techs: [
+        skillArray[0], skillArray[1], skillArray[2]
+      ],
+      type: 'Solo Project',
+      days: 5,
+      desc: 'A chrome extension to connect with OpenAI API and save responses to files. Initially for frequent use and specifically code analysis, now with ChatGPT out it is mostly a store of prompts. I did update to the chat completion with the 3.5 API available.',
+      github: 'https://github.com/PeterPCW/aiCodeDoc',
+      page: '',
+      images: [/*
+        { img: projOneOneScr, desc: 'Game Board And Options' }, 
+        { img: projOneTwoScr, desc: 'Game In Progress (Medium Board)' }, 
+        { img: projOneFiveScr, desc: 'Game In Progress (Small Board)' },
+        { img: projOneThreeScr, desc: 'Game Victory' }, 
+        { img: projOneFourScr, desc: 'Game Over, High Scores' }
+    */],
+      isActive: 'is-active'
+    }
+    /*{
     name: 'Sushi Sweeper',
     techs: [
       skillArray[0], skillArray[1], skillArray[4]
@@ -97,7 +118,7 @@ const projects = [
       { img: projFourFourScr, desc: 'User/Following List' } 
     ],
     isActive: ''
-  }
+  }*/
 ]
 
 export default projects
