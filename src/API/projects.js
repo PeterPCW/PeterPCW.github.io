@@ -1,5 +1,6 @@
 import skillArray from './skills'
 
+import bpb from '../images/exp-logos/byte+bit.png'
 /* TODO
 
 import projOneOneScr from '../images/proj-imgs/proj-1/screenshot-1.png'
@@ -35,13 +36,9 @@ const projects = [
       desc: 'A chrome extension to connect with OpenAI API and save responses to files. Initially for frequent use and specifically code analysis, now with ChatGPT out it is mostly a store of prompts. I did update to the chat completion with the 3.5 API available.',
       github: 'https://github.com/PeterPCW/aiCodeDoc',
       page: '',
-      images: [/*
-        { img: projOneOneScr, desc: 'Game Board And Options' }, 
-        { img: projOneTwoScr, desc: 'Game In Progress (Medium Board)' }, 
-        { img: projOneFiveScr, desc: 'Game In Progress (Small Board)' },
-        { img: projOneThreeScr, desc: 'Game Victory' }, 
-        { img: projOneFourScr, desc: 'Game Over, High Scores' }
-    */],
+      images: [
+        { img: bpb, desc: 'Not the right image' }
+    ],
       isActive: 'is-active'
     }
     /*{
