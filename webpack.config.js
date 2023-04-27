@@ -4,14 +4,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const DotEnv = require('dotenv-webpack')
 
 module.exports = env => {
-  const publicPath = env.NODE_ENV === 'local' ? {
-    publicPath: '/'
-  } : {}
+  const publicPath = env.NODE_ENV === 'local' ? '/' : '/public/'
   return {
     entry: './src/index.js',
     output: {
       filename: 'bundle.js',
       path: path.resolve(__dirname, 'public'),
+      publicPath: publicPath
     },
     module: {
       rules: [
@@ -36,8 +35,9 @@ module.exports = env => {
       new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin({
         template: 'src/index.html',
-        filename: 'index.html',
-        inject: 'body'
+        filename: './index.html',
+        inject: 'body',
+        publicPath: publicPath
       })
     ]
   }

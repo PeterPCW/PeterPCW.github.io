@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import skillArray from '../API/skills'
-/*import projects from '../API/projects'*/
+import projects from '../API/projects'
 import link from '../images/svg-icons/link-new.svg'
 import Fade from 'react-reveal/Fade'
 import magnify from '../images/exp-logos/magnify.svg'
