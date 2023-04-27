@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
 
 $roberto: 'Roboto Mono', monospace;
+$filter: hue-rotate(30deg) saturate(200%);
 $orange:  #ff6300;
 $davy-grey: #333333;
 $ash-grey: #878787;
@@ -169,7 +170,7 @@ main {
 }
 
 #projects {
-  background: linear-gradient(0deg, $ash-grey 0%, #727272 100%);
+  background: linear-gradient(0deg, $ash-grey 100%, #727272 0%);
   min-height: 95vh;
   color: $ash-grey;
   .content {
@@ -185,6 +186,7 @@ main {
     width: 800px;
     border: 5px $ash-grey solid;
     border-radius: 25px 0;
+    background: $davy-grey;
 
     article {
       height: 480px;
@@ -288,6 +290,7 @@ main {
           height: 90px;
           margin: 0;
           padding: 10px;
+          background: $davy-grey;
         }
 
 
@@ -339,7 +342,7 @@ main {
 }
 
 #skills {
-  background: linear-gradient(0deg, #727272 0%, #5d5d5d 100%);
+  background: linear-gradient(0deg, #727272 100%, #5d5d5d 0%);
   color: $ash-grey;
   min-height: 95vh;
 
@@ -350,6 +353,7 @@ main {
     justify-content: center;
     width: 800px;
     height: 100%;
+    background: $davy-grey;
     
 
     .pt-one {
@@ -373,6 +377,7 @@ main {
         display: flex;
         flex-direction: column;
         margin: 5px 30px 0;
+        color: $orange
 
         h3 {
           margin: 5px 0;
@@ -390,15 +395,16 @@ main {
             justify-content: center;
             align-items: center;
             display: flex;
+            background: $davy-grey;
             
           }
         }
       }
     }
     .pt-two {
-      
       display: flex;
       justify-content: center;
+      color: $orange
 
     }
     article {
@@ -427,6 +433,7 @@ main {
   align-items: center;
   display: flex;
   margin: 5px;
+  background: $davy-grey;
   .name-container {
     position: absolute;
     height: 95px;
@@ -453,12 +460,12 @@ main {
   opacity: 1;
   }
   .devicon {
-    filter: $orange;
+    filter: $filter;
   }
 }
 
 #exp {
-  background: linear-gradient(0deg, #5d5d5d 0%, #484848 100%);
+  background: linear-gradient(0deg, #5d5d5d 100%, #484848 0%);
   min-height: 60vh;
   .exp-box {
     margin: 40px 0;
@@ -471,6 +478,7 @@ main {
     color: $ash-grey;
     padding: 20px;
     border-radius: 25px 0;
+    background: $davy-grey;
 
     .pt-one {
       flex: 1;
@@ -522,7 +530,6 @@ main {
         align-self: center;
         height: 45px;
         width: 80%;
-        border-radius: 15px;
       }
     }
     article {
@@ -535,7 +542,7 @@ main {
 
 #about {
   padding-bottom: 0;
-  background: linear-gradient(0deg, #484848 0%, $davy-grey 100%);
+  background: linear-gradient(0deg, #484848 100%, $davy-grey 0%);
   min-height: 80vh;
   .about-box {
     margin: 40px 0;
@@ -547,6 +554,7 @@ main {
     border: solid $ash-grey 5px;
     border-radius: 25px 0;
     color: $ash-grey;
+    background: $davy-grey;
     .pt-one {
       width: 120px;
       display: flex;

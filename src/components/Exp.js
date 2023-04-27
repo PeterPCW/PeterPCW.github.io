@@ -89,22 +89,13 @@ const Exp = () => {
               <p>{expArr[expIndex].desc}</p>
             </div>
           </article>
-        </div>
-        <div className='buttons exp-nav'>
-          <button className='proj-button' onClick={handleLeftButton}>⁌</button>
-          {expArr.filter((exp, i) => i % 2 === 0).map((exp, i) => {
-            return <button value={i} className={`${exp.isActive} proj-button`} onClick={handleChangeProj} key={i}>⌬</button>
-          })}
-          <button className='proj-button' onClick={handleRightButton}>⁍</button>
-        </div>
-        <div className='buttons exp-nav'>
-          <button className='proj-button' onClick={handleLeftButton}>⁌</button>
-          {expArr.map((exp, i) => {
-            return <button value={i} className={`${exp.isActive} proj-button`} onClick={handleChangeProj} key={i}>⌬</button>
-          })}
-          <button className='proj-button' onClick={handleRightButton}>⁍</button>
-        </div>
-        <div className="exp-box">
+          <div className='buttons exp-nav'>
+            <button className='proj-button' onClick={handleLeftButton}>⁌</button>
+            {expArr.filter((exp, i) => i % 2 === 0).map((exp, i) => {
+              return <button value={i} className={`${exp.isActive} proj-button`} onClick={handleChangeProj} key={i}>⌬</button>
+            })}
+            <button className='proj-button' onClick={handleRightButton}>⁍</button>
+          </div>
           <article className="pt-one">
             <div className="logo-cont">
               <img className="logo" src={expArr[expIndex+1].img} alt={expArr[expIndex+1].org} />
