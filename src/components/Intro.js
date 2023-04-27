@@ -25,6 +25,7 @@ const Intro = () => {
           <h2>Dad Joker<Typing.Speed ms={33} />...</h2><Typing.Delay ms={10000000000} />
         </Typing>
       </div>
+      <div></div>
       <div className="image-container">
         <img src={hexagon} alt="That's me!" className="profile"/>
       </div>
