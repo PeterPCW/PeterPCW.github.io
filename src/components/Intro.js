@@ -22,7 +22,7 @@ const Intro = () => {
           <h2>Experimental Chef</h2>
           <Typing.Delay ms={330} />
           <Typing.Speed ms={33} />
-          <h2>Expert Dad Joker<Typing.Speed ms={330} />...</h2><Typing.Delay ms={10000000000} />
+          <h2>Dad Joker<Typing.Speed ms={33} />...</h2><Typing.Delay ms={10000000000} />
         </Typing>
         
         

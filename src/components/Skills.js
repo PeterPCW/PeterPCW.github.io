@@ -36,7 +36,7 @@ const Skills = () => {
                 <div className="name-container">
                   <p>{skill.name}</p>
                 </div>
-                <img src={skill.svg} alt={skill.name} className="devicon" />
+                <img src={skill.svg} alt={skill.name} className="devicon"/>
               </div>
             })}
           </div>
