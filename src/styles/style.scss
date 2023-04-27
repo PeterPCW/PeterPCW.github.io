@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
 
 $roberto: 'Roboto Mono', monospace;
-$filter: invert(51%) saturate(5892%) hue-rotate(33deg) brightness(333%) contrast(333%) opacity(100%);
+$filter: invert(51%) saturate(5892%) hue-rotate(33deg) brightness(133%) contrast(133%) opacity(100%);
 $orange:  #ff6300;
 $davy-grey: #333333;
 $ash-grey: #878787;
@@ -82,8 +82,11 @@ main {
   padding: 0;
   .content {
     width: 87%;
-    max-width: 97%;
-    padding: 0 40px;
+    max-width: 87%;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
   }
   min-height: 90vh;
   background: url(../images/svg-bgs/HoneycombPage01.svg) no-repeat center center, $ash-grey;
@@ -97,6 +100,7 @@ main {
     .profile {
       height: 150%;
       width: 150%;
+      filter:drop-shadow(0px 0px 15px $davy-grey);
     }
   }
 
@@ -111,14 +115,13 @@ main {
     flex-direction: column;
     align-self: flex-start;
     .title {
-      font-size: 3rem;
+      font-size: 5rem;
       margin: 20px;
-      margin-left: 10px;
       width: 100%;
     }
     h2 {
-      margin-left: 80px;
-      font-size: 1.5rem;
+      margin-left: 33px;
+      font-size: 3.3rem;
     }
   }
 }
@@ -569,7 +572,6 @@ main {
       flex-direction: column;
       justify-content: space-evenly;
       .tabs{
-      
         list-style-type: none;
         padding: 0;
         display: flex;
