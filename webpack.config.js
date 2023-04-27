@@ -11,8 +11,7 @@ module.exports = env => {
     entry: './src/index.js',
     output: {
       filename: 'bundle.js',
-      path: path.resolve('.'),
-      ...publicPath
+      path: path.resolve(__dirname, 'public'),
     },
     module: {
       rules: [
@@ -23,13 +22,14 @@ module.exports = env => {
       ]
     },
     devServer: {
-      publicPath: '/',
-      contentBase: path.resolve('src'),
       hot: true,
       open: true,
       port: 8000,
-      watchContentBase: true,
-      historyApiFallback: true
+      historyApiFallback: true,
+      static: [
+        {directory: path.resolve('src'), watch: true},
+        {directory: path.resolve('public'), watch: true}
+      ]
     },
     plugins: [
       new DotEnv(),
