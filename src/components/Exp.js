@@ -8,7 +8,7 @@ const Exp = () => {
 
   function handleChangeProj(e) {
     e.preventDefault()
-    const newIndex = Number(e.target.value)
+    const newIndex = Number(e.target.value) * 2
     if (expIndex === newIndex) {
       return
     }
