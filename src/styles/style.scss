@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
 
 $roberto: 'Roboto Mono', monospace;
-$filter: hue-rotate(30deg) saturate(200%);
+$filter: invert(51%) sepia(99%) saturate(5892%) hue-rotate(324deg) brightness(100%) contrast(103%);
 $orange:  #ff6300;
 $davy-grey: #333333;
 $ash-grey: #878787;
@@ -170,7 +170,7 @@ main {
 }
 
 #projects {
-  background: linear-gradient(0deg, $ash-grey 100%, #727272 0%);
+  background: linear-gradient(0deg, #727272 0%, $ash-grey 100%);
   min-height: 95vh;
   color: $ash-grey;
   .content {
@@ -342,7 +342,7 @@ main {
 }
 
 #skills {
-  background: linear-gradient(0deg, #727272 100%, #5d5d5d 0%);
+  background: linear-gradient(0deg, #5d5d5d 0%, #727272 100%);
   color: $ash-grey;
   min-height: 95vh;
 
@@ -467,11 +467,12 @@ main {
 }
 
 #exp {
-  background: linear-gradient(0deg, #5d5d5d 100%, #484848 0%);
+  background: linear-gradient(0deg, #484848 0%, #5d5d5d 100%);
   min-height: 60vh;
   .exp-cont {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     border: solid $ash-grey 5px;
     padding: 20px;
     border-radius: 25px 0;
@@ -532,11 +533,6 @@ main {
             font-size: 14px;
           }
         }
-        .buttons.exp-nav {
-          align-self: center;
-          height: 45px;
-          width: 80%;
-        }
       }
       article {
         min-height: 200px;
@@ -544,12 +540,18 @@ main {
         margin: 10px;
       }
     }
+    .buttons.exp-nav {
+      align-self: center;
+      height: 45px;
+      width: 80%;
+      border-radius: 25px 0;
+    }
   }
 }
 
 #about {
   padding-bottom: 0;
-  background: linear-gradient(0deg, #484848 100%, $davy-grey 0%);
+  background: linear-gradient(0deg, $davy-grey 0%, #484848 100%);
   min-height: 80vh;
   .about-box {
     margin: 40px 0;
@@ -637,7 +639,7 @@ main {
 }
 
 #spacer {
-  background: linear-gradient(0deg, $ash-grey 100%, $davy-grey 100%);
+  background: linear-gradient(0deg, $davy-grey 100%, $ash-grey 100%);
   height: 350px;
 }
 
