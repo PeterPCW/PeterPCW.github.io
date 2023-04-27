@@ -1,6 +1,6 @@
-/* TODO
-
 import skillArray from './skills'
+
+/* TODO
 
 import projOneOneScr from '../images/proj-imgs/proj-1/screenshot-1.png'
 import projOneTwoScr from '../images/proj-imgs/proj-1/screenshot-2.png'
