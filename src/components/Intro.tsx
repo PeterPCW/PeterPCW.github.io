@@ -2,9 +2,9 @@ import React from 'react'
 import hexagon from '../images/profile-hex.png'
 import Typing from 'react-typing-animation'
 
-const Intro = () => {
+function Intro() {
 
-  
+
 
   return <section className="section" id="intro">
     <section className="content">
@@ -27,7 +27,7 @@ const Intro = () => {
       </div>
       <div></div>
       <div className="image-container">
-        <img src={hexagon} alt="That's me!" className="profile"/>
+        <img src={hexagon} alt="That's me!" className="profile" />
       </div>
     </section>
 

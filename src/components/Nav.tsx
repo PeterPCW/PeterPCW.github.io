@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Nav = () => {
+function Nav() {
   return <section className="section" id="nav">
     <section className="content">
       <ul className="navbar">

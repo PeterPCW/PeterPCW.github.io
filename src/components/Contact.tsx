@@ -3,7 +3,7 @@ import linkedin from '../images/hexes/linkedin-hex.svg'
 import github from '../images/hexes/github-hex.svg'
 import hex from '../images/hexes/empty-hex.svg'
 
-const Contact = () => {
+function Contact() {
 
   const myMailto = 'mailto:contact@byteplusbit.com&subject=Let\'s Work Together&body=Hello Peter! %0D%0A%0D%0AI saw your portfolio and I would like to discuss an opportunity with you -'
 

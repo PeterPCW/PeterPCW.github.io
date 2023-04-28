@@ -2,7 +2,7 @@ import React from 'react'
 import skillArray from '../API/skills'
 import learnArray from '../API/learning'
 
-const Skills = () => {
+function Skills() {
 
   return <section className="section" id="skills">
     <section className="content">
@@ -19,7 +19,7 @@ const Skills = () => {
             <div className="mapped-skills learning-skills">
               {learnArray.map((skill, i) => {
                 return <div className="skill-box" key={i}>
-                  <div className="name-container" >
+                  <div className="name-container">
                     <p>{skill.name}</p>
 
                   </div>
@@ -36,7 +36,7 @@ const Skills = () => {
                 <div className="name-container">
                   <p>{skill.name}</p>
                 </div>
-                <img src={skill.svg} alt={skill.name} className="devicon"/>
+                <img src={skill.svg} alt={skill.name} className="devicon" />
               </div>
             })}
           </div>

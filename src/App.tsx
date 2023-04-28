@@ -10,17 +10,17 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 /*import Spacer from './components/Spacer'*/
 
-const App = () => {
+function App() {
   return <main>
-    < Intro />
-    < Nav />
-    < Projects />
-    < Skills />
-    < Exp />
-    < About />
+    <Intro />
+    <Nav />
+    <Projects />
+    <Skills />
+    <Exp />
+    <About />
     {/*< Spacer />*/}
-    < Contact />
-    < Footer />
+    <Contact />
+    <Footer />
   </main>
 }
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import experience from '../API/experience'
 
 
-const Exp = () => {
+function Exp() {
   const [expIndex, updateExpIndex] = useState(0)
   const [expArr, updateExpArr] = useState(experience)
 
@@ -72,7 +72,7 @@ const Exp = () => {
   }
 
   return <section className="section" id="exp">
-    <section className="content">  
+    <section className="content">
       <div className="section-title">
         <div className="exp-cont">
           <div className="exp-box">
@@ -101,16 +101,16 @@ const Exp = () => {
           <div className="exp-box">
             <article className="pt-one">
               <div className="logo-cont">
-                <img className="logo" src={expArr[expIndex+1].img} alt={expArr[expIndex+1].org} />
+                <img className="logo" src={expArr[expIndex + 1].img} alt={expArr[expIndex + 1].org} />
                 <div className="subhead">
-                  <h4><span className="orange">{'//'}</span> {expArr[expIndex+1].org}</h4>
+                  <h4><span className="orange">{'//'}</span> {expArr[expIndex + 1].org}</h4>
                 </div>
               </div>
             </article>
             <article className="pt-two">
               <div className="description">
-                <h3>{expArr[expIndex+1].name} <span className="orange">—</span> {expArr[expIndex+1].date} <span className="orange">{'//'}</span> {expArr[expIndex+1].end}</h3>
-                <p>{expArr[expIndex+1].desc}</p>
+                <h3>{expArr[expIndex + 1].name} <span className="orange">—</span> {expArr[expIndex + 1].date} <span className="orange">{'//'}</span> {expArr[expIndex + 1].end}</h3>
+                <p>{expArr[expIndex + 1].desc}</p>
               </div>
             </article>
           </div>

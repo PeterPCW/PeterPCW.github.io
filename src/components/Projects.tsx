@@ -3,13 +3,13 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Fade } from 'react-reveal'
-import skillArray from '../API/skills'
 import projects from '../API/projects'
 import link from '../images/svg-icons/link-new.svg'
+import github from '../images/hexes/github-hex.svg'
 import magnify from '../images/exp-logos/magnify.svg'
 import exit from '../images/exp-logos/exit.svg'
 
-const Projects = () => {
+function Projects() {
   const [projectIndex, updateProjectIndex] = useState(0)
   const [projectArr, updateProjectArr] = useState(projects)
 
@@ -131,7 +131,7 @@ const Slides = ({ project }: { project: ProjectType }) => {
             <div className="name-container" >
               <p><span className="orange">Readme</span> </p>
             </div>
-            <img src={skillArray[3].svg} alt={skillArray[3].name} />
+            <img src={github} alt="GitHub" />
           </div>
         </a>
       </div>
