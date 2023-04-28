@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import aboutMeArr from '../API/about'
-import instagramLogo from '../images/exp-logos/twitter-logo.png'
 
-const About = () => {
+function About() {
 
   const [interestIndex, updateInterestIndex] = useState(0)
   const [interestArr, updateInterestArr] = useState(aboutMeArr)
@@ -42,8 +41,8 @@ const About = () => {
         </article>
         <article className="pt-two">
           {/*<div className="img-cont">
-            <img src={currentInterest.image} />
-          </div>*/}
+          <img src={currentInterest.image} />
+        </div>*/}
         </article>
         <article className="pt-three">
           <div>

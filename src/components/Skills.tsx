@@ -1,16 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import skillArray from '../API/skills'
 import learnArray from '../API/learning'
 
 const Skills = () => {
-  const [htmlContent, setHtmlContent] = useState('');
-
-  useEffect(() => {
-    fetch('../python/bokeh/ExperienceChart.html')
-      .then(response => response.text())
-      .then(data => setHtmlContent(data))
-      .catch(error => console.error(error));
-  }, []);
 
   return <section className="section" id="skills">
     <section className="content">
@@ -20,7 +12,7 @@ const Skills = () => {
             <h2><span className="orange">{'//'}</span> Skills & Experience</h2>
             <p>I pride myself on finding the right tool for the job, which has given me a broad and odd topology of skills - a sample of which are displayed here.</p>
             <p>The core of my experience is in React, Node, and Python, with their respective frameworks. C++ has joined the team for some professional projects, and LabVIEW will always hold fond memories as my first.</p>
-            <p>I am a scripter at heart who is always looking to automate (lest I forget how it works), but when I do require a UI, design and intuitive feel are just as important as function. And don't forget documentation!</p>
+            <p>I am a scripter at heart who is always looking to automate (lest I forget how it works), but when I do require a UI, design and intuitive feel are just as important as function. And don&apos;t forget documentation!</p>
           </div>
           <div className="learning">
             <h3><span className="orange">{'//'}</span> Learning</h3>
@@ -48,7 +40,7 @@ const Skills = () => {
               </div>
             })}
           </div>
-          <div dangerouslySetInnerHTML={{__html: htmlContent}}></div>
+          <iframe src="./ExperienceChart.html" title="Experience chart" />
         </article>
       </div>
     </section>

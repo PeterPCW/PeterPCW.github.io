@@ -1,10 +1,11 @@
 /* TODO */
 
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import { Fade } from 'react-reveal'
 import skillArray from '../API/skills'
 import projects from '../API/projects'
 import link from '../images/svg-icons/link-new.svg'
-import Fade from 'react-reveal/Fade'
 import magnify from '../images/exp-logos/magnify.svg'
 import exit from '../images/exp-logos/exit.svg'
 
@@ -91,8 +92,7 @@ const Projects = () => {
   </section>
 }
 
-
-const Slides = ({ project }) => {
+const Slides = ({ project }: { project: ProjectType }) => {
   const linkObj = { name: 'Link', svg: link }
 
   if (project.name === undefined || !project.name) {
@@ -137,11 +137,9 @@ const Slides = ({ project }) => {
       </div>
     </article>
   </div>
-
 }
 
 const Image = ({ image }) => {
-
   const imageArr = image
   const [imageIndex, updateImageIndex] = useState(0)
   const [lightboxDisplay, setLightBoxDisplay] = useState(false)
@@ -178,10 +176,6 @@ const Image = ({ image }) => {
     setLightBoxDisplay(false)
   }
 
-
-
-
-
   return <div className="proj-img" >
     <div
       className="img-cont"
@@ -213,7 +207,7 @@ const Image = ({ image }) => {
                 return <Fade key={i}>
                   <img
                     id="lightbox-img" src={image.img} 
-                    style={{ height: {}, maxWidth: '95wv', width: '100%' }}
+                    style={{ height: 'auto', maxWidth: '95wv', width: '100%' }}
                   ></img>
                   <div className="magnify">
                     <img src={exit} alt="Exit" />
@@ -239,5 +233,71 @@ const Image = ({ image }) => {
     </div>
   </div>
 }
+
+Projects.propTypes = {
+  project: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    techs: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        svg: PropTypes.any.isRequired,
+      })
+    ).isRequired,
+    type: PropTypes.string.isRequired,
+    days: PropTypes.number.isRequired,
+    desc: PropTypes.string.isRequired,
+    github: PropTypes.string.isRequired,
+    page: PropTypes.string.isRequired,
+    images: PropTypes.arrayOf(
+      PropTypes.shape({
+        img: PropTypes.any.isRequired,
+        desc: PropTypes.string.isRequired,
+      })
+    ).isRequired,
+    isActive: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
+type ProjectType = {
+  name: string;
+  techs: {
+    name: string;
+    svg: any;
+  }[];
+  type: string;
+  days: number;
+  desc: string;
+  github: string;
+  page: string;
+  images: {
+    img: any;
+    desc: string;
+  }[];
+  isActive: string;
+};
+
+Slides.propTypes = {
+  project: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    techs: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        svg: PropTypes.any.isRequired,
+      })
+    ).isRequired,
+    images: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+    desc: PropTypes.string.isRequired,
+    github: PropTypes.string.isRequired,
+    page: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
+Image.propTypes = {
+  image: PropTypes.arrayOf(
+  PropTypes.shape({
+    img: PropTypes.string.isRequired,
+  }).isRequired
+  ).isRequired,
+};
 
 export default Projects

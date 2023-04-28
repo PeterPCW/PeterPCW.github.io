@@ -7,8 +7,8 @@ import Skills from './components/Skills'
 import Exp from './components/Exp'
 import About from './components/About'
 import Contact from './components/Contact'
-import Spacer from './components/Spacer'
 import Footer from './components/Footer'
+/*import Spacer from './components/Spacer'*/
 
 const App = () => {
   return <main>

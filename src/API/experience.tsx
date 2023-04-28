@@ -3,6 +3,11 @@ import bpb from '../images/exp-logos/byte+bit.png'
 import ca from '../images/exp-logos/codecademy-logo.png'
 import ni from '../images/exp-logos/nationalinstruments-logo.png'
 
+/*const college: React.ReactNode = <img src={mst} alt="Missouri S&T logo" />;
+const bpb: React.ReactNode = <img src={bpblogo} alt="Byte Plus Bit logo" />;
+const ca: React.ReactNode = <img src={calogo} alt="Codecademy logo" />;
+const ni: React.ReactNode = <img src={nilogo} alt="National Instruments logo" />;*/
+
 const experience = [
   {
     name: 'Byte Plus Bit',
