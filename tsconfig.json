@@ -16,7 +16,7 @@
   "exclude": [
     "./node_modules/**/*",
     "./coverage/**/*",
-    "./docs/**/*"
+    "./public/**/*"
   ],
   "moduleResolution": "node",
   "types": ["node", "jest", "@testing-library/jest-dom", "@types/react-typing-animation"],
