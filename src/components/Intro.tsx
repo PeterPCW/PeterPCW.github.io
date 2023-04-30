@@ -1,6 +1,6 @@
 import React from 'react'
 import hexagon from '../images/profile-hex.png'
-import Typing from 'react-typing-animation'
+import { TypeAnimation } from 'react-type-animation'
 
 function Intro() {
 
@@ -9,21 +9,25 @@ function Intro() {
   return <section className="section" id="intro">
     <section className="content">
       <div className="title-container">
-        <Typing speed={87}>
-          <h1 className="title"><span className="orange">{'//'}</span> Peter Williams</h1>
-          <Typing.Delay ms={330} />
-          <Typing.Speed ms={33} />
-          <h2>Software Engineer</h2>
-          <Typing.Delay ms={330} />
-          <Typing.Speed ms={33} />
-          <h2>SaaS Developer</h2>
-          <Typing.Delay ms={330} />
-          <Typing.Speed ms={33} />
-          <h2>Experimental Chef</h2>
-          <Typing.Delay ms={330} />
-          <Typing.Speed ms={33} />
-          <h2>Dad Joker<Typing.Speed ms={33} />...</h2><Typing.Delay ms={10000000000} />
-        </Typing>
+        <h1 className="title"><span className="orange">{'//'}</span> Peter Williams</h1>
+        <TypeAnimation
+          sequence={[
+            'SaaS Developer',
+            333, // Waits 1/3s
+            'Prompt Engineer',
+            333, // Waits 1/3s
+            'Customer Advocate',
+            333, // Waits 1/3s
+            'Experimental Chef',
+            () => {
+              // console.log('Sequence completed'); Place optional callbacks anywhere in the array
+            }
+          ]}
+          wrapper="span"
+          cursor={true}
+          repeat={0}
+          style={{ fontSize: '2em', display: 'inline-block' }}
+        />
       </div>
       <div></div>
       <div className="image-container">

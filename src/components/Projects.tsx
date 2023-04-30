@@ -1,15 +1,13 @@
 /* TODO */
 
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
-import { Fade } from 'react-reveal'
 import projects from '../API/projects'
 import link from '../images/svg-icons/link-new.svg'
 import github from '../images/hexes/github-hex.svg'
 import magnify from '../images/exp-logos/magnify.svg'
 import exit from '../images/exp-logos/exit.svg'
 
-function Projects() {
+const Projects = () => {
   const [projectIndex, updateProjectIndex] = useState(0)
   const [projectArr, updateProjectArr] = useState(projects)
 
@@ -92,7 +90,7 @@ function Projects() {
   </section>
 }
 
-const Slides = ({ project }: { project: ProjectType }) => {
+const Slides = ({ project }: SlidesProps) => {
   const linkObj = { name: 'Link', svg: link }
 
   if (project.name === undefined || !project.name) {
@@ -139,7 +137,7 @@ const Slides = ({ project }: { project: ProjectType }) => {
   </div>
 }
 
-const Image = ({ image }) => {
+const Image = ({ image }: ImageProps) => {
   const imageArr = image
   const [imageIndex, updateImageIndex] = useState(0)
   const [lightboxDisplay, setLightBoxDisplay] = useState(false)
@@ -185,12 +183,12 @@ const Image = ({ image }) => {
           if (i !== imageIndex) {
             return
           } else {
-            return <Fade key={i}>
+            return <div key={i}>
               <img className='thumb' src={image.img} onClick={() => showImage()} />
               <div className="magnify">
                 <img src={magnify} alt="Magnify" />
               </div>
-            </Fade>
+            </div>
           }
 
         })}
@@ -204,7 +202,7 @@ const Image = ({ image }) => {
               if (i !== imageIndex) {
                 return
               } else {
-                return <Fade key={i}>
+                return <div key={i}>
                   <img
                     id="lightbox-img" src={image.img} 
                     style={{ height: 'auto', maxWidth: '95wv', width: '100%' }}
@@ -212,8 +210,7 @@ const Image = ({ image }) => {
                   <div className="magnify">
                     <img src={exit} alt="Exit" />
                   </div>
-
-                </Fade>
+                </div>
               }
             })}
           </div>
@@ -234,29 +231,27 @@ const Image = ({ image }) => {
   </div>
 }
 
-Projects.propTypes = {
-  project: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    techs: PropTypes.arrayOf(
-      PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        svg: PropTypes.any.isRequired,
-      })
-    ).isRequired,
-    type: PropTypes.string.isRequired,
-    days: PropTypes.number.isRequired,
-    desc: PropTypes.string.isRequired,
-    github: PropTypes.string.isRequired,
-    page: PropTypes.string.isRequired,
-    images: PropTypes.arrayOf(
-      PropTypes.shape({
-        img: PropTypes.any.isRequired,
-        desc: PropTypes.string.isRequired,
-      })
-    ).isRequired,
-    isActive: PropTypes.string.isRequired,
-  }).isRequired,
-};
+interface Projects {
+  name: string;
+  techs: {
+    name: string;
+    svg: any;
+  }[];
+  type: string;
+  days: number;
+  desc: string;
+  github: string;
+  page: string;
+  images: {
+    img: any;
+    desc: string;
+  }[];
+  isActive: string;
+}
+
+/*interface ProjectProps {
+  project: Project;
+}
 
 type ProjectType = {
   name: string;
@@ -274,30 +269,34 @@ type ProjectType = {
     desc: string;
   }[];
   isActive: string;
-};
+};*/
 
-Slides.propTypes = {
-  project: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    techs: PropTypes.arrayOf(
-      PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        svg: PropTypes.any.isRequired,
-      })
-    ).isRequired,
-    images: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
-    desc: PropTypes.string.isRequired,
-    github: PropTypes.string.isRequired,
-    page: PropTypes.string.isRequired,
-  }).isRequired,
-};
+interface Slide {
+  img: string;
+  desc: string;
+}
 
-Image.propTypes = {
-  image: PropTypes.arrayOf(
-  PropTypes.shape({
-    img: PropTypes.string.isRequired,
-  }).isRequired
-  ).isRequired,
-};
+interface SlidesProps {
+  project: {
+    name: string;
+    techs: {
+      name: string;
+      svg: any;
+    }[];
+    images: Slide[];
+    desc: string;
+    github: string;
+    page: string;
+  };
+}
+
+interface Image {
+  img: string;
+  desc: string;
+}
+
+interface ImageProps {
+  image: Image[];
+}
 
 export default Projects
