@@ -410,15 +410,20 @@ main {
     }
   }
 }
-
+.graphed-skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 555px; 
+}
 .mapped-skills {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 333px;
-  
+  width: 333px; 
 }
 .skill-box{
   width: 66px;
