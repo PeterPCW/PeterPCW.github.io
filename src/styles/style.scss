@@ -399,16 +399,6 @@ main {
           display: flex;
           flex-direction: row;
           width: 133px;          
-          .skill-box {
-            flex: 1;
-            width: 66px;
-            height: 66px;
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            background: $davy-grey;
-            
-          }
         }
       }
     }
