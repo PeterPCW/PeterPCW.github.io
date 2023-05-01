@@ -75,6 +75,7 @@ function Exp() {
     <section className="content">
       <div className="section-title">
         <div className="exp-cont">
+          <h2><span className="orange">{'//'}</span> Experience</h2>
           <div className="exp-box">
             <article className="pt-one">
               <div className="logo-cont">

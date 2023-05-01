@@ -359,6 +359,7 @@ main {
 
     .pt-one {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       color: $orange;
       background: $davy-grey;
@@ -554,6 +555,8 @@ main {
 }
 
 #about {
+  display: flex;
+  flex-direction: column;
   padding-bottom: 0;
   background: linear-gradient(0deg, $davy-grey 0%, #484848 100%);
   min-height: 80vh;
@@ -583,7 +586,7 @@ main {
         margin: 25px 0;
         .interest-tab.is-active {
           background-color:  $orange;
-          color: $ash-grey;
+          color: $davy-grey;
         }
         .interest-tab:focus {
           outline: none;

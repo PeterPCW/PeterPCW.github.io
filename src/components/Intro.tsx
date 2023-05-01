@@ -38,7 +38,7 @@ function Intro() {
         <TypeAnimation
           sequence={[
             2200, // Waits 1/3s
-            'Customer Advocate',
+            'Customer Champion',
             () => {
               // console.log('Sequence completed'); Place optional callbacks anywhere in the array
             }
@@ -57,7 +57,7 @@ function Intro() {
             }
           ]}
           wrapper="span"
-          cursor={true}
+          cursor={false}
           repeat={0}
           style={h2style}
         />

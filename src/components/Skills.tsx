@@ -8,7 +8,7 @@ function Skills() {
     <section className="content">
       <div className="skills-box">
         <article className="pt-one">
-          <h2><span className="orange">{'//'}</span> Skills & Experience</h2>
+          <h2><span className="orange">{'//'}</span> Skills</h2>
           <div className="skills-content">
             <div className="mapped-skills">
               {skillArray.map((skill, i) => {

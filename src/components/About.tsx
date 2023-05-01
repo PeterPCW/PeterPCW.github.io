@@ -30,9 +30,9 @@ function About() {
 
   return <section className="section" id="about">
     <section className="content">
+      <h2><span className="orange">{'//'}</span> A Little About Me</h2>
       <div className="about-box">
         <article className="pt-one">
-          <h3><span className="orange">{'//'}</span> A Little About Me</h3>
           <ul className="tabs">
             {aboutMeArr.map((interest, i) => {
               return <button className={`${interest.isActive} interest-tab`} value={i} key={interest.title} onClick={handleChangeInterest}>{interest.title}</button>
