@@ -1,7 +1,6 @@
 import React from 'react'
 import hexagon from '../images/profile-hex.png'
 import { TypeAnimation } from 'react-type-animation'
-import styles from '../styles/style.scss'
 
 function Intro() {
 
@@ -21,7 +20,7 @@ function Intro() {
           wrapper="span"
           cursor={false}
           repeat={0}
-          style={styles['#intro']['title-container']['h2']}
+          style={{ margin: '20px 20px 20px 50px', fontSize: '2em', display: 'inline-block' }}
         />
         <div></div>
         <TypeAnimation
@@ -35,7 +34,7 @@ function Intro() {
           wrapper="span"
           cursor={false}
           repeat={0}
-          style={styles['#intro']['title-container']['h2']}
+          style={{ margin: '20px 20px 20px 50px', fontSize: '2em', display: 'inline-block' }}
         />
         <div></div>
         <div></div>
@@ -50,7 +49,7 @@ function Intro() {
           wrapper="span"
           cursor={false}
           repeat={0}
-          style={styles['#intro']['title-container']['h2']}
+          style={{ margin: '20px 20px 20px 50px', fontSize: '2em', display: 'inline-block' }}
         />
         <div></div>
         <div></div>
@@ -66,7 +65,7 @@ function Intro() {
           wrapper="span"
           cursor={false}
           repeat={0}
-          style={styles['#intro']['title-container']['h2']}
+          style={{ margin: '20px 20px 20px 50px', fontSize: '2em', display: 'inline-block' }}
         />
       </div>
       <div></div>
