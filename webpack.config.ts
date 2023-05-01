@@ -5,7 +5,7 @@ import DotEnv from 'dotenv-webpack';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 module.exports = env => {
-  const publicPath = env.NODE_ENV === 'local' ? '/' : '/docs/';
+  const publicPath = env.NODE_ENV === 'local' ? '/' : '/';
   return {
     entry: './src/index.tsx',
     output: {
