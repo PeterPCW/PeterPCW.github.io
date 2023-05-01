@@ -1,6 +1,6 @@
 import os
-import shutil
-import imgkit
+# import shutil
+# import imgkit
 
 # Run the API tests
 # os.system("coverage run -m pytest")
@@ -13,11 +13,11 @@ os.system("cd src/python/bokeh && python ExperienceChart.py")
 os.system('cd .. && cd .. && cd ..')
 
 # Build the React app - includes eslint and jest per package.json
-os.system("npm run build")
+os.system("npm run lintbuild")
 
 # Commit to deploy
-os.system('git add . && git commit -m "commit for deploy" && git push')
+os.system('git add . && git commit -m "commit from deploy" && git push')
 
-# Add gh-pages remote and deploy to gh-pages
-print('# Add gh-pages remote and deploy to gh-pages')
-os.system("git remote add origin https://github.com/PeterPCW/Resume-Site.git && npm run deploy")
+#### Old Code #### replace with copy to prod on test pass or something
+#print('# Add gh-pages remote and deploy to gh-pages')
+#os.system("git remote add origin https://github.com/PeterPCW/Resume-Site.git && npm run deploy")

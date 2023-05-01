@@ -4,7 +4,7 @@ import { TypeAnimation } from 'react-type-animation'
 
 function Intro() {
 
-
+  const h2style = { margin: '16.5px 16.5px 16.5px 60px', fontSize: '2em', fontWeight: 'bold', display: 'inline-block' }
 
   return <section className="section" id="intro">
     <section className="content">
@@ -20,12 +20,11 @@ function Intro() {
           wrapper="span"
           cursor={false}
           repeat={0}
-          style={{ margin: '20px 20px 20px 50px', fontSize: '2em', display: 'inline-block' }}
+          style={h2style}
         />
-        <div></div>
         <TypeAnimation
           sequence={[
-            1500, // Waits 1/3s
+            1100, // Waits 1/3s
             'Prompt Engineer',
             () => {
               // console.log('Sequence completed'); Place optional callbacks anywhere in the array
@@ -34,13 +33,11 @@ function Intro() {
           wrapper="span"
           cursor={false}
           repeat={0}
-          style={{ margin: '20px 20px 20px 50px', fontSize: '2em', display: 'inline-block' }}
+          style={h2style}
         />
-        <div></div>
-        <div></div>
         <TypeAnimation
           sequence={[
-            3000, // Waits 1/3s
+            2200, // Waits 1/3s
             'Customer Advocate',
             () => {
               // console.log('Sequence completed'); Place optional callbacks anywhere in the array
@@ -49,23 +46,20 @@ function Intro() {
           wrapper="span"
           cursor={false}
           repeat={0}
-          style={{ margin: '20px 20px 20px 50px', fontSize: '2em', display: 'inline-block' }}
+          style={h2style}
         />
-        <div></div>
-        <div></div>
-        <div></div>
         <TypeAnimation
           sequence={[
-            4500, // Waits 1/3s
+            3300, // Waits 1/3s
             'Experimental Chef',
             () => {
               // console.log('Sequence completed'); Place optional callbacks anywhere in the array
             }
           ]}
           wrapper="span"
-          cursor={false}
+          cursor={true}
           repeat={0}
-          style={{ margin: '20px 20px 20px 50px', fontSize: '2em', display: 'inline-block' }}
+          style={h2style}
         />
       </div>
       <div></div>

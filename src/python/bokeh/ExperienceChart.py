@@ -1,7 +1,5 @@
 from math import pi
-
 import pandas as pd
-
 from bokeh.palettes import Category20c
 from bokeh.plotting import figure, show
 from bokeh.transform import cumsum
@@ -28,8 +26,8 @@ data['color'] = colors
 p = figure(sizing_mode='scale_width', 
            aspect_scale=.85, 
            toolbar_location=None, 
-  #         tools='hover', 
-  #         tooltips="@language: @value", 
+           tools='hover', 
+           tooltips="@language: @value", 
            x_range=(-0.125, 1.125),
            y_range=(-0.125, 1.125))
 
@@ -48,7 +46,7 @@ p.background_fill_color = '#333333'
 p.border_fill_color = '#333333'
 p.legend.background_fill_color = '#333333'
 p.legend.border_line_color = '#333333'
-p.legend.label_text_color = "#333333"
+p.legend.label_text_color = "#bbbbbb"
 p.legend.label_text_font_size = '18pt'
 p.legend.location = 'center'
 p.align = 'center'
