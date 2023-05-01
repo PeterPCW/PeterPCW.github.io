@@ -1,4 +1,5 @@
 import React from 'react'
+import Iframe from 'react-iframe'
 import skillArray from '../API/skills'
 import learnArray from '../API/learning'
 
@@ -20,7 +21,7 @@ function Skills() {
                 </div>
               })}
             </div>
-            <iframe src="${process.env.PUBLIC_URL}/ExperienceChart.html" title="Experience chart" />
+            <Iframe url="${process.env.PUBLIC_URL}/ExperienceChart.html"/>
           </div>
         </article>
         <article className="pt-two">
