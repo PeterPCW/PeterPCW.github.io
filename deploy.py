@@ -8,7 +8,7 @@ import msvcrt
 # os.system("coverage run -m pytest")
 
 # Compile the ExperienceChart.py file into ExperienceChart.html
-os.system("cd src/python/bokeh && python ExperienceChart.py")
+os.system("cd src/python/bokeh && python ExperienceChart.py --no-browser")
 # os.system("cd python/bokeh && bokeh serve ExperienceChart.py --save --show --port 5001 --allow-websocket-origin=peterpcw.github.io:443 --allow-websocket-origin=localhost:5001 && cd .. && cd ..")
 
 # Back to root directory
