@@ -398,10 +398,10 @@ main {
         .learning-skills {
           display: flex;
           flex-direction: row;
-          width: 133px;          
+          width: 150px;          
           .skill-box{
-            width: 66px;
-            height: 66px;
+            width: 67px;
+            height: 67px;
             justify-content: center;
             align-items: center;
             display: flex;
@@ -451,12 +451,12 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 333px;
+  width: 360px;
   
 }
 .skill-box{
-  width: 66px;
-  height: 66px;
+  width: 67px;
+  height: 67px;
   justify-content: center;
   align-items: center;
   display: flex;
