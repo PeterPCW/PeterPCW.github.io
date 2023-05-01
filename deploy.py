@@ -2,6 +2,7 @@ import os
 # import shutil
 # import imgkit
 import time
+import msvcrt
 
 # Run the API tests
 # os.system("coverage run -m pytest")
@@ -16,17 +17,23 @@ os.system('cd .. && cd .. && cd ..')
 # Build the React app - includes eslint and jest per package.json
 os.system("npm run lintbuild")
 
-# Ask for commit message with timeout
-print("Please enter a commit message (30s timeout):")
-try:
-    commit_msg = input()
-    time.sleep(30)  # Wait for 30 seconds
-except:
-    commit_msg = "commit from deploy"  # Timeout, set default message
+def get_commit_message(timeout=30):
+    start_time = time.time()
+    message = ""
+    while True:
+        if msvcrt.kbhit():  # Check if a key has been pressed
+            char = msvcrt.getwche()  # Read a character without waiting for a newline
+            if char == '\r':  # If the Enter key was pressed, exit the loop
+                break
+            message += char  # Append the character to the message
+        elif time.time() - start_time > timeout:  # If the timeout has elapsed, exit the loop
+            break
+    if not message:
+        message = "commit from deploy"  # Use default message if no input was received
+    return message
 
-# Commit to deploy
-os.system(f'git add . && git commit -m "{commit_msg}" && git push')
-
+commit_message = get_commit_message()
+os.system(f'git add . && git commit -m "{commit_message}" && git push')
 
 #### Old Code #### replace with copy to prod on test pass or something
 #print('# Add gh-pages remote and deploy to gh-pages')
