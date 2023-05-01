@@ -26,7 +26,7 @@ const aboutMeArr = [
   },
   {
     title: 'Joker',
-    desc: "I may be shy at first, but I will soon begin to show a wealth of sarcasm, pop culture references, and dad jokes to lighten any mood. /n/nDid you know diarrhea is hereditary?",
+    desc: "I may be shy at first, but I will quickly begin to show a wealth of sarcasm, pop culture references, and dad jokes to lighten any mood. /n/nDid you know diarrhea is hereditary?",
     isActive: ''
   }
 ]

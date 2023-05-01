@@ -13,7 +13,6 @@
 /__pycache__
 
 # deploy
-/docs
 /docs_backup
 
 #cache
