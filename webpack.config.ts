@@ -5,12 +5,12 @@ import DotEnv from 'dotenv-webpack';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 module.exports = env => {
-  const publicPath = env.NODE_ENV === 'local' ? '/' : '/public/';
+  const publicPath = env.NODE_ENV === 'local' ? '/' : '/docs/';
   return {
     entry: './src/index.tsx',
     output: {
       filename: 'bundle.js',
-      path: path.resolve(__dirname, 'public'),
+      path: path.resolve(__dirname, 'docs'),
       assetModuleFilename: '[name][ext]',
       publicPath: publicPath,
     },
@@ -36,7 +36,7 @@ module.exports = env => {
       historyApiFallback: true,
       static: [
         { directory: path.resolve('src'), watch: true },
-        { directory: path.resolve('public'), watch: true },
+        { directory: path.resolve('docs'), watch: true },
       ],
     },
     plugins: [
