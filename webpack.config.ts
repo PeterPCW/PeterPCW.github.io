@@ -9,7 +9,7 @@ module.exports = env => {
   return {
     entry: './src/index.tsx',
     output: {
-      filename: 'bundle.ts',
+      filename: 'bundle.js',
       path: path.resolve(__dirname, 'public'),
       assetModuleFilename: '[name][ext]',
       publicPath: publicPath,
