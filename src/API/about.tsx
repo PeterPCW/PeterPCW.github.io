@@ -7,7 +7,7 @@ const aboutMeArr = [
   {
     title: 'Chef',
     desc: "To unwind I enjoy cooking by the seat of my pants. At the stove or the mixing bowl it's all feel without a care for measurement or timers. Always fun, and usually tasty too!",
-    isActive: ''
+    isActive: 'is-active'
   },
   {
     title: 'Ranger',

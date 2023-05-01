@@ -16,6 +16,7 @@ Next up (specific):
 
 * Get tests running smooth
 * Pull in project info
+* Add/fix images
 
 Dreams:
 

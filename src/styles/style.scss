@@ -348,14 +348,11 @@ main {
   min-height: 95vh;
 
   .skills-box {
-    margin: 35px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 1000px;
+    width: 1400px;
     height: 100%;
-    background: $davy-grey;
-    
 
     .pt-one {
       display: flex;
@@ -417,8 +414,7 @@ main {
     }
     article {
       height: 580px;
-      padding: 10px;
-      margin: 10px;
+      padding: 25px;
       border-radius: 25px 0px;
       border: solid $ash-grey 5px;
     }
@@ -556,7 +552,6 @@ main {
 }
 
 #about {
-  padding-bottom: 0;
   background: linear-gradient(0deg, $davy-grey 0%, #484848 100%);
   min-height: 80vh;
   .about-cont {
@@ -569,6 +564,7 @@ main {
     background: $davy-grey;
     display: flex;
     flex-direction: column;
+    padding: 20px;
     .about-box {
       margin: 40px 0;
       display: flex;
@@ -663,6 +659,7 @@ main {
 
   .content {
     flex-direction: column;
+    color: $orange;
   }
 
   .contact-box {
