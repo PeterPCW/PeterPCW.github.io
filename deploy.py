@@ -32,6 +32,7 @@ def get_commit_message(timeout=30):
         message = "commit from deploy"  # Use default message if no input was received
     return message
 
+print('Enter a commit message (optional, 30s timeout for "commit from deploy"):')
 commit_message = get_commit_message()
 os.system(f'git add . && git commit -m "{commit_message}" && git push')
 

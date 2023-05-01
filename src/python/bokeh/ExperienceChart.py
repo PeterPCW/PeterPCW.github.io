@@ -1,7 +1,7 @@
 from math import pi
 import pandas as pd
 from bokeh.palettes import Category20c
-from bokeh.plotting import figure, show
+from bokeh.plotting import figure, save
 from bokeh.transform import cumsum
 from bokeh.models import LabelSet, ColumnDataSource, Expression
 from bokeh.io import curdoc
@@ -57,4 +57,4 @@ p.axis.visible = False
 p.grid.grid_line_color = None
 p.title.text_font_size = '48pt'
 
-show(p)
+save(p, filename='ExperienceChart.html')
