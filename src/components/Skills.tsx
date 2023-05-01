@@ -19,7 +19,7 @@ function Skills() {
               </div>
             })}
           </div>
-          <iframe src="ExperienceChart.html" title="Experience chart" />
+          <iframe src="${process.env.PUBLIC_URL}/ExperienceChart.html" title="Experience chart" />
         </article>
         <article className="pt-one">
           <div>
