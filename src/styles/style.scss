@@ -398,7 +398,7 @@ main {
         .learning-skills {
           display: flex;
           flex-direction: row;
-          width: 150px;          
+          width: 200px;          
           .skill-box{
             width: 67px;
             height: 67px;
@@ -442,8 +442,8 @@ main {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 750px;
-  height: 750px;
+  width: 555px;
+  height: 555px;
 }
 .mapped-skills {
   display: flex;
@@ -451,7 +451,7 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 360px;
+  width: 400px;
   
 }
 .skill-box{
