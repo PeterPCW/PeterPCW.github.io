@@ -13,18 +13,51 @@ function Intro() {
         <TypeAnimation
           sequence={[
             'SaaS Developer',
+            () => {
+              // console.log('Sequence completed'); Place optional callbacks anywhere in the array
+            }
+          ]}
+          wrapper="span"
+          cursor={false}
+          repeat={0}
+          style={{ fontSize: '2em', display: 'inline-block' }}
+        />
+        <TypeAnimation
+          sequence={[
             333, // Waits 1/3s
             'Prompt Engineer',
-            333, // Waits 1/3s
+            () => {
+              // console.log('Sequence completed'); Place optional callbacks anywhere in the array
+            }
+          ]}
+          wrapper="span"
+          cursor={false}
+          repeat={0}
+          style={{ fontSize: '2em', display: 'inline-block' }}
+        />
+        <TypeAnimation
+          sequence={[
+            666, // Waits 1/3s
             'Customer Advocate',
-            333, // Waits 1/3s
+            () => {
+              // console.log('Sequence completed'); Place optional callbacks anywhere in the array
+            }
+          ]}
+          wrapper="span"
+          cursor={false}
+          repeat={0}
+          style={{ fontSize: '2em', display: 'inline-block' }}
+        />
+        <TypeAnimation
+          sequence={[
+            999, // Waits 1/3s
             'Experimental Chef',
             () => {
               // console.log('Sequence completed'); Place optional callbacks anywhere in the array
             }
           ]}
           wrapper="span"
-          cursor={true}
+          cursor={false}
           repeat={0}
           style={{ fontSize: '2em', display: 'inline-block' }}
         />
