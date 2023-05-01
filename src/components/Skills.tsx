@@ -28,7 +28,7 @@ function Skills() {
         <article className="pt-two">
           <div>
             <p>My technical skills are on display above and across this simple portfolio site.</p>
-            <p>Beyond a terminal or IDE I am:</p>
+            <p>Beyond the terminal or IDE I am:</p>
             <ul>
               <li>a team builder, proactively supporting and growing others</li>
               <li>an avid scripter, automating to maximize efficiency and consistency</li>

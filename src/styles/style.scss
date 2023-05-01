@@ -399,6 +399,33 @@ main {
           display: flex;
           flex-direction: row;
           width: 133px;          
+          .skill-box{
+            width: 66px;
+            height: 66px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            margin: 5px;
+            .name-container {
+              position: absolute;
+              height: 95px;
+              width: 95px;
+              visibility: hidden;
+              opacity: 0;
+              border-radius: 10px;
+              color: $orange;
+              transition: visibility 0s, opacity 0.25s linear;
+              p {
+                color: $orange;
+                text-align: center;
+                margin-top: 90%;
+                user-select: none;
+              }
+            }
+            img {
+              height: 80%;
+            }
+          }
         }
       }
     }
@@ -415,7 +442,8 @@ main {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 555px; 
+  width: 750px;
+  height: 750px;
 }
 .mapped-skills {
   display: flex;
@@ -423,7 +451,8 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 333px; 
+  width: 333px;
+  
 }
 .skill-box{
   width: 66px;
