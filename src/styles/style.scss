@@ -352,15 +352,15 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 800px;
+    width: 1000px;
     height: 100%;
     background: $davy-grey;
     
 
     .pt-one {
-      flex: 1;
       display: flex;
-      flex-direction: row;
+      justify-content: center;
+      color: $orange;
       background: $davy-grey;
       .sec-title {
         flex: 4;
@@ -373,7 +373,18 @@ main {
           font-size: 13px;
         }
       }
-
+      .skills-content {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        background: $davy-grey;
+      }
+    }
+    .pt-two {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      background: $davy-grey;
       .learning {
         flex: 1;
         display: flex;
@@ -402,13 +413,6 @@ main {
           }
         }
       }
-    }
-    .pt-two {
-      display: flex;
-      justify-content: center;
-      color: $orange;
-      background: $davy-grey;
-
     }
     article {
       height: 580px;
