@@ -483,6 +483,7 @@ main {
     border-radius: 25px 0;
     margin: 40px 0;
     background: $davy-grey;
+    color: $orange;
 
     .exp-box {
       display: flex;
@@ -555,91 +556,97 @@ main {
 }
 
 #about {
-  display: flex;
-  flex-direction: column;
   padding-bottom: 0;
   background: linear-gradient(0deg, $davy-grey 0%, #484848 100%);
   min-height: 80vh;
-  .about-box {
-    margin: 40px 0;
-    display: flex;
-    flex-direction: row;
+  .about-cont {
     justify-content: center;
     width: 800px;
     min-height: 500px;
     border: solid $ash-grey 5px;
     border-radius: 25px 0;
-    color: $ash-grey;
+    color: $orange;
     background: $davy-grey;
-    .pt-one {
-      width: 120px;
+    display: flex;
+    flex-direction: column;
+    .about-box {
+      margin: 40px 0;
       display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      .tabs{
-        list-style-type: none;
-        padding: 0;
+      flex-direction: row;
+      .pt-one {
+        width: 120px;
         display: flex;
         flex-direction: column;
-        align-items: stretch;
         justify-content: space-evenly;
-        margin: 25px 0;
-        .interest-tab.is-active {
-          background-color:  $orange;
-          color: $davy-grey;
-        }
-        .interest-tab:focus {
-          outline: none;
-        }
-        .interest-tab {
-          margin: 20px 0;
-          height: 30px;
-          border-radius: 10px;
-          border: none;
-          background:$ash-grey;
-        }
-      }
-    }
-    .pt-two {
-      border: $ash-grey solid 1px;
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      padding: 5px;
-      background-color: $davy-grey;
-      .img-cont {
-        img {
-          height: 100%;
-          width: 100%;
-        }
-      }
-      
-    }
-    .pt-three {
-      width: 180px;
-      div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        h3 {
-          width: 100%;
-        }
-        .social {
-          height: 70px;
-          width: 70px;
-          margin: 20px;
-          a {
-            padding: 0;
-            margin: 0;
+        .tabs{
+          list-style-type: none;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          justify-content: space-evenly;
+          margin: 25px 0;
+          .interest-tab.is-active {
+            background-color:  $orange;
+            color: $davy-grey;
+            font-weight: bold;
+          }
+          .interest-tab:focus {
+            outline: none;
+          }
+          .interest-tab {
+            margin: 20px 0;
+            height: 30px;
+            border-radius: 10px;
+            border: none;
+            background:$ash-grey;
           }
         }
       }
-    }
-    article {
-      min-height: 350px;
-      padding: 10px;
-      margin: 10px;
+      .pt-two {
+        border: $ash-grey solid 1px;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        padding: 5px;
+        background-color: $davy-grey;
+        .img-cont {
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+        
+      }
+      .pt-three {
+        width: 180px;
+        div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          h3 {
+            width: 100%;
+          }
+          p {
+            color: $ash-grey;
+          }
+          .social {
+            height: 70px;
+            width: 70px;
+            margin: 20px;
+            a {
+              padding: 0;
+              margin: 0;
+            }
+          }
+        }
+      }
+      article {
+        min-height: 350px;
+        padding: 10px;
+        margin: 10px;
+      }
     }
   }
 }
