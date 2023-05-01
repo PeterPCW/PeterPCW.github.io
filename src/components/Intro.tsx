@@ -21,7 +21,7 @@ function Intro() {
           wrapper="span"
           cursor={false}
           repeat={0}
-          style={{ ...styles['#intro']['title-container']['h2'] }}
+          style={styles['#intro']['title-container']['h2']}
         />
         <div></div>
         <TypeAnimation
@@ -35,7 +35,7 @@ function Intro() {
           wrapper="span"
           cursor={false}
           repeat={0}
-          style={{ ...styles['#intro']['title-container']['h2'] }}
+          style={styles['#intro']['title-container']['h2']}
         />
         <div></div>
         <div></div>
@@ -50,7 +50,7 @@ function Intro() {
           wrapper="span"
           cursor={false}
           repeat={0}
-          style={{ ...styles['#intro']['title-container']['h2'] }}
+          style={styles['#intro']['title-container']['h2']}
         />
         <div></div>
         <div></div>
@@ -66,7 +66,7 @@ function Intro() {
           wrapper="span"
           cursor={false}
           repeat={0}
-          style={{  ...styles['#intro']['title-container']['h2'] }}
+          style={styles['#intro']['title-container']['h2']}
         />
       </div>
       <div></div>
