@@ -14,7 +14,7 @@ function App() {
   return <main>
     <Intro />
     <Nav />
-    <Projects />
+    {/*<Projects />*/}
     <Skills />
     <Exp />
     <About />
