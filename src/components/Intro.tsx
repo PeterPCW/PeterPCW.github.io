@@ -20,11 +20,12 @@ function Intro() {
           wrapper="span"
           cursor={false}
           repeat={0}
-          style={{ fontSize: '2em', display: 'inline-block' }}
+          style={{ fontSize: '2em', margin: '0 0 0 10px', display: 'inline-block' }}
         />
+        <div></div>
         <TypeAnimation
           sequence={[
-            333, // Waits 1/3s
+            1500, // Waits 1/3s
             'Prompt Engineer',
             () => {
               // console.log('Sequence completed'); Place optional callbacks anywhere in the array
@@ -33,11 +34,12 @@ function Intro() {
           wrapper="span"
           cursor={false}
           repeat={0}
-          style={{ fontSize: '2em', display: 'inline-block' }}
+          style={{ fontSize: '2em', margin: '0 0 0 20px', display: 'inline-block' }}
         />
+        <div></div>
         <TypeAnimation
           sequence={[
-            666, // Waits 1/3s
+            3000, // Waits 1/3s
             'Customer Advocate',
             () => {
               // console.log('Sequence completed'); Place optional callbacks anywhere in the array
@@ -46,11 +48,12 @@ function Intro() {
           wrapper="span"
           cursor={false}
           repeat={0}
-          style={{ fontSize: '2em', display: 'inline-block' }}
+          style={{ fontSize: '2em', margin: '0 0 0 30px', display: 'inline-block' }}
         />
+        <div></div>
         <TypeAnimation
           sequence={[
-            999, // Waits 1/3s
+            4500, // Waits 1/3s
             'Experimental Chef',
             () => {
               // console.log('Sequence completed'); Place optional callbacks anywhere in the array
@@ -59,7 +62,7 @@ function Intro() {
           wrapper="span"
           cursor={false}
           repeat={0}
-          style={{ fontSize: '2em', display: 'inline-block' }}
+          style={{ fontSize: '2em', margin: '0 0 0 40px', display: 'inline-block' }}
         />
       </div>
       <div></div>
