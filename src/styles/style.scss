@@ -67,6 +67,7 @@ main {
   width: 3vw;
   color: $ash-grey;
   font-weight: 700;
+  font-size: 3rem;
 }
 
 .proj-button:focus {
@@ -164,6 +165,7 @@ main {
       justify-content: center;
       align-items: center;
       width: 5vw;
+      min-width: 25px;
       margin: 0 .5vh;
       font-weight: 700;
     }
@@ -531,7 +533,7 @@ main {
           align-items: center;
           justify-content: center;
           .logo {
-            background-color: $ash-grey;
+            background-color: $davy-grey;
             border-radius: 3vh;
             height: min(20vh, 12vw);
             width: min(20vh, 12vw);
@@ -565,7 +567,7 @@ main {
     .buttons.exp-nav {
       align-self: center;
       height: 5vh;
-      width: 80%;
+      width: 33%;
       border-radius: 3vh 0;
     }
   }
