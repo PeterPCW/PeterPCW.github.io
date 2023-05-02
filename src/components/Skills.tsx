@@ -26,7 +26,7 @@ function Skills() {
           </div>
         </article>
         <article className="pt-two">
-          <div>
+          <div className="description">
             <p>My technical skills are on display above and across this simple portfolio site.</p>
             <p>Beyond the terminal or IDE I am:</p>
             <ul>
