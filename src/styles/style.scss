@@ -23,7 +23,7 @@ body {
 }
 
 main > .section {
-  padding: 80px 0;
+  padding: 1vw 0;
 }
 
 #root {
@@ -31,7 +31,7 @@ main > .section {
 }
 
 main {
-  max-width: 1200px;
+  max-width: 93vw;
   margin: auto;
 
 }
@@ -44,30 +44,29 @@ main {
 }
 
 .content {
-  max-width: 900px;
+  max-width: 87vw;
 }
 
 .buttons {
   background: $davy-grey;
-  height: 50px;
-  min-width: 300px;
+  height: 5vh;
+  min-width: 15vw;
   width: 55vw;
-  max-width: 500px;
+  max-width: 75vw;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  border-radius: 20px 20px 0 0;
-  border: solid $ash-grey 2px;
+  border-radius: 1vh 1vh 0 0;
+  border: solid $ash-grey 1vh;
 }
 
 .proj-button {
   background: none;
   border: none;
-  width: 45px;
+  width: 3vw;
   color: $ash-grey;
   font-weight: 700;
-  font-size: 35px;
 }
 
 .proj-button:focus {
@@ -81,44 +80,44 @@ main {
 #intro {
   padding: 0;
   .content {
-    width: 87%;
-    max-width: 87%;
-    padding: 0px;
+    width: 87vw;
+    max-width: 87vw;
+    padding: 0;
   }
   min-height: 90vh;
   background: url(../images/svg-bgs/HoneycombPage01.svg) no-repeat center center, $ash-grey;
   background-size: cover, auto, auto;
   .image-container {
-    width: 450px;
-    height: 100%;
+    width: 33vw;
+    height: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     .profile {
       height: 133%;
       width: 133%;
-      filter:drop-shadow(0px 0px 15px $davy-grey);
+      filter:drop-shadow(0 0 1vw $davy-grey);
     }
   }
 
   .title-container{
-    border-radius: 25px 0;
-    margin: 0px;
-    padding: 0px;
-    width: 65%;
-    height: 400px;
+    border-radius: 1vh 0;
+    margin: 0;
+    padding: 0;
+    width: 57vw;
+    height: 40vh;
     color: $orange;
     display: flex;
     flex-direction: column;
     align-self: flex-start;
     .title {
       font-size: 3.3rem;
-      margin: 20px;
+      margin: 2vw;
       width: 100%;
     }
     h2 {
-      margin: 20px;
-      margin-left: 33px;
+      margin: 2vw;
+      margin-left: 3vw;
       font-size: 2rem;
     }
   }
@@ -134,14 +133,13 @@ main {
   z-index: 5;
   top: 0;
   height: 10vh;
-  min-height: 50px;
   background-color: $davy-grey;
-  border:  $orange 2px solid;
+  border:  $orange 1vh solid;
   border-left: none;
   border-right: none;
   justify-content: center;
   .navbar {
-    margin: 0 40px;
+    margin: 0 3vw;
     flex-direction: row;
     display: flex;
     list-style-type: none;
@@ -153,18 +151,17 @@ main {
     }
     .nav-button {
       font-size: 1rem;
-      border: $davy-grey 2px solid;
-      border-radius: 4px;
+      border: $davy-grey 1vh solid;
+      border-radius: 1vh;
       height: 7vh;
-      min-height: 50px;
       background-color: $ash-grey;
       color: $davy-grey;
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      width: 110px;
-      margin: 0 5px;
+      width: 5vw;
+      margin: 0 1vw;
       font-weight: 700;
     }
   }
@@ -176,39 +173,37 @@ main {
   color: $ash-grey;
   .content {
     flex-direction: column;
-    margin: 20px 0;
+    margin: 1vw 0;
   }
   .project-box {
-    margin: 0 0 20px 0;
-    padding: 5px 10px;
+    margin: 0 0 1vw 0;
+    padding: 1vh 1vw;
     align-content: stretch;
     display: flex;
     flex-direction: row;
-    width: 800px;
-    border: 5px $ash-grey solid;
-    border-radius: 25px 0;
+    width: 87vw;
+    border: 1vh $ash-grey solid;
+    border-radius: 1vh 0;
     background: $davy-grey;
 
     article {
-      height: 480px;
-      margin: 10px;
+      height: 51vh;
+      margin: 1vh;
     }
     .pt-one {
-      width: 560px;
+      width: 54vw;
       display: flex;
       flex-direction: column;
       .project-skills.mapped-skills {
         flex: 1;
         flex-wrap: nowrap;
-        height: 100px;
+        height: 10vh;
         justify-content: start;
       }
       .border {
-        border: solid $ash-grey 3px;
+        border: solid $ash-grey 1vh;
         display: flex;
         background-color: $davy-grey;
-        min-width:545px;
-        min-height:285px;
       }
 
       .proj-img{
@@ -217,43 +212,43 @@ main {
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
-        margin-top: 10px;
+        margin-top: 1vh;
 
         .img-cont {
-          border-radius: 5px;
+          border-radius: 1vh;
           display: flex;
           .thumb {
-            max-height: 400px;
+            max-height: 87%;
             width: 100%;
           }
           .magnify{
             img {
-              height: 50px;
-              width: 50px;
+              height: 2vw;
+              width: 2vw;
               
             }
             pointer-events: none;
             position: absolute;
-            padding: 10px;
+            padding: 1vh;
             background-color: $davy-grey;
-            border-radius: 0 0 10px 0;
+            border-radius: 1vh;
           }
         }
         .descbar {
           display: flex;
           width: 80%;
           justify-content: space-between;
-          padding: 5px;
+          padding: 1vh;
           
           p {
-            padding: 5px 20px;
+            padding: 1vh 1vw;
             margin: 0;
           }
           button {
             background: $ash-grey;
-            border: solid $ash-grey 2px;
-            border-radius: 7px;
-            height: 35px;
+            border: solid $ash-grey 1vh;
+            border-radius: 1vh;
+            height: 3vh;
           }
           button:focus {
             outline: none;
@@ -262,15 +257,15 @@ main {
       }
     }
     .pt-two{
-      width: 190px;
+      width: 33vw;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      margin: 0 10px;
+      margin: 0 1vw;
       .proj-text{
         flex: 8;
         h2 {
-          margin: 5px 0;
+          margin: 1vh 0;
 
         }
         p {
@@ -281,16 +276,16 @@ main {
         display: flex;
         flex-direction: row;
         flex: 1;
-        height: 90px;
+        height: 10vh;
         .page-link {
-          width: 90px;
-          height: 90px;
+          width: 5vw;
+          height: 10vh;
         }
         .skill-box {
-          width: 90px;
-          height: 90px;
+          width: 5vw;
+          height: 10vh;
           margin: 0;
-          padding: 10px;
+          padding: 1vh;
           background: $davy-grey;
         }
 
@@ -316,9 +311,9 @@ main {
   justify-content: center;
   .descbar {
     background-color: $davy-grey;
-    border: solid $davy-grey 2px;
+    border: solid $davy-grey 1vh;
     border-top: none;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 1vh 1vh;
   }
 }
 #lightbox-img {
@@ -328,7 +323,7 @@ main {
 
 .lightbox-cont {
   background-color: $ash-grey;
-  border: solid $davy-grey 3px;
+  border: solid $davy-grey 1vh;
   max-height: 90vh;
   min-height: 60%;
   width: 150vh;
@@ -351,8 +346,8 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 1400px;
-    height: 100%;
+    width: 87vw;
+    height: 87vh;
 
     .pt-one {
       display: flex;
@@ -362,14 +357,10 @@ main {
       background: $davy-grey;
       .sec-title {
         flex: 4;
-        margin: 5px 30px 0;
+        margin: 1vh 2vw 0;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-
-        p {
-          font-size: 13px;
-        }
       }
       .skills-content {
         flex: 1;
@@ -387,32 +378,31 @@ main {
         flex: 1;
         display: flex;
         flex-direction: column;
-        margin: 5px 30px 0;
+        margin: 1vh 2vw 0;
         color: $orange
 
         h3 {
-          margin: 5px 0;
-
+          margin: 1vh 0;
         }
 
         .learning-skills {
           display: flex;
           flex-direction: row;
-          width: 200px;          
+          width: 20vh;          
           .skill-box{
-            width: 67px;
-            height: 67px;
+            width: 7vh;
+            height: 7vh;
             justify-content: center;
             align-items: center;
             display: flex;
-            margin: 5px;
+            margin: 1vh;
             .name-container {
               position: absolute;
-              height: 95px;
-              width: 95px;
+              height: 9vh;
+              width: 9vh;
               visibility: hidden;
               opacity: 0;
-              border-radius: 10px;
+              border-radius: 1vh;
               color: $orange;
               transition: visibility 0s, opacity 0.25s linear;
               p {
@@ -430,10 +420,10 @@ main {
       }
     }
     article {
-      height: 580px;
-      padding: 25px;
-      border-radius: 25px 0px;
-      border: solid $ash-grey 5px;
+      height: 60vh;
+      padding: 1vw;
+      border-radius: 1vh 0px;
+      border: solid $ash-grey 1vh;
     }
   }
 }
@@ -442,8 +432,8 @@ main {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 555px;
-  height: 555px;
+  width: 33vw;
+  height: 33vw;
 }
 .mapped-skills {
   display: flex;
@@ -451,23 +441,23 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 400px;
+  width: 33vw;
   
 }
 .skill-box{
-  width: 67px;
-  height: 67px;
+  width: 7vh;
+  height: 7vh;
   justify-content: center;
   align-items: center;
   display: flex;
-  margin: 5px;
+  margin: 1vh;
   .name-container {
     position: absolute;
-    height: 95px;
-    width: 95px;
+    height: 9vh;
+    width: 9vh;
     visibility: hidden;
     opacity: 0;
-    border-radius: 10px;
+    border-radius: 1vh;
     color: $orange;
     transition: visibility 0s, opacity 0.25s linear;
     p {
@@ -498,10 +488,10 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: solid $ash-grey 5px;
-    padding: 20px;
-    border-radius: 25px 0;
-    margin: 40px 0;
+    border: solid $ash-grey 1vh;
+    padding: 1vw;
+    border-radius: 1vh 0;
+    margin: 4vh 0;
     background: $davy-grey;
     color: $orange;
 
@@ -509,8 +499,8 @@ main {
       display: flex;
       flex-direction: row;
       justify-content: center;
-      width: 800px;
-      height: 280px;
+      width: 87vw;
+      height: 33vh;
       color: $ash-grey;
 
       .pt-one {
@@ -520,26 +510,24 @@ main {
         align-items: center;
         justify-content: center;
         .logo-cont {
-          height: 155px;
-          width: 155px;
+          height: min(15vh, 9vw);
+          width: min(15vh, 9vw);
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
           .logo {
             background-color: $ash-grey;
-            border-radius: 5px;
-            height: 155px;
-            width: 155px;
-            padding: 5px;
+            border-radius: 1vh;
+            height: min(15vh, 9vw);
+            width: min(15vh, 9vw);
+            padding: 1vh;
             
           }
           .subhead {
-            min-height: 50px;
+            min-height: 5vh;
             h4 {
-              margin: 10px;
-              font-size: 14px;
-              margin: 5;
+              margin: 1vh;
               text-align: center;
             }
             
@@ -552,49 +540,43 @@ main {
         flex-direction: column;
         .description {
           flex: 1;
-          h3 {
-            font-size: 16px;
-          }
-          p {
-            font-size: 14px;
-          }
         }
       }
       article {
-        min-height: 200px;
-        padding: 10px;
-        margin: 10px;
+        min-height: 20vh;
+        padding: 1vh;
+        margin: 1vh;
       }
     }
     .buttons.exp-nav {
       align-self: center;
-      height: 45px;
+      height: 5vh;
       width: 80%;
-      border-radius: 25px 0;
+      border-radius: 1vh 0;
     }
   }
 }
 
 #about {
   background: linear-gradient(0deg, $davy-grey 0%, #484848 100%);
-  min-height: 80vh;
+  min-height: 93vh;
   .about-cont {
     justify-content: center;
-    width: 800px;
-    min-height: 500px;
-    border: solid $ash-grey 5px;
-    border-radius: 25px 0;
+    width: 87vw;
+    min-height: 87vh;
+    border: solid $ash-grey 1vh;
+    border-radius: 1vh 0;
     color: $orange;
     background: $davy-grey;
     display: flex;
     flex-direction: column;
-    padding: 20px 0;
+    padding: 2vh;
     .about-box {
-      margin: 20px 0;
+      margin: 2vh;
       display: flex;
       flex-direction: row;
       .pt-one {
-        width: 120px;
+        width: 5vw;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -605,7 +587,7 @@ main {
           flex-direction: column;
           align-items: stretch;
           justify-content: space-evenly;
-          margin: 20px 0;
+          margin: 2vh 0;
           .interest-tab.is-active {
             background-color:  $orange;
             color: $davy-grey;
@@ -615,20 +597,20 @@ main {
             outline: none;
           }
           .interest-tab {
-            margin: 20px 0;
-            height: 30px;
-            border-radius: 10px;
+            margin: 2vh 0;
+            height: 3vh;
+            border-radius: 1vh;
             border: none;
             background:$ash-grey;
           }
         }
       }
       .pt-two {
-        border: $ash-grey solid 1px;
+        border: $ash-grey solid 1vh;
         flex: 1;
         display: flex;
         justify-content: center;
-        padding: 0px;
+        padding: 0;
         background-color: $davy-grey;
         .img-cont {
           img {
@@ -639,33 +621,20 @@ main {
         
       }
       .pt-three {
-        width: 180px;
+        width: 10vw;
         div {
           display: flex;
           flex-direction: column;
           align-items: center;
-
-          h3 {
-            width: 100%;
-          }
           p {
             color: $ash-grey;
-          }
-          .social {
-            height: 70px;
-            width: 70px;
-            margin: 20px;
-            a {
-              padding: 0;
-              margin: 0;
-            }
           }
         }
       }
       article {
-        min-height: 350px;
-        padding: 10px;
-        margin: 10px;
+        min-height: 33vh;
+        padding: 1vh;
+        margin: 1vh;
       }
     }
   }
@@ -673,7 +642,7 @@ main {
 
 #spacer {
   background: linear-gradient(0deg, $davy-grey 100%, $ash-grey 100%);
-  height: 350px;
+  height: 33vh;
 }
 
 #contact {
@@ -687,21 +656,21 @@ main {
   }
 
   .contact-box {
-    margin: 40px 0;
+    margin: 4vh 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 600px;
+    width: 33vw;
     .hex-box {
-      width: 200px;
+      width: 10vw;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 15px;
+      margin: 1vh;
       img {
         height: 100%;
-        width: 200px;
-        filter:drop-shadow(0px 0px 15px $davy-grey);
+        width: 10vw;
+        filter:drop-shadow(0 0 1vh $davy-grey);
         transition: 0.3s;
       }
       .abs {
@@ -714,7 +683,7 @@ main {
     }
     .hex-box:hover {
       img {
-        filter:drop-shadow(0px 0px 15px white) invert(100%);
+        filter:drop-shadow(0 0 1vh white) invert(100%);
       }
       .abs {
         color: white;
@@ -723,11 +692,11 @@ main {
   }
 }
 .elem-spacer {
-  height: 250px;
+  height: 25vh;
 }
 
 .spacer {
-  height: 140px;
+  height: 14vh;
 }
 .lat-spacer {
   display: none;
@@ -737,16 +706,15 @@ main {
   width: 100%;
   background: $davy-grey;
   color: $ash-grey;
-  font-size: 12px;
   p {
     text-align: center;
     margin: 0;
-    padding-bottom: 5px;
+    padding-bottom: 1vh;
   }
 }
 
 
-@media (max-width:820px), (hover:none), (orientation: portrait) {
+@media (max-width:1400px), (hover:none), (orientation: portrait) {
   .content {
     flex-direction: column;
     justify-content: center;
@@ -755,7 +723,7 @@ main {
     .title-container {
       width: 100%;
       margin-bottom: 0;
-      height: 340px;
+      height: 20vh;
     }
   }
   #nav {
@@ -784,9 +752,8 @@ main {
     .project-box{
       flex-direction: column;
       width: 90vw;
-      min-width: 600px;
       .pt-one {
-        width: 97%;
+        width: 87%;
         justify-content: center;
         .proj-img {
           width: 100%;
@@ -797,7 +764,7 @@ main {
         flex-direction: row;
         align-items: center;
         width: 100%;
-        height: 200px;
+        height: 10vh;
 
       }
     }
@@ -806,18 +773,17 @@ main {
     .skills-box{
       flex-direction: column;
       width: 90vw;
-      min-width: 600px;
       .pt-one {
-        height: 350px;
+        height: 20vh;
         flex-direction: row;
         
         .learning{
-          margin: 25px 10px;
+          margin: 2vw 1vw;
           h3 {
-            width: 140px;
+            width: 15vw;
           }
           .learning-skills {
-            width:140px
+            width:15vw
           }
         }
       }
@@ -827,15 +793,14 @@ main {
     .exp-box {
       flex-direction: column;
       width: 90vw;
-      min-width: 600px;
       height: 100%;
       .pt-one {
-        margin-bottom: 0px;
-        padding-bottom: 0px;
+        margin-bottom: 0;
+        padding-bottom: 0;
       }
       .pt-two {
-        margin-top: 0px;
-        padding-top: 0px;
+        margin-top: 0;
+        padding-top: 0;
       }
     }
   }
@@ -843,11 +808,8 @@ main {
     .about-box {
       flex-direction: column;
       width: 90vw;
-      min-width: 600px;
-    
       .pt-one {
-        min-height: 70px;
-        height: 70px;
+        height: 2vh;
         flex-direction: row;
         width: 100%;
         margin: 0;
@@ -855,11 +817,11 @@ main {
         .tabs {
           flex-direction: row;
           align-items: center;
-          margin: 0 5px;
+          margin: 0 1vw;
           .interest-tab {
-            padding: 5px 0;
-            margin: 4px;
-            width: 90px;
+            padding: 1vw 0;
+            margin: 1vw;
+            width: 10vw;
           }
         }
       }
@@ -869,7 +831,6 @@ main {
       .pt-three {
         width: 100%;
         margin-top: 0;
-        min-height: 140px;
       }
     }
   }
@@ -893,8 +854,7 @@ main {
     }
   }
   .elem-spacer {
-    height: 
-    120px;
+    height: 120px;
   }
   .lightbox-cont {
     min-height: 0%;
@@ -902,10 +862,10 @@ main {
   
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   main {
-    border-left: solid $orange 4px;
-    border-right: solid $orange 4px;
+    border-left: solid $orange 1vw;
+    border-right: solid $orange 1vw;
   }
 }
 
@@ -913,7 +873,7 @@ main {
   #projects .content {
    .pt-one { height: 100%; }
     .pt-two {
-      height: 250px;
+      height: 25vh;
       .proj-text {
         h2 { font-size: 2rem; }
         p { font-size: 1.5rem; }
@@ -925,7 +885,7 @@ main {
   #skills .skills-box .pt-one {
     .sec-title  {
       height: 100%;
-      margin-bottom: 20px;
+      margin-bottom: 2vh;
       h2 { font-size: 1.75rem; }
       p { font-size: 1.25rem; }
     }
@@ -934,31 +894,28 @@ main {
       
   #exp .exp-box {
     .pt-one .logo-cont .subhead {
-      width: 500px;
-      margin-bottom: 10px;
-      h4 { font-size: 2em; }
+      width: 25vw;
+      margin-bottom: 1vh;
+      h4 { font-size: 2rem; }
     }
     .pt-two .description {
-      h3 {font-size: 1.5em;}
-      p {font-size: 1.5em;}
+      h3 {font-size: 1.5rem;}
+      p {font-size: 1.5rem;}
     }
   }
   #about {
-    font-size: 1.75em;
+    font-size: 1.75rem;
     .about-box {
       .pt-one {
       flex-direction: column;
       height: 100%;
-      .tabs .interest-tab {
-        flex: 1;
-        width: 0;
-        height: 100%;
-        font-size: 1.25em;
+        .tabs .interest-tab {
+          flex: 1;
+          width: 0;
+          height: 100%;
+          font-size: 1.25rem;
+        }
       }
-      }
-      .pt-three {
-        min-height: 200px;
-      }  
     }
   }
   .footer {
