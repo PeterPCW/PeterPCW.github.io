@@ -29,7 +29,7 @@ p = figure(sizing_mode='scale_width',
            tools='hover', 
            tooltips="@language: @value", 
            x_range=(-0.125, 1.125),
-           y_range=(-0.125, 1.125))
+           y_range=(-0.125, 1.125),)
 
 p.wedge(x=.5, y=.5, radius=0.5,
         start_angle=cumsum('angle', include_zero=True), end_angle=cumsum('angle'),
@@ -56,5 +56,7 @@ p.axis.axis_label = None
 p.axis.visible = False
 p.grid.grid_line_color = None
 p.title.text_font_size = '48pt'
+p.height = '75%'
+p.width = '75%'
 
 save(p, filename='ExperienceChart.html')
