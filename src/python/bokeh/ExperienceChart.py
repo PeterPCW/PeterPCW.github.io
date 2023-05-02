@@ -24,18 +24,18 @@ data['angle'] = data['value']/data['value'].sum() * 2*pi
 data['color'] = colors
 
 p = figure(sizing_mode='scale_width', 
-           aspect_scale=.85, 
-           toolbar_location=None, 
-           tools='hover', 
-           tooltips="@language: @value", 
-           x_range=(-0.125, 1.125),
-           y_range=(-0.125, 1.125),)
+        aspect_scale=.85, 
+        toolbar_location=None, 
+        x_range=(-0.125, 1.125),
+        y_range=(-0.125, 1.125),
+        tools='hover', 
+        tooltips="@language: @value",)
 
 p.wedge(x=.5, y=.5, radius=0.5,
         start_angle=cumsum('angle', include_zero=True), end_angle=cumsum('angle'),
         line_color="#bbbbbb", 
         fill_color='color', 
-        legend_field='language', 
+        legend_field='language',
         source=data)
 
 # Add the inner circle
@@ -56,7 +56,5 @@ p.axis.axis_label = None
 p.axis.visible = False
 p.grid.grid_line_color = None
 p.title.text_font_size = '48pt'
-p.height = '75%'
-p.width = '75%'
 
 save(p, filename='ExperienceChart.html')
