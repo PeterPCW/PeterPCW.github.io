@@ -95,7 +95,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-right: 10vw;
+    margin-right: 10vw;
     .profile {
       height: 133%;
       width: 133%;
@@ -445,7 +445,6 @@ main {
   align-items: center;
   width: 100%;
   height: 100%;
-  padding-bottom: 56.25%;
   position: relative;
 }
 .mapped-skills {
