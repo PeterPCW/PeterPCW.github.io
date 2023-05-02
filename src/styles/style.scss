@@ -610,9 +610,11 @@ main {
       margin: 2vh;
       display: flex;
       flex-direction: row;
+      justify-content: center;
       .pt-one {
-        width: 5vw;
-        min-width: 50px;
+        width: 15vw;
+        min-width: 75px;
+        margin: 2vw;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -661,7 +663,7 @@ main {
         
       }
       .pt-three {
-        width: 10vw;
+        width: 15vw;
         div {
           display: flex;
           flex-direction: column;
