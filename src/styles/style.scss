@@ -57,7 +57,7 @@ main {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  border-radius: 1vh 1vh 0 0;
+  border-radius: 3vh 3vh 0 0;
   border: solid $ash-grey 1vh;
 }
 
@@ -84,12 +84,13 @@ main {
     max-width: 87vw;
     padding: 0;
   }
-  min-height: 90vh;
+  height: 90vh;
+  min-height: 400px;
   background: url(../images/svg-bgs/HoneycombPage01.svg) no-repeat center center, $ash-grey;
   background-size: cover, auto, auto;
   .image-container {
     width: 33vw;
-    height: 100vw;
+    height: 33vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -101,11 +102,12 @@ main {
   }
 
   .title-container{
-    border-radius: 1vh 0;
+    border-radius: 3vh 0;
     margin: 0;
     padding: 0;
     width: 57vw;
     height: 40vh;
+    min-height: 400px;
     color: $orange;
     display: flex;
     flex-direction: column;
@@ -139,7 +141,7 @@ main {
   border-right: none;
   justify-content: center;
   .navbar {
-    margin: 0 3vw;
+    margin: 0 .5vh;
     flex-direction: row;
     display: flex;
     list-style-type: none;
@@ -151,8 +153,8 @@ main {
     }
     .nav-button {
       font-size: 1rem;
-      border: $davy-grey 1vh solid;
-      border-radius: 1vh;
+      border: $davy-grey .5vh solid;
+      border-radius: 3vh;
       height: 7vh;
       background-color: $ash-grey;
       color: $davy-grey;
@@ -161,7 +163,7 @@ main {
       justify-content: center;
       align-items: center;
       width: 5vw;
-      margin: 0 1vw;
+      margin: 0 .5vh;
       font-weight: 700;
     }
   }
@@ -169,7 +171,8 @@ main {
 
 #projects {
   background: linear-gradient(0deg, #727272 0%, $ash-grey 100%);
-  min-height: 95vh;
+  height: 87vh;
+  min-height: 650px;
   color: $ash-grey;
   .content {
     flex-direction: column;
@@ -183,11 +186,12 @@ main {
     flex-direction: row;
     width: 87vw;
     border: 1vh $ash-grey solid;
-    border-radius: 1vh 0;
+    border-radius: 3vh 0;
     background: $davy-grey;
 
     article {
       height: 51vh;
+      min-height: 650px;
       margin: 1vh;
     }
     .pt-one {
@@ -215,7 +219,7 @@ main {
         margin-top: 1vh;
 
         .img-cont {
-          border-radius: 1vh;
+          border-radius: 3vh;
           display: flex;
           .thumb {
             max-height: 87%;
@@ -231,7 +235,7 @@ main {
             position: absolute;
             padding: 1vh;
             background-color: $davy-grey;
-            border-radius: 1vh;
+            border-radius: 3vh;
           }
         }
         .descbar {
@@ -247,7 +251,7 @@ main {
           button {
             background: $ash-grey;
             border: solid $ash-grey 1vh;
-            border-radius: 1vh;
+            border-radius: 3vh;
             height: 3vh;
           }
           button:focus {
@@ -313,7 +317,7 @@ main {
     background-color: $davy-grey;
     border: solid $davy-grey 1vh;
     border-top: none;
-    border-radius: 0 0 1vh 1vh;
+    border-radius: 0 0 3vh 3vh;
   }
 }
 #lightbox-img {
@@ -340,7 +344,8 @@ main {
 #skills {
   background: linear-gradient(0deg, #5d5d5d 0%, #727272 100%);
   color: $ash-grey;
-  min-height: 95vh;
+  height: 87vh;
+  min-height: 650px;
 
   .skills-box {
     display: flex;
@@ -348,6 +353,7 @@ main {
     justify-content: center;
     width: 87vw;
     height: 87vh;
+    min-height: 650px;
 
     .pt-one {
       display: flex;
@@ -355,6 +361,7 @@ main {
       justify-content: center;
       color: $orange;
       background: $davy-grey;
+      min-height: 450px;
       .sec-title {
         flex: 4;
         margin: 1vh 2vw 0;
@@ -374,6 +381,7 @@ main {
       display: flex;
       flex-direction: row;
       background: $davy-grey;
+      min-height: 200px;
       .learning {
         flex: 1;
         display: flex;
@@ -402,7 +410,7 @@ main {
               width: 9vh;
               visibility: hidden;
               opacity: 0;
-              border-radius: 1vh;
+              border-radius: 3vh;
               color: $orange;
               transition: visibility 0s, opacity 0.25s linear;
               p {
@@ -422,7 +430,7 @@ main {
     article {
       height: 60vh;
       padding: 1vw;
-      border-radius: 1vh 0px;
+      border-radius: 3vh 0;
       border: solid $ash-grey 1vh;
     }
   }
@@ -442,6 +450,7 @@ main {
   justify-content: center;
   align-items: center;
   width: 33vw;
+  max-width: 650px
   
 }
 .skill-box{
@@ -457,7 +466,7 @@ main {
     width: 9vh;
     visibility: hidden;
     opacity: 0;
-    border-radius: 1vh;
+    border-radius: 3vh;
     color: $orange;
     transition: visibility 0s, opacity 0.25s linear;
     p {
@@ -483,14 +492,15 @@ main {
 
 #exp {
   background: linear-gradient(0deg, #484848 0%, #5d5d5d 100%);
-  min-height: 60vh;
+  height: 70vh;
+  min-height: 450px;
   .exp-cont {
     display: flex;
     flex-direction: column;
     justify-content: center;
     border: solid $ash-grey 1vh;
     padding: 1vw;
-    border-radius: 1vh 0;
+    border-radius: 3vh 0;
     margin: 4vh 0;
     background: $davy-grey;
     color: $orange;
@@ -501,6 +511,7 @@ main {
       justify-content: center;
       width: 87vw;
       height: 33vh;
+      min-height: 200px;
       color: $ash-grey;
 
       .pt-one {
@@ -510,17 +521,17 @@ main {
         align-items: center;
         justify-content: center;
         .logo-cont {
-          height: min(15vh, 9vw);
-          width: min(15vh, 9vw);
+          height: min(20vh, 12vw);
+          width: min(20vh, 12vw);
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
           .logo {
             background-color: $ash-grey;
-            border-radius: 1vh;
-            height: min(15vh, 9vw);
-            width: min(15vh, 9vw);
+            border-radius: 3vh;
+            height: min(20vh, 12vw);
+            width: min(20vh, 12vw);
             padding: 1vh;
             
           }
@@ -552,20 +563,21 @@ main {
       align-self: center;
       height: 5vh;
       width: 80%;
-      border-radius: 1vh 0;
+      border-radius: 3vh 0;
     }
   }
 }
 
 #about {
   background: linear-gradient(0deg, $davy-grey 0%, #484848 100%);
-  min-height: 93vh;
+  height: 93vh;
+  min-height: 650px;
   .about-cont {
     justify-content: center;
     width: 87vw;
-    min-height: 87vh;
+    min-height: 650px;
     border: solid $ash-grey 1vh;
-    border-radius: 1vh 0;
+    border-radius: 3vh 0;
     color: $orange;
     background: $davy-grey;
     display: flex;
@@ -588,6 +600,8 @@ main {
           align-items: stretch;
           justify-content: space-evenly;
           margin: 2vh 0;
+          width: 5vw;
+          min-width: 33px;
           .interest-tab.is-active {
             background-color:  $orange;
             color: $davy-grey;
@@ -599,7 +613,7 @@ main {
           .interest-tab {
             margin: 2vh 0;
             height: 3vh;
-            border-radius: 1vh;
+            border-radius: 3vh;
             border: none;
             background:$ash-grey;
           }
@@ -723,7 +737,7 @@ main {
     .title-container {
       width: 100%;
       margin-bottom: 0;
-      height: 20vh;
+      height: 33vh;
     }
   }
   #nav {
@@ -764,7 +778,7 @@ main {
         flex-direction: row;
         align-items: center;
         width: 100%;
-        height: 10vh;
+        height: 20vh;
 
       }
     }
