@@ -21,7 +21,7 @@ function Skills() {
               })}
             </div>
             <div className="graphed-skills">
-              <iframe src="https://peterpcw.github.io/ExperienceChart.html" title="Experience Chart" />
+              <iframe src="https://peterpcw.github.io/ExperienceChart.html" title="Experience Chart" height='min(33vh, 33vw)' width='min(33vh, 33vw)'/>
             </div>
           </div>
         </article>
