@@ -401,7 +401,6 @@ main {
       flex-direction: row;
       background: $davy-grey;
       min-height: 200px;
-      max-width: 120px;
       .description {
         flex: 1;
       }
@@ -409,7 +408,8 @@ main {
         flex: 1;
         display: flex;
         flex-direction: column;
-        margin: 1vh 2vw 0;
+        max-width: 120px;
+        margin: 2vw 2vw 0;
         color: $orange;
         h3 {
           margin: 1vh 0;
