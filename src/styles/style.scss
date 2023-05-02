@@ -401,6 +401,7 @@ main {
       flex-direction: row;
       background: $davy-grey;
       min-height: 200px;
+      max-width: 120px;
       .description {
         flex: 1;
       }
