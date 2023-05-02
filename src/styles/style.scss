@@ -80,11 +80,9 @@ main {
 }
 
 #intro {
-  padding: 0;
   .content {
     width: 87vw;
     max-width: 87vw;
-    padding: 0;
   }
   height: 90vh;
   min-height: 400px;
@@ -809,7 +807,11 @@ main {
   #skills {
     .skills-box{
       width: 100%;
-      .pt-one {        
+      .pt-one {
+        flex-direction: column;
+      }
+      .pt-two {
+        flex-direction: column;
         .learning{
           margin: 2vw 1vw;
           h3 {
@@ -821,6 +823,16 @@ main {
         }
       }
     }
+  }
+  .mapped-skills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 33vw;
+    max-width: 87%;
+    min-width: 87%;
   }
   #exp {
     .exp-box {
