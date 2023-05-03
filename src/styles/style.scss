@@ -369,6 +369,8 @@ main {
     min-height: 650px;
     margin: 15vh 0 0;
     padding: 15vh 0 0;
+    border-radius: 3vh 0;
+    border: solid $ash-grey 1vh;
     .pt-one {
       display: flex;
       flex-direction: column;
@@ -445,8 +447,7 @@ main {
       }
     }
     article {
-      border-radius: 3vh 0;
-      border: solid $ash-grey 1vh;
+      padding: 5vh 0;
     }
   }
 }
