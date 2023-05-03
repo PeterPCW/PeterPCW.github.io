@@ -376,7 +376,6 @@ main {
       color: $orange;
       background: $davy-grey;
       min-height: 450px;
-      margin: 10vh 0;
       .sec-title {
         flex: 4;
         margin: 1vh 2vw 0;
@@ -398,7 +397,6 @@ main {
       flex-direction: row;
       background: $davy-grey;
       min-height: 200px;
-      margin: 10vh 0;
       .description {
         flex: 1;
       }
@@ -459,7 +457,6 @@ main {
   justify-content: center;
   align-items: center;
   width: min(50vh, 50vw);
-  height: min(50vh, 50vw);
   position: relative;
   padding: -5vw;
 }
