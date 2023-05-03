@@ -15,7 +15,7 @@ os.system("cd src/python/bokeh && python ExperienceChart.py --no-browser")
 os.system('cd .. && cd .. && cd ..')
 
 # Build the React app - includes eslint and jest per package.json
-os.system("npm run lintbuild")
+os.system("npm run build")
 
 def get_commit_message(timeout=30):
     start_time = time.time()

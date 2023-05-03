@@ -9,11 +9,11 @@
   "scripts": {
     "lint": "eslint \"**/*.{ts,tsx,json}\" --ignore-path .gitignore",
     "lint:fix": "npm run lint -- --fix",
-    "lintbuild": "npm run lint && npm run build",
+    "lintbuild": "npm run lint && npm run onlybuild",
     "test": "jest --coverage",
-    "testbuild": "npm run lint && npm run test && npm run build",
-    "build": "webpack --mode production",
-    "serve": "webpack-dev-server --mode=development"
+    "build": "npm run lint && npm run test && npm run onlybuild",
+    "onlybuild": "webpack --mode production",
+    "serve": "webpack --mode=development"
   },
   "eslintConfig": {
     "extends": "@imaginary-cloud/react"

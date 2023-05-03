@@ -208,6 +208,7 @@ main {
       height: 51vh;
       min-height: 650px;
       margin: 1vh;
+      padding: 1vh;
     }
     .pt-one {
       width: 54vw;
@@ -371,12 +372,12 @@ main {
     padding: 15vh 0 0;
     border-radius: 3vh 0;
     border: solid $ash-grey 1vh;
+    background: $davy-grey;
     .pt-one {
       display: flex;
       flex-direction: column;
       justify-content: center;
       color: $orange;
-      background: $davy-grey;
       min-height: 450px;
       .sec-title {
         flex: 4;
@@ -396,7 +397,6 @@ main {
       flex: 1;
       display: flex;
       flex-direction: row;
-      background: $davy-grey;
       min-height: 200px;
       .description {
         flex: 1;
@@ -447,7 +447,8 @@ main {
       }
     }
     article {
-      padding: 5vh 0;
+      margin: 1vh;
+      padding: 1vh;
     }
   }
 }
@@ -456,7 +457,8 @@ main {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: min(50vh, 50vw);
+  width: auto;
+  max-width: min(40vh, 40vw);
   position: relative;
   padding: -5vw;
 }
@@ -617,8 +619,8 @@ main {
           align-items: stretch;
           justify-content: space-evenly;
           margin: 2vh 0;
-          width: 5vw;
-          min-width: 33px;
+          width: 15vw;
+          min-width: 100px;
           .interest-tab.is-active {
             background-color:  $orange;
             color: $davy-grey;
@@ -643,7 +645,7 @@ main {
         justify-content: center;
         padding: 0 3vw;
         margin: 0 3vw;
-        max-width: 350px;
+        max-width: 500px;
         background-color: $davy-grey;
         .img-cont {
           img {
