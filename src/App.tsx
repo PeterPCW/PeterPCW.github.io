@@ -11,7 +11,7 @@ import Footer from './components/Footer'
 /*import Spacer from './components/Spacer'*/
 
 function App() {
-  return <main>
+  return <main data-testid="app-component">
     <Intro />
     <Nav />
     {/*<Projects />*/}

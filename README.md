@@ -6,19 +6,18 @@ Plans (general):
 
 * ~~Get code working on 2023 stack~~
 * ~~Convert to Typescript~~
-* ~~Automate deploy ste~~ps (~90%)
-* ~~Add linting/~~testing (~75%)
+* ~~Automate deploy steps~~
+* ~~Add linting/testing~~
 * ~~Update content to be~~ about me (~65%)
-* ~~Restyle to m~~y liking (~60%)
+* ~~Restyle to my lik~~ing (~85%)
 * Document code and steps to build/use
 
 Next up (specific):
 
-* Get tests running smooth
 * Pull in project info
 * Add/fix images
 
-Dreams:
+Dreams (TDB):
 
 * Overhaul design with MUI
 * We'll see after that
