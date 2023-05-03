@@ -85,7 +85,7 @@ main {
   height: 90vh;
   min-height: 400px;
   background: url(../images/svg-bgs/HoneycombPage01.svg) no-repeat center center, $ash-grey;
-  background-size: contain, auto;
+  background-size: cover, auto;
   .image-container {
     width: 33vw;
     height: 33vw;
@@ -684,8 +684,8 @@ main {
 
 #contact {
   background: url(../images/svg-bgs/HoneycombHalf.svg) no-repeat center bottom, $davy-grey;
-  background-size: contain, auto;
-  min-height: 90vh;
+  background-size: cover, auto;
+  min-height: 60vh;
 
   .content {
     flex-direction: column;
