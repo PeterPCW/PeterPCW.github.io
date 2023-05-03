@@ -1,6 +1,6 @@
 import chefImg from '../images/about-imgs/chef-img.png'
-import advImg from '../images/about-imgs/adventure-img.png'
-import learnImg from '../images/about-imgs/learning-img.png'
+import advImg from '../images/about-imgs/adventurer-img.png'
+import learnImg from '../images/about-imgs/learner-img.png'
 import actImg from '../images/about-imgs/advocate-img.png'
 import jokeImg from '../images/about-imgs/joker-img.png'
 
