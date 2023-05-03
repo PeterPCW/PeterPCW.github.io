@@ -367,9 +367,8 @@ main {
     flex-direction: column;
     justify-content: center;
     width: 87vw;
-    height: 87vh;
     min-height: 650px;
-
+    margin: 5vh 0;
     .pt-one {
       display: flex;
       flex-direction: column;
@@ -406,7 +405,7 @@ main {
         display: flex;
         flex-direction: column;
         max-width: 200px;
-        margin: 2vw 2vw 0;
+        margin: 2vw;
         color: $orange;
         h3 {
           margin: 1vh 0;
@@ -519,9 +518,7 @@ main {
     flex-direction: column;
     justify-content: center;
     border: solid $ash-grey 1vh;
-    padding: 1vw;
     border-radius: 3vh 0;
-    margin: 4vh 0;
     background: $davy-grey;
     color: $orange;
 
@@ -531,7 +528,6 @@ main {
       justify-content: center;
       align-items: center;
       width: 80vw;
-      height: 33vh;
       min-height: 200px;
       color: $ash-grey;
 
@@ -860,7 +856,7 @@ main {
           .interest-tab {
             padding: 1vw 0;
             margin: 1vw;
-            width: 10vw;
+            width: 100px;
           }
         }
       }
@@ -949,7 +945,7 @@ main {
       height: 100%;
         .tabs .interest-tab {
           flex: 1;
-          width: 0;
+          width: 100px;
           height: 100%;
           font-size: 1.25rem;
         }
