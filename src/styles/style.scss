@@ -361,97 +361,97 @@ main {
   color: $ash-grey;
   height: 87vh;
   min-height: 650px;
-  .content {
-    align-items: flex-start;
-    .skills-box {
+  .skills-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 87vw;
+    min-height: 650px;
+    margin: 15vh 0;
+    padding: 10vh 0;
+    .pt-one {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      width: 87vw;
-      min-height: 650px;
-      margin: 5vh 0;
-      .pt-one {
+      color: $orange;
+      background: $davy-grey;
+      min-height: 450px;
+      margin: 10vh 0;
+      .sec-title {
+        flex: 4;
+        margin: 1vh 2vw 0;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        color: $orange;
-        background: $davy-grey;
-        min-height: 450px;
-        .sec-title {
-          flex: 4;
-          margin: 1vh 2vw 0;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-        }
-        .skills-content {
-          flex: 1;
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          background: $davy-grey;
-        }
+        justify-content: space-between;
       }
-      .pt-two {
+      .skills-content {
         flex: 1;
         display: flex;
         flex-direction: row;
+        justify-content: center;
         background: $davy-grey;
-        min-height: 200px;
-        .description {
-          flex: 1;
+      }
+    }
+    .pt-two {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      background: $davy-grey;
+      min-height: 200px;
+      margin: 10vh 0;
+      .description {
+        flex: 1;
+      }
+      .learning {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        max-width: 200px;
+        margin: 2vw;
+        color: $orange;
+        h3 {
+          margin: 1vh 0;
         }
-        .learning {
-          flex: 1;
+        .learning-skills {
           display: flex;
-          flex-direction: column;
-          max-width: 200px;
-          margin: 2vw;
-          color: $orange;
-          h3 {
-            margin: 1vh 0;
-          }
-          .learning-skills {
+          flex-direction: row;
+          width: 20vh;
+          max-width: 200px;         
+          .skill-box{
+            width: 7vh;
+            height: 7vh;
+            justify-content: center;
+            align-items: center;
             display: flex;
-            flex-direction: row;
-            width: 20vh;
-            max-width: 200px;         
-            .skill-box{
-              width: 7vh;
-              height: 7vh;
-              justify-content: center;
-              align-items: center;
-              display: flex;
-              margin: 1vh;
-              .name-container {
-                position: absolute;
-                height: 9vh;
-                width: 9vh;
-                visibility: hidden;
-                opacity: 0;
-                border-radius: 3vh;
+            margin: 1vh;
+            .name-container {
+              position: absolute;
+              height: 9vh;
+              width: 9vh;
+              visibility: hidden;
+              opacity: 0;
+              border-radius: 3vh;
+              color: $orange;
+              transition: visibility 0s, opacity 0.25s linear;
+              p {
                 color: $orange;
-                transition: visibility 0s, opacity 0.25s linear;
-                p {
-                  color: $orange;
-                  text-align: center;
-                  margin-top: 90%;
-                  user-select: none;
-                }
+                text-align: center;
+                margin-top: 90%;
+                user-select: none;
               }
-              img {
-                height: 80%;
-              }
+            }
+            img {
+              height: 80%;
             }
           }
         }
       }
-      article {
-        height: 60vh;
-        padding: 1vw;
-        border-radius: 3vh 0;
-        border: solid $ash-grey 1vh;
-      }
+    }
+    article {
+      height: 60vh;
+      padding: 1vw;
+      border-radius: 3vh 0;
+      border: solid $ash-grey 1vh;
     }
   }
 }
@@ -471,7 +471,7 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 33vw;
+  width: min(50vh, 50vw);
   max-width: 650px;
 }
 .skill-box{
