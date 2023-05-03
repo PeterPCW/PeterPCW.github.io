@@ -517,6 +517,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 87vw;
     border: solid $ash-grey 1vh;
     border-radius: 3vh 0;
     background: $davy-grey;
@@ -528,7 +529,6 @@ main {
       justify-content: center;
       align-items: center;
       width: 80vw;
-      margin: 0 3.5vw;
       min-height: 200px;
       color: $ash-grey;
 
