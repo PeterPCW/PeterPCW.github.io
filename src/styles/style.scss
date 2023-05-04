@@ -195,7 +195,7 @@ main {
   background: linear-gradient(0deg, #727272 0%, $ash-grey 100%);
   height: 87vh;
   min-height: 650px;
-  color: $ash-grey;
+  color: $davy-grey;
   margin: 5 vh;
   .content {
     flex-direction: column;
@@ -206,14 +206,15 @@ main {
     align-content: stretch;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     width: 87vw;
-    border: 1vh $ash-grey solid;
+    border: 1vh $davy-grey solid;
     border-radius: 3vh 0;
-    background: $davy-grey;
+    background: $ash-grey;
 
     article {
-      height: 51vh;
-      min-height: 650px;
+      height: 'auto';
+      min-height: 200px;
       margin: 1vh;
       padding: 1vh;
     }
@@ -228,9 +229,7 @@ main {
         justify-content: start;
       }
       .border {
-        border: solid $ash-grey 1vh;
         display: flex;
-        background-color: $davy-grey;
       }
 
       .proj-img{
@@ -249,6 +248,9 @@ main {
             width: 100%;
           }
           .magnify{
+            position: 'absolute';
+            top: 0;
+            left: 0;
             img {
               height: 2vw;
               width: 2vw;
@@ -291,9 +293,9 @@ main {
       margin: 0 1vw;
       .proj-text{
         flex: 8;
-        h2 {
+        h3 {
           margin: 1vh 0;
-
+          color: $orange;
         }
         p {
           margin: 0;
@@ -343,11 +345,12 @@ main {
     border-radius: 0 0 3vh 3vh;
   }
 }
+
 #lightbox-img {
   height: 100%;
   width: 100%;
+  max-width: '95vw';
 }
-
 .lightbox-cont {
   background-color: $ash-grey;
   border: solid $davy-grey 1vh;
@@ -458,7 +461,7 @@ main {
   justify-content: center;
   align-items: center;
   width: auto;
-  max-width: min(40vh, 40vw);
+  max-width: min(50vh, 50vw);
   position: relative;
   padding: -5vw;
 }

@@ -7,8 +7,8 @@ function Skills() {
   return <section className="section" id="skills">
     <section className="content">
       <div className="skills-box">
+        <h2><span className="orange">{'//'}</span> Skills</h2>
         <article className="pt-one">
-          <h2><span className="orange">{'//'}</span> Skills</h2>
           <div className="skills-content">
             <div className="mapped-skills">
               {skillArray.map((skill, i) => {
@@ -21,7 +21,7 @@ function Skills() {
               })}
             </div>
             <div className="graphed-skills">
-              <iframe src="https://peterpcw.github.io/ExperienceChart.html" title="Experience Chart" height='min(25vh, 25vw)' width='min(25vh, 25vw)' style={{top: 0, left: 0, width: '100%', height: '100%', border: 0}}/>
+              <iframe src="https://peterpcw.github.io/ExperienceChart.html" title="Experience Chart" style={{position: 'absolute', top: '10%', left: 0, width: '100%', height: '80%', border: 0}}/>
             </div>
           </div>
         </article>

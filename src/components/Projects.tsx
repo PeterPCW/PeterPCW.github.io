@@ -84,7 +84,7 @@ const Projects = () => {
         {projectArr.map((proj, i) => {
           return <button value={i} className={`${proj.isActive} proj-button`} onClick={handleChangeProj} key={i}>⌬</button>
         })}
-      <button className='proj-button' onClick={handleRightButton}>⁍</button>
+        <button className='proj-button' onClick={handleRightButton}>⁍</button>
       </div>
       <Slides project={projectArr[projectIndex]} />
       <div className="empty"></div>
@@ -98,7 +98,9 @@ const Slides = ({ project }: SlidesProps) => {
   if (project.name === undefined || !project.name) {
     return
   } else return <div key={project.name} className="project-box">
+    <h2><span className="orange">{'//'}</span> Projects</h2>
     <article className="pt-one">
+      < Image image={project.images} />
       <div className="mapped-skills project-skills">
         {project.techs.map((tech, i) => {
           return <div key={i} className="skill-box">
@@ -109,12 +111,10 @@ const Slides = ({ project }: SlidesProps) => {
           </div>
         })}
       </div>
-      < Image image={project.images} />
-
     </article>
     <article className="pt-two">
       <div className="proj-text">
-        <h2>{project.name}</h2>
+        <h3>{project.name}</h3>
         <p>{project.desc}</p>
       </div>
       <div className="proj-nav">
@@ -206,8 +206,7 @@ const Image = ({ image }: ImageProps) => {
               } else {
                 return <div key={i}>
                   <img
-                    id="lightbox-img" src={image.img} 
-                    style={{ height: 'auto', maxWidth: '95wv', width: '100%' }}
+                    id="lightbox-img" src={image.img}
                   ></img>
                   <div className="magnify">
                     <img src={exit} alt="Exit" />
