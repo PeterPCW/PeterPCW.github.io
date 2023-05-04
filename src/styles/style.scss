@@ -683,7 +683,7 @@ main {
 
 #contact {
   background: url(../images/svg-bgs/HoneycombHalf.svg) no-repeat center bottom, $davy-grey;
-  background-size: cover, auto;
+  background-size: contain, auto;
   min-height: 60vh;
 
   .content {

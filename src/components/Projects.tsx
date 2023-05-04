@@ -9,7 +9,7 @@ import exit from '../images/exp-logos/exit.svg'
 
 
 const Projects = () => {
-  /*const [projectIndex, updateProjectIndex] = useState(0)
+  const [projectIndex, updateProjectIndex] = useState(0)
   const [projectArr, updateProjectArr] = useState(projects)
 
   function handleChangeProj(e) {
@@ -75,18 +75,18 @@ const Projects = () => {
     })
     updateProjectArr(projectData)
     updateProjectIndex(indexValue)
-  }*/
+  }
 
   return <section className="section" id="projects">
     <section className="content">
-      {/*<div className='buttons'>
+      <div className='buttons'>
         <button className='proj-button' onClick={handleLeftButton}>⁌</button>
         {projectArr.map((proj, i) => {
           return <button value={i} className={`${proj.isActive} proj-button`} onClick={handleChangeProj} key={i}>⌬</button>
         })}
       <button className='proj-button' onClick={handleRightButton}>⁍</button>
       </div>
-      <Slides project={projectArr[projectIndex]} />*/}
+      <Slides project={projectArr[projectIndex]} />
       <div className="empty"></div>
     </section>
   </section>
