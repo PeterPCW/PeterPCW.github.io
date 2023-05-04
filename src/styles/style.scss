@@ -829,6 +829,9 @@ main {
     max-width: 87%;
     min-width: 87%;
   }
+  .graphed-skills {
+    display: none; // Hide the div instead of trying to sort out scaling the bokeh page
+  }
   #exp {
     .exp-box {
       width: 100%;
