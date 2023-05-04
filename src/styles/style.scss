@@ -163,6 +163,7 @@ main {
 
 .buttons {
   background: $davy-grey;
+  border: 1vh $ash-grey solid;
   height: 5vh;
   min-width: 15vw;
   width: 55vw;
@@ -197,125 +198,129 @@ main {
   .content {
     flex-direction: column;
   }
-  .project-box {
-    margin: 0 0 1vh 0;
-    padding: 1vh 1vh;
-    align-content: stretch;
+  .proj-cont {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 87vw;
-    border: 1vh $ash-grey solid;
-    border-radius: 3vh 0;
-    background: $ash-grey;
-
-    article {
-      height: 'auto';
-      min-height: 200px;
-      margin: 1vh;
-      padding: 1vh;
+    flex-direction: column;
+    h2 {
+      color: $orange;
     }
-    .pt-one {
-      width: 54vw;
+    .project-box {
+      margin: 0 0 1vh 0;
+      padding: 1vh 1vh;
+      align-content: stretch;
       display: flex;
-      flex-direction: column;
-      .project-skills.mapped-skills {
-        flex: 1;
-        flex-wrap: nowrap;
-        height: 10vh;
-        justify-content: start;
+      flex-direction: row;
+      justify-content: center;
+      width: 87vw;
+      border: 1vh $ash-grey solid;
+      border-radius: 3vh 0;
+      background: $davy-grey;
+      article {
+        height: 'auto';
+        min-height: 200px;
+        margin: 1vh;
+        padding: 1vh;
       }
-      .border {
-        display: flex;
-      }
-
-      .proj-img{
-        flex: 8;
+      .pt-one {
+        width: 54vw;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        margin-top: 1vh;
-
-        .img-cont {
-          border-radius: 3vh;
-          display: flex;
-          .thumb {
-            max-height: 87%;
-            width: 100%;
-          }
-          .magnify{
-            position: 'absolute';
-            top: 0;
-            left: 0;
-            img {
-              height: 2vw;
-              width: 2vw;
-              
-            }
-            pointer-events: none;
-            position: absolute;
-            padding: 1vh;
-            background-color: $davy-grey;
-            border-radius: 3vh;
-          }
+        .project-skills.mapped-skills {
+          flex: 1;
+          flex-wrap: nowrap;
+          height: 10vh;
+          justify-content: start;
         }
-        .descbar {
+        .border {
           display: flex;
-          width: 80%;
-          justify-content: space-between;
-          padding: 1vh;
-          
+        }
+
+        .proj-img{
+          flex: 8;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+          margin-top: 1vh;
+
+          .img-cont {
+            border-radius: 3vh;
+            display: flex;
+            .thumb {
+              max-height: 87%;
+              width: 100%;
+            }
+            .magnify{
+              position: 'relative';
+              top: 0;
+              left: 0;
+              img {
+                height: 2vw;
+                width: 2vw;
+                
+              }
+              pointer-events: none;
+              position: absolute;
+              padding: 1vh;
+              background-color: $davy-grey;
+              border-radius: 3vh;
+            }
+          }
+          .descbar {
+            display: flex;
+            width: 80%;
+            justify-content: space-between;
+            padding: 1vh;
+            
+            p {
+              padding: 1vh 1vw;
+              margin: 0;
+            }
+            button {
+              background: $davy-grey;
+              border: solid $ash-grey 1vh;
+              border-radius: 3vh;
+              height: 3vh;
+            }
+            button:focus {
+              outline: none;
+            }
+          }
+       }
+     }
+      .pt-two{
+        width: 33vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 0 1vw;
+        .proj-text{
+          flex: 8;
+          h3 {
+            margin: 1vh 0;
+            color: $orange;
+          }
           p {
-            padding: 1vh 1vw;
             margin: 0;
           }
-          button {
-            background: $davy-grey;
-            border: solid $ash-grey 1vh;
-            border-radius: 3vh;
-            height: 3vh;
-          }
-          button:focus {
-            outline: none;
-          }
         }
-      }
-    }
-    .pt-two{
-      width: 33vw;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      margin: 0 1vw;
-      .proj-text{
-        flex: 8;
-        h3 {
-          margin: 1vh 0;
-          color: $orange;
-        }
-        p {
-          margin: 0;
-        }
-      }
-      .proj-nav {
-        display: flex;
-        flex-direction: row;
-        flex: 1;
-        height: 10vh;
-        .page-link {
-          width: 5vw;
+        .proj-nav {
+          display: flex;
+          flex-direction: row;
+          flex: 1;
           height: 10vh;
+          .page-link {
+            width: 5vw;
+            height: 10vh;
+          }
+          .skill-box {
+            width: 5vw;
+            height: 10vh;
+            margin: 0;
+            padding: 1vh;
+            background: $ash-grey;
+          }
         }
-        .skill-box {
-          width: 5vw;
-          height: 10vh;
-          margin: 0;
-          padding: 1vh;
-          background: $ash-grey;
-        }
-
-
       }
     }
   }
@@ -512,67 +517,71 @@ main {
   background: linear-gradient(0deg, #484848 0%, #5d5d5d 100%);
   min-height: 450px;
   margin: 0;
-  .exp-cont {
+  .content {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 87vw;
-    border: solid $ash-grey 1vh;
-    border-radius: 3vh 0;
-    background: $davy-grey;
-    color: $orange;
-    padding: 2vh;
-
-    .exp-box {
+    .exp-cont {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: center;
-      align-items: center;
-      width: 80vw;
-      min-height: 200px;
-      color: $ash-grey;
+      width: 87vw;
+      border: solid $ash-grey 1vh;
+      border-radius: 3vh 0;
+      background: $davy-grey;
+      color: $orange;
+      padding: 2vh;
 
-      .pt-one {
-        flex: 1;
+      .exp-box {
         display: flex;
-        flex-direction: column;
-        .logo-cont {
-          height: min(20vh, 12vw);
-          width: min(20vh, 12vw);
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 80vw;
+        min-height: 200px;
+        color: $ash-grey;
+
+        .pt-one {
+          flex: 1;
           display: flex;
           flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          .logo {
-            background-color: $davy-grey;
-            border-radius: 3vh;
-            height: min(20vh, 12vw);
-            width: min(20vh, 12vw);
-            padding: 1vh;
-            
-          }
-          .subhead {
-            min-height: 5vh;
-            h4 {
-              margin: 1vh;
-              text-align: center;
+          .logo-cont {
+            height: 'auto';
+            width: 'auto';
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .logo {
+              background-color: $davy-grey;
+              border-radius: 3vh;
+              height: min(20vh, 12vw);
+              width: min(20vh, 12vw);
+              padding: 1vh;
             }
-            
+            .subhead {
+              min-height: 5vh;
+              h4 {
+                margin: 1vh;
+                text-align: center;
+              }
+              
+            }
           }
         }
-      }
-      .pt-two {
-        flex: 4;
-        display: flex;
-        flex-direction: column;
-        .description {
-          flex: 1;
+        .pt-two {
+          flex: 4;
+          display: flex;
+          flex-direction: column;
+          .description {
+            flex: 1;
+          }
         }
-      }
-      article {
-        min-height: 20vh;
-        padding: 1vh;
-        margin: 1vh;
+        article {
+          min-height: 20vh;
+          padding: 1vh;
+          margin: 1vh;
+        }
       }
     }
   }

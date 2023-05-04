@@ -97,45 +97,47 @@ const Slides = ({ project }: SlidesProps) => {
 
   if (project.name === undefined || !project.name) {
     return
-  } else return <div key={project.name} className="project-box">
-    <h2><span className="orange">{'//'}</span> Projects</h2>
-    <article className="pt-one">
-      < Image image={project.images} />
-      <div className="mapped-skills project-skills">
-        {project.techs.map((tech, i) => {
-          return <div key={i} className="skill-box">
-            <div className="name-container proj-name-cont" >
-              <p>{tech.name}</p>
+  } else return <div className='proj-cont'>
+    <div key={project.name} className="project-box">
+      <h2><span className="orange">{'//'}</span> Projects</h2>
+      <article className="pt-one">
+        < Image image={project.images} />
+        <div className="mapped-skills project-skills">
+          {project.techs.map((tech, i) => {
+            return <div key={i} className="skill-box">
+              <div className="name-container proj-name-cont" >
+                <p>{tech.name}</p>
+              </div>
+              <img src={tech.svg} alt={tech.name} className="devicon" />
             </div>
-            <img src={tech.svg} alt={tech.name} className="devicon" />
-          </div>
-        })}
-      </div>
-    </article>
-    <article className="pt-two">
-      <div className="proj-text">
-        <h3>{project.name}</h3>
-        <p>{project.desc}</p>
-      </div>
-      <div className="proj-nav">
-        <a href={project.page} target="_blank" rel="noreferrer" className="page-link">
-          <div className="skill-box">
-            <div className="name-container" >
-              <p><span className="orange">Project</span> </p>
+          })}
+        </div>
+      </article>
+      <article className="pt-two">
+        <div className="proj-text">
+          <h3>{project.name}</h3>
+          <p>{project.desc}</p>
+        </div>
+        <div className="proj-nav">
+          <a href={project.page} target="_blank" rel="noreferrer" className="page-link">
+            <div className="skill-box">
+              <div className="name-container" >
+                <p><span className="orange">Project</span> </p>
+              </div>
+              <img src={linkObj.svg} alt={linkObj.name} />
             </div>
-            <img src={linkObj.svg} alt={linkObj.name} />
-          </div>
-        </a>
-        <a href={project.github} target="_blank" rel="noreferrer" className="page-link">
-          <div className="skill-box">
-            <div className="name-container" >
-              <p><span className="orange">Readme</span> </p>
+          </a>
+          <a href={project.github} target="_blank" rel="noreferrer" className="page-link">
+            <div className="skill-box">
+              <div className="name-container" >
+                <p><span className="orange">Readme</span> </p>
+              </div>
+              <img src={github} alt="GitHub" />
             </div>
-            <img src={github} alt="GitHub" />
-          </div>
-        </a>
-      </div>
-    </article>
+          </a>
+        </div>
+      </article>
+    </div>
   </div>
 }
 
