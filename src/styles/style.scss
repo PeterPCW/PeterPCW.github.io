@@ -52,7 +52,7 @@ main {
   }
   height: 90vh;
   min-height: 400px;
-  background: url(../images/svg-bgs/HoneycombPage01.svg) no-repeat center center, $ash-grey;
+  background: url(../images/svg-bgs/HoneycombPage01.svg) no-repeat center center, linear-gradient(0deg, #797979 0%, $ash-grey 100%);;
   background-size: cover, auto;
   .image-container {
     width: 33vw;
@@ -181,7 +181,7 @@ main {
 }
 
 #projects {
-  background: linear-gradient(0deg, #727272 0%, $ash-grey 100%);
+  background: linear-gradient(0deg, #6B6B6B 0%, #797979 100%);
   height: 'auto';
   min-height: 650px;
   color: $ash-grey;
@@ -365,7 +365,7 @@ main {
 }
 
 #skills {
-  background: linear-gradient(0deg, #5d5d5d 0%, #727272 100%);
+  background: linear-gradient(0deg, #5d5d5d 0%, #6B6B6B 100%);
   color: $ash-grey;
   height: 'auto';
   min-height: 650px;
@@ -511,7 +511,7 @@ main {
 }
 
 #exp {
-  background: linear-gradient(0deg, #484848 0%, #5d5d5d 100%);
+  background: linear-gradient(0deg, #4F4F4F 0%, #5d5d5d 100%);
   min-height: 450px;
   margin: 0;
   .content {
@@ -585,7 +585,7 @@ main {
 }
 
 #about {
-  background: linear-gradient(0deg, $davy-grey 0%, #484848 100%);
+  background: linear-gradient(0deg, #414141 0%, #4F4F4F 100%);
   height: 93vh;
   min-height: 650px;
   .about-cont {
@@ -681,7 +681,7 @@ main {
 }
 
 #contact {
-  background: url(../images/svg-bgs/HoneycombHalf.svg) no-repeat center bottom, $davy-grey;
+  background: url(../images/svg-bgs/HoneycombHalf.svg) no-repeat center bottom, linear-gradient(0deg, $davy-grey 0%, #414141 100%);;
   background-size: contain, auto;
   min-height: 60vh;
 
