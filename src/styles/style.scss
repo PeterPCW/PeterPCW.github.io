@@ -192,20 +192,20 @@ main {
   .proj-cont {
     display: flex;
     flex-direction: column;
+    width: 87vw;
+    border: 1vh $ash-grey solid;
+    border-radius: 3vh 0;
+    background: $davy-grey;
+    margin: 0 0 1vh 0;
+    padding: 1vh 1vh;
     h2 {
       color: $orange;
     }
     .project-box {
-      margin: 0 0 1vh 0;
-      padding: 1vh 1vh;
       align-content: stretch;
       display: flex;
       flex-direction: row;
       justify-content: center;
-      width: 87vw;
-      border: 1vh $ash-grey solid;
-      border-radius: 3vh 0;
-      background: $davy-grey;
       article {
         height: 'auto';
         min-height: 200px;
@@ -217,6 +217,7 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         .project-skills.mapped-skills {
           flex: 1;
           flex-wrap: nowrap;
@@ -285,6 +286,8 @@ main {
         .proj-text{
           flex: 8;
           align-self: center;
+          justify-self: center;
+          padding: 15vh 0 0;
           h3 {
             margin: 1vh 0;
             color: $orange;
@@ -296,6 +299,7 @@ main {
         .proj-nav {
           display: flex;
           flex-direction: row;
+          align-items: end;
           flex: 1;
           height: 10vh;
           .page-link {
@@ -376,6 +380,9 @@ main {
     border-radius: 3vh 0;
     border: solid $ash-grey 1vh;
     background: $davy-grey;
+    h2 {
+      color: $orange;
+    }
     .pt-one {
       display: flex;
       flex-direction: column;
