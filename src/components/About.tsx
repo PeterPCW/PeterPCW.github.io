@@ -47,7 +47,7 @@ function About() {
           </article>
           <article className="pt-three">
             <div>
-              <h3><span className="orange">{'//'}</span> {currentInterest.title}</h3>
+              <h3>{currentInterest.title}</h3>
               <p dangerouslySetInnerHTML={{__html: currentInterest.desc}}></p>
             </div>
           </article>

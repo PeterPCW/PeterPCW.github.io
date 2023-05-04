@@ -73,6 +73,13 @@ function Exp() {
 
   return <section className="section" id="exp">
     <section className="content">
+      <div className='buttons'>
+        <button className='proj-button' onClick={handleLeftButton}>⁌</button>
+        {expArr.filter((exp, i) => i % 2 === 0).map((exp, i) => {
+          return <button value={i} className={`${exp.isActive} proj-button`} onClick={handleChangeProj} key={i}>⌬</button>
+        })}
+        <button className='proj-button' onClick={handleRightButton}>⁍</button>
+      </div>
       <div className="exp-cont">
         <h2><span className="orange">{'//'}</span> Experience</h2>
         <div className="exp-box">
@@ -90,13 +97,6 @@ function Exp() {
               <p>{expArr[expIndex].desc}</p>
             </div>
           </article>
-        </div>
-        <div className='buttons exp-nav'>
-          <button className='proj-button' onClick={handleLeftButton}>⁌</button>
-          {expArr.filter((exp, i) => i % 2 === 0).map((exp, i) => {
-            return <button value={i} className={`${exp.isActive} proj-button`} onClick={handleChangeProj} key={i}>⌬</button>
-          })}
-          <button className='proj-button' onClick={handleRightButton}>⁍</button>
         </div>
         <div className="exp-box">
           <article className="pt-one">

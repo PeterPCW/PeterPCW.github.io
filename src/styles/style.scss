@@ -54,36 +54,6 @@ main {
   padding: 100px 0;
 }
 
-.buttons {
-  background: $davy-grey;
-  height: 5vh;
-  min-width: 15vw;
-  width: 55vw;
-  max-width: 75vw;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  border-radius: 3vh 3vh 0 0;
-}
-
-.proj-button {
-  background: none;
-  border: none;
-  width: 3vw;
-  color: $ash-grey;
-  font-weight: 700;
-  font-size: 2rem;
-}
-
-.proj-button:focus {
-  outline: 0;
-}
-
-.proj-button.is-active {
-  color:  $orange;
-}
-
 #intro {
   .content {
     width: 87vw;
@@ -191,11 +161,38 @@ main {
   }
 }
 
+.buttons {
+  background: $davy-grey;
+  height: 5vh;
+  min-width: 15vw;
+  width: 55vw;
+  max-width: 75vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3vh 3vh 0 0;
+}
+.proj-button {
+  background: none;
+  border: none;
+  width: 3vw;
+  color: $ash-grey;
+  font-weight: 700;
+  font-size: 2rem;
+}
+.proj-button:focus {
+  outline: 0;
+}
+.proj-button.is-active {
+  color:  $orange;
+}
+
 #projects {
   background: linear-gradient(0deg, #727272 0%, $ash-grey 100%);
-  height: 87vh;
+  height: 'auto';
   min-height: 650px;
-  color: $davy-grey;
+  color: $ash-grey;
   margin: 5 vh;
   .content {
     flex-direction: column;
@@ -208,7 +205,7 @@ main {
     flex-direction: row;
     justify-content: center;
     width: 87vw;
-    border: 1vh $davy-grey solid;
+    border: 1vh $ash-grey solid;
     border-radius: 3vh 0;
     background: $ash-grey;
 
@@ -274,7 +271,7 @@ main {
             margin: 0;
           }
           button {
-            background: $ash-grey;
+            background: $davy-grey;
             border: solid $ash-grey 1vh;
             border-radius: 3vh;
             height: 3vh;
@@ -315,7 +312,7 @@ main {
           height: 10vh;
           margin: 0;
           padding: 1vh;
-          background: $davy-grey;
+          background: $ash-grey;
         }
 
 
@@ -370,7 +367,7 @@ main {
 #skills {
   background: linear-gradient(0deg, #5d5d5d 0%, #727272 100%);
   color: $ash-grey;
-  height: 87vh;
+  height: 'auto';
   min-height: 650px;
   .skills-box {
     display: flex;
@@ -577,13 +574,6 @@ main {
         padding: 1vh;
         margin: 1vh;
       }
-    }
-    .buttons.exp-nav {
-      align-self: center;
-      height: 7vh;
-      width: 20%;
-      border-radius: 3vh 0;
-      border: solid $ash-grey .5vh
     }
   }
 }
