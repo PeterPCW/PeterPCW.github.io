@@ -43,15 +43,6 @@ main {
 
 .content {
   max-width: 87vw;
-  margin: 100px 0;
-  padding: 100px 0;
-}
-
-.empty {
-  max-width: 87vw;
-  min-height: 10vh;
-  margin: 100px 0;
-  padding: 100px 0;
 }
 
 #intro {
@@ -225,6 +216,7 @@ main {
         width: 54vw;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         .project-skills.mapped-skills {
           flex: 1;
           flex-wrap: nowrap;
@@ -251,9 +243,6 @@ main {
               width: 100%;
             }
             .magnify{
-              position: 'relative';
-              top: 0;
-              left: 0;
               img {
                 height: 2vw;
                 width: 2vw;
@@ -277,10 +266,9 @@ main {
               margin: 0;
             }
             button {
-              background: $davy-grey;
-              border: solid $ash-grey 1vh;
+              background: $ash-grey;
               border-radius: 3vh;
-              height: 3vh;
+              height: 5vh;
             }
             button:focus {
               outline: none;
@@ -296,6 +284,7 @@ main {
         margin: 0 1vw;
         .proj-text{
           flex: 8;
+          align-self: center;
           h3 {
             margin: 1vh 0;
             color: $orange;
@@ -318,7 +307,9 @@ main {
             height: 10vh;
             margin: 0;
             padding: 1vh;
-            background: $ash-grey;
+            img {
+              fill: $ash-grey;
+            }
           }
         }
       }
@@ -462,7 +453,7 @@ main {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: auto;
+  width: 80%;
   max-width: min(50vh, 50vw);
   position: relative;
   padding: -5vw;
@@ -827,7 +818,7 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 33vw;
+    width: 87%;
     max-width: 87%;
     min-width: 87%;
   }

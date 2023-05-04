@@ -14,7 +14,7 @@ function App() {
   return <main data-testid="app-component">
     <Intro />
     <Nav />
-    <Spacer />
+    {/*<Spacer />*/}
     <Projects />
     <Skills />
     <Exp />

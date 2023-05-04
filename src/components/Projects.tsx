@@ -87,7 +87,6 @@ const Projects = () => {
         <button className='proj-button' onClick={handleRightButton}>⁍</button>
       </div>
       <Slides project={projectArr[projectIndex]} />
-      <div className="empty"></div>
     </section>
   </section>
 }
@@ -98,10 +97,10 @@ const Slides = ({ project }: SlidesProps) => {
   if (project.name === undefined || !project.name) {
     return
   } else return <div className='proj-cont'>
+    <h2><span className="orange">{'//'}</span> Projects</h2>
     <div key={project.name} className="project-box">
-      <h2><span className="orange">{'//'}</span> Projects</h2>
       <article className="pt-one">
-        < Image image={project.images} />
+        <Image image={project.images} />
         <div className="mapped-skills project-skills">
           {project.techs.map((tech, i) => {
             return <div key={i} className="skill-box">
@@ -189,9 +188,9 @@ const Image = ({ image }: ImageProps) => {
           } else {
             return <div key={i}>
               <img className='thumb' src={image.img} onClick={() => showImage()} />
-              <div className="magnify">
+              {/*<div className="magnify">
                 <img src={magnify} alt="Magnify" />
-              </div>
+              </div>*/}
             </div>
           }
 
@@ -251,28 +250,6 @@ interface Projects {
   }[];
   isActive: string;
 }
-
-/*interface ProjectProps {
-  project: Project;
-}
-
-type ProjectType = {
-  name: string;
-  techs: {
-    name: string;
-    svg: any;
-  }[];
-  type: string;
-  days: number;
-  desc: string;
-  github: string;
-  page: string;
-  images: {
-    img: any;
-    desc: string;
-  }[];
-  isActive: string;
-};*/
 
 interface Slide {
   img: string;

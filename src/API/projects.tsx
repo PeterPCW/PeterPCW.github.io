@@ -1,121 +1,89 @@
 import skillArray from './skills'
 
+import thissite from '../images/proj-imgs/ThisSite.png'
+import linkedin from '../images/proj-imgs/LinkedInSearchExtension.png'
+import projdefault from '../images/proj-imgs/projDefault.png'
+import react from '../images/proj-imgs/ReactAWS.png'
+import python from '../images/proj-imgs/PythonPreprocess.png'
+import redis from '../images/proj-imgs/RedisCache.png'
 import bpb from '../images/exp-logos/byte+bit.png'
-/* TODO
-
-import projOneOneScr from '../images/proj-imgs/proj-1/screenshot-1.png'
-import projOneTwoScr from '../images/proj-imgs/proj-1/screenshot-2.png'
-import projOneThreeScr from '../images/proj-imgs/proj-1/screenshot-3.png'
-import projOneFourScr from '../images/proj-imgs/proj-1/screenshot-4.png'
-import projOneFiveScr from '../images/proj-imgs/proj-1/screenshot-5.png'
-
-import projTwoOneScr from '../images/proj-imgs/proj-2/screenshot-1.png'
-import projTwoTwoScr from '../images/proj-imgs/proj-2/screenshot-2.png'
-import projTwoThreeScr from '../images/proj-imgs/proj-2/screenshot-3.png'
-import projTwoFourScr from '../images/proj-imgs/proj-2/screenshot-4.png'
-
-import projThreeOneScr from '../images/proj-imgs/proj-3/screenshot-1.png'
-import projThreeTwoScr from '../images/proj-imgs/proj-3/screenshot-2.png'
-import projThreeThreeScr from '../images/proj-imgs/proj-3/screenshot-3.png'
-import projThreeFourScr from '../images/proj-imgs/proj-3/screenshot-4.png'
-import projThreeFiveScr from '../images/proj-imgs/proj-3/screenshot-5.png'
-
-import projFourOneScr from '../images/proj-imgs/proj-4/screenshot-1.png'
-import projFourTwoScr from '../images/proj-imgs/proj-4/screenshot-2.png'
-import projFourThreeScr from '../images/proj-imgs/proj-4/screenshot-3.png'
-import projFourFourScr from '../images/proj-imgs/proj-4/screenshot-4.png'*/
 
 const projects = [
-    {
-      name: 'ChatGPT Chrome Extension',
-      techs: [
-        skillArray[0], skillArray[1], skillArray[2]
-      ],
-      type: 'Solo Project',
-      days: 5,
-      desc: 'A chrome extension to connect with OpenAI API and save responses to files. Initially for frequent use and specifically code analysis, now with ChatGPT out it is mostly a store of prompts. I did update to the chat completion with the 3.5 API available.',
-      github: 'https://github.com/PeterPCW/aiCodeDoc',
-      page: '',
-      images: [
-        { img: bpb, desc: 'Not the right image' }
-      ],
-      isActive: 'is-active'
-    }
-    /*{
-    name: 'Sushi Sweeper',
+  {
+    name: 'This Site!',
     techs: [
-      skillArray[0], skillArray[1], skillArray[4]
+      skillArray[0], skillArray[1], skillArray[2], skillArray[5], skillArray[6], skillArray[7], skillArray[17], skillArray[19]
     ],
     type: 'Solo Project',
-    days: 5,
-    desc: 'A game based on Minesweeper built in JavaScript, involving recursion and 1D array logic. Features include changeable board size and difficulty setting.',
-    github: 'https://github.com/ProDigresser/project-1',
-    page: 'https://prodigresser.github.io/project-1/',
+    days: 10,
+    desc: 'This counts right? I adapted it from ~3 year old code, upgraded to Typescript, added linting and tests, imported a Python chart,... the list goes on. All of the details are in the README.',
+    github: 'https://github.com/PeterPCW/PeterPCW.github.io',
+    page: 'https://peterpcw.github.io/',
     images: [
-      { img: projOneOneScr, desc: 'Game Board And Options' }, 
-      { img: projOneTwoScr, desc: 'Game In Progress (Medium Board)' }, 
-      { img: projOneFiveScr, desc: 'Game In Progress (Small Board)' },
-      { img: projOneThreeScr, desc: 'Game Victory' }, 
-      { img: projOneFourScr, desc: 'Game Over, High Scores' }
+      { img: thissite, desc: "That's me!" }
     ],
     isActive: 'is-active'
   },
   {
-    name: 'Just Eat App',
+    name: 'LinkedIn Search Extension',
     techs: [
-      skillArray[5], skillArray[3], skillArray[11], skillArray[13]
+      skillArray[0], skillArray[1], skillArray[2], skillArray[5], skillArray[6], skillArray[18]
     ],
-    type: 'Pair Project',
-    days: 2,
-    desc: 'A Just Eat React app that pulls from the JustEat API, whilst utilising NPM and WebPack. We pair programmed  for the core of the project and then coded independently.',
-    github: 'https://github.com/ProDigresser/project-2',
-    page: 'https://prodigresser.github.io/project-2/',
+    type: 'Solo Project',
+    days: 1,
+    desc: 'A chrome extension to quickly launch a LinkedIn search. v1 is for job hunting and finding connections at the companies. v2 might upgrade this to an email lead gen SaaS product. 👀',
+    github: 'https://github.com/PeterPCW/LinkedIn-Search-From-Anywhere',
+    page: 'https://github.com/PeterPCW/LinkedIn-Search-From-Anywhere',
     images: [
-      { img: projTwoOneScr, desc: 'Landing Page' }, 
-      { img: projTwoTwoScr, desc: 'Restaurant List' }, 
-      { img: projTwoThreeScr, desc: 'Restaurant Profile' }, 
-      { img: projTwoFourScr, desc: 'Restaurant Details' }
+      { img: linkedin, desc: 'Extension Popup' }
     ],
     isActive: ''
   },
   {
-    name: 'Seeded.',
+    name: 'GPT Technical Interviews',
     techs: [
-      skillArray[5], skillArray[6], skillArray[7], skillArray[14]
+      skillArray[11]
     ],
-    type: '4 Person Team',
-    days: 7,
-    desc: 'Using the MERN framework, we developed a feature rich app that helps people find plant sitters, integrating a map and social media components. My focus was on the back-end — designing endpoints, pulling from external APIs and serving to the front end.',
-    github: 'https://github.com/ProDigresser/project-3',
-    page: 'https://prodigresser-seeded.herokuapp.com/',
+    type: 'Solo Project',
+    days: 3,
+    desc: 'A series of technical interview questions and answers generated by ChatGPT. I initially used these for studying and then realized that no one asks questions this hard. 😅',
+    github: 'https://github.com/PeterPCW/GPT-Technical-Interviews',
+    page: 'https://github.com/PeterPCW/GPT-Technical-Interviews',
     images: [
-      
-      { img: projThreeOneScr, desc: 'Landing Page' }, 
-      { img: projThreeTwoScr, desc: 'Home Page' }, 
-      { img: projThreeThreeScr, desc: 'User Map and Navigation' }, 
-      { img: projThreeFourScr, desc: 'Message Board' }, 
-      { img: projThreeFiveScr, desc: 'Plant Library API' }
+      { img: react, desc: 'React Frontend AWS' },{ img: python, desc: 'Scikit-learn Proprocess Data' },{ img: redis, desc: 'Node Redis Timed Cache' }
     ],
     isActive: ''
   },
   {
-    name: 'HowTo-Tube',
+    name: 'Prompt Saver Extension',
     techs: [
-      skillArray[8], skillArray[9], skillArray[15], skillArray[10]
+      skillArray[0], skillArray[1], skillArray[2], skillArray[5], skillArray[6], skillArray[11], skillArray[18]
     ],
-    type: '3 Person Team',
-    days: 6,
-    desc: 'In this project, we designed a Python back end with Flask & PostgreSQL and a React.js front end for a self-improvement video site. We developed the database as a group before designing features independently. My areas of input were on the back end — designing the serializers and controllers.',
-    github: 'https://github.com/ProDigresser/project-4',
-    page: 'https://howto-tube.herokuapp.com/',
+    type: 'Solo Project',
+    days: 5,
+    desc: 'A chrome extension to save prompts found online. It connects with OpenAI API to test them if desired, but the point is to quickly save responses. Updated to the chat completion with the 3.5 API available. This still needs some work to update from the original narrower use case so no image yet.',
+    github: 'https://github.com/PeterPCW/promptSaver',
+    page: 'https://github.com/PeterPCW/promptSaver',
     images: [
-      { img: projFourOneScr, desc: 'Landing Page' } , 
-      { img: projFourTwoScr, desc: 'Signup Page' } , 
-      { img: projFourThreeScr, desc: 'User Videos and Suggestions' } , 
-      { img: projFourFourScr, desc: 'User/Following List' } 
+      { img: projdefault, desc: 'No images yet' }
     ],
     isActive: ''
-  }*/
+  },
+  {
+    name: 'Byte+Bit Site',
+    techs: [
+      skillArray[0], skillArray[1], skillArray[2], skillArray[5], skillArray[6], skillArray[12], skillArray[13], skillArray[15], skillArray[17], skillArray[19]
+    ],
+    type: 'Solo Project',
+    days: 10,
+    desc: 'Shrouded in mystery, this site is not ready to show just yet. It will be an example of a full-stack site using microservices architecture and hosted on AWS. This is where I will host and advertize SaaS products once they reach monetizable quality. Stay tuned!',
+    github: '',
+    page: '',
+    images: [
+      { img: bpb, desc: 'Old icon, might need a Designer' }
+    ],
+    isActive: ''
+  },
 ]
 
 export default projects
