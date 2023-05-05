@@ -466,13 +466,10 @@ main {
   }
 }
 .graphed-skills {
-  display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   width: 37%;
   max-width: 37%;
-  position: relative;
 }
 .mapped-skills {
   display: flex;
