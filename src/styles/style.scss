@@ -418,6 +418,7 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        max-width: 200px;
         margin: 0 2vw;
         color: $orange;
         h3 {
@@ -426,8 +427,7 @@ main {
         .learning-skills {
           display: flex;
           flex-direction: row;
-          width: 20vh;
-          max-width: 200px;         
+          width: 20vh;         
           .skill-box{
             width: 7vh;
             height: 7vh;
@@ -465,10 +465,11 @@ main {
   }
 }
 .graphed-skills {
+  display: flex;
   justify-content: center;
   align-items: center;
-  width: 37%;
-  max-width: 37%;
+  width: 35vw;
+  height: 28vw;
 }
 .mapped-skills {
   display: flex;
@@ -813,6 +814,7 @@ main {
         flex-direction: column;
         .learning{
           margin: 2vw 1vw;
+          max-width: none;
           h3 {
             width: 15vw;
           }
