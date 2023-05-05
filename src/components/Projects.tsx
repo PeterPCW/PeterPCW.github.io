@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import projects from '../API/projects'
 import link from '../images/svg-icons/link-new.svg'
-import github from '../images/svg-icons/github-plain.svg'
+import github from '../images/svg-icons/github-original.svg'
 // import magnify from '../images/exp-logos/magnify.svg'
 import exit from '../images/exp-logos/exit.svg'
 
