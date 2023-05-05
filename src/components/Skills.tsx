@@ -33,7 +33,7 @@ function Skills() {
               <li>a team builder, proactively supporting and growing others</li>
               <li>an avid scripter, automating to maximize efficiency and consistency</li>
               <li>a keen designer, going the extra mile to get things just right</li>
-              <li>a meticulous documenter, making sure others can follow the trails I blaze</li>
+              <li>a meticulous documenter, ensuring others can follow the trails I blaze</li>
             </ul>
           </div>
           <div className="learning">
