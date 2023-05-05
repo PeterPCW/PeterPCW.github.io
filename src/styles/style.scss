@@ -29,7 +29,7 @@ main > .section {
 }
 
 main {
-  max-width: 93vw;
+  max-width: 100%;
   margin: auto;
 
 }
@@ -818,7 +818,8 @@ main {
             width: 15vw;
           }
           .learning-skills {
-            width:80%
+            width:80%;
+            max-width: none;
           }
         }
       }
