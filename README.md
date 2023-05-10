@@ -8,13 +8,12 @@ Plans (general):
 * ~~Convert to Typescript~~
 * ~~Automate deploy steps~~
 * ~~Add linting/testing~~
-* ~~Update content to be~~ about me (~65%)
+* ~~Update content to be about me~~
 * ~~Restyle to my lik~~ing (~85%)
 * Document code and steps to build/use
 
 Next up (specific):
 
-* Pull in project info
 * Add/fix images
 
 Dreams (TDB):

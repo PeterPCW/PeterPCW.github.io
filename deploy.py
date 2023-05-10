@@ -3,19 +3,20 @@ import os
 # import imgkit
 import time
 import msvcrt
+import argparse
 
-# Run the API tests
-# os.system("coverage run -m pytest")
+# Parse command-line arguments
+parser = argparse.ArgumentParser()
+parser.add_argument('--no-build', action='store_true', help='skip the build step')
+args = parser.parse_args()
 
-# Compile the ExperienceChart.py file into ExperienceChart.html
-os.system("cd src/python/bokeh && python ExperienceChart.py --no-browser")
-# os.system("cd python/bokeh && bokeh serve ExperienceChart.py --save --show --port 5001 --allow-websocket-origin=peterpcw.github.io:443 --allow-websocket-origin=localhost:5001 && cd .. && cd ..")
+# Build the React app if --no-build is not specified
+if not args.no_build:
+    # Back to root directory
+    os.system('cd .. && cd .. && cd ..')
 
-# Back to root directory
-os.system('cd .. && cd .. && cd ..')
-
-# Build the React app - includes eslint and jest per package.json
-os.system("npm run build")
+    # Build the React app - includes eslint and jest per package.json
+    os.system("npm run build")
 
 def get_commit_message(timeout=30):
     start_time = time.time()
