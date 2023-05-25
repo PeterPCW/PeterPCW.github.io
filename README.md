@@ -9,14 +9,10 @@ Plans (general):
 * ~~Automate deploy steps~~
 * ~~Add linting/testing~~
 * ~~Update content to be about me~~
-* ~~Restyle to my lik~~ing (~85%)
+* ~~Restyle to my liking~~
 * Document code and steps to build/use
 
-Next up (specific):
+V2:
 
-* Add/fix images
-
-Dreams (TDB):
-
-* Overhaul design with MUI
-* We'll see after that
+* I've found better sites to model from so I don't plan any major changes here
+* I will stash this in a V1 branch and then start working on a complete overhaul down the road (a few other projects are higher in the queue)
