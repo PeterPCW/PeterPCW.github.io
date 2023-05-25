@@ -30,7 +30,8 @@ function Skills() {
             <p>My technical skills are on display above and across this simple portfolio site.</p>
             <p>Beyond the terminal or IDE I am:</p>
             <ul>
-              <li>a team builder, proactively supporting and growing others</li>
+              <li>a team builder, proactively helping and growing others</li>
+              <li>a seasoned supporter, engaging with empathy while staying calm, clear, and concise</li>
               <li>an avid scripter, automating to maximize efficiency and consistency</li>
               <li>a keen designer, going the extra mile to get things just right</li>
               <li>a meticulous documenter, ensuring others can follow the trails I blaze</li>

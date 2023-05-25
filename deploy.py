@@ -36,7 +36,3 @@ def get_commit_message(timeout=30):
 print('Enter a commit message (optional, 30s timeout for "commit from deploy", careful no backspace!):')
 commit_message = get_commit_message()
 os.system(f'git add . && git commit -m "{commit_message}" && git push')
-
-#### Old Code #### replace with copy to prod on test pass or something
-#print('# Add gh-pages remote and deploy to gh-pages')
-#os.system("git remote add origin https://github.com/PeterPCW/Resume-Site.git && npm run deploy")

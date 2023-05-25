@@ -12,7 +12,7 @@ function Intro() {
         <h1 className="title"><span className="orange">{'//'}</span> Peter Williams</h1>
         <TypeAnimation
           sequence={[
-            'SaaS Developer',
+            'Software Developer',
             () => {
               // console.log('Sequence completed'); Place optional callbacks anywhere in the array
             }
@@ -25,7 +25,7 @@ function Intro() {
         <TypeAnimation
           sequence={[
             1100, // Waits 1/3s
-            'Prompt Engineer',
+            'Customer Support Champion',
             () => {
               // console.log('Sequence completed'); Place optional callbacks anywhere in the array
             }
@@ -38,7 +38,7 @@ function Intro() {
         <TypeAnimation
           sequence={[
             2200, // Waits 1/3s
-            'Customer Champion',
+            'Prompt Engineer',
             () => {
               // console.log('Sequence completed'); Place optional callbacks anywhere in the array
             }

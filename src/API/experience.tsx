@@ -20,15 +20,15 @@ const experience = [
   {
     name: 'Systems Software, Hardware Test, Product Support',
     date: '2011', end: '2023',
-    desc: 'I held multiple engineering roles during 12 years with NI, migrating into deeper technical software roles with each jump. My favorite parts were working directly with customers and automating processes.',
+    desc: 'I held multiple engineering roles during 12 years with NI working mainly in LabVIEW, C++, and TestStand. I made multiple moves advancing to deeper technical roles. My favorite parts were working directly with customers and automating processes.',
     img: ni,
     org: 'National Instruments',
     isActive: ''
   },
   {
-    name: 'Self Guided // Freelance',
+    name: 'Self Guided // Personal',
     date: 'Sept 2017', end: 'Present',
-    desc: 'My language exploration started at Codecademy but these days I learn through building and troubleshooting projects. I have created apps, websites, and bots to automate tasks and wrap them in amazing user experiences.',
+    desc: 'My language exploration started at Codecademy but these days I learn through building and troubleshooting projects. I have created apps, websites, bots, and browser extensions to automate workflows and wrap them in amazing user experiences.',
     img: ca,
     org: 'Codecademy',
     isActive: ''
