@@ -225,6 +225,11 @@ main {
           height: 10vh;
           justify-content: center;
           width: 100%;
+          .skill-box {
+            width: 7vw;
+            height: 7vw;
+            max-width: 65px;
+          }
         }
         .border {
           display: flex;
@@ -778,17 +783,11 @@ main {
     .project-box{
       width: 100%;
       .pt-one {
-        width: 100%;
+        width: 80%;
         justify-content: center;
         .proj-img {
-          width: 100%;
+          width: 80%;
           justify-content: center;
-        }
-        .project-skills {
-          .skills-box {
-            width: 7vw;
-            height: 7vw;
-          }
         }
       }
       .pt-two {
