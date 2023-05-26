@@ -171,7 +171,10 @@ main {
   width: 3vw;
   color: $ash-grey;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 3rem;
+  .proj-tab {
+    font-size: 1.5rem;
+  }
 }
 .proj-button:focus {
   outline: 0;
