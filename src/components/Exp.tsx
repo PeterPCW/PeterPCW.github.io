@@ -74,9 +74,9 @@ function Exp() {
   return <section className="section" id="exp">
     <section className="content">
       <div className='buttons'>
-        <button className='proj-button proj-tab' onClick={handleLeftButton}>⁌</button>
+        <button className='proj-button' onClick={handleLeftButton}>⁌</button>
         {expArr.filter((exp, i) => i % 2 === 0).map((exp, i) => {
-          return <button value={i} className={`${exp.isActive} proj-button`} onClick={handleChangeProj} key={i}>⌬</button>
+          return <button value={i} className={`${exp.isActive} proj-tab proj-button`} onClick={handleChangeProj} key={i}>⌬</button>
         })}
         <button className='proj-button' onClick={handleRightButton}>⁍</button>
       </div>

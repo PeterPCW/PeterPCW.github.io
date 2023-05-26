@@ -82,7 +82,7 @@ const Projects = () => {
       <div className='buttons'>
         <button className='proj-button' onClick={handleLeftButton}>⁌</button>
         {projectArr.map((proj, i) => {
-          return <button value={i} className={`${proj.isActive} proj-button proj-tab`} onClick={handleChangeProj} key={i}>⌬</button>
+          return <button value={i} className={`${proj.isActive} proj-tab proj-button`} onClick={handleChangeProj} key={i}>⌬</button>
         })}
         <button className='proj-button' onClick={handleRightButton}>⁍</button>
       </div>
