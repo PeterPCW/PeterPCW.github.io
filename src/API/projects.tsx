@@ -12,7 +12,7 @@ const projects = [
   {
     name: 'This Site!',
     techs: [
-      skillArray[0], skillArray[1], skillArray[2], skillArray[5], skillArray[6], skillArray[7], skillArray[17], skillArray[19]
+      skillArray[1], skillArray[2], skillArray[5], skillArray[6], skillArray[10], skillArray[11], skillArray[17], skillArray[19]
     ],
     type: 'Solo Project',
     days: 10,
@@ -27,7 +27,7 @@ const projects = [
   {
     name: 'LinkedIn Search Extension',
     techs: [
-      skillArray[0], skillArray[1], skillArray[2], skillArray[5], skillArray[6], skillArray[18]
+      skillArray[1], skillArray[2], skillArray[5], skillArray[10], skillArray[11], skillArray[17], skillArray[18]
     ],
     type: 'Solo Project',
     days: 1,
@@ -42,7 +42,7 @@ const projects = [
   {
     name: 'GPT Technical Interviews',
     techs: [
-      skillArray[11]
+      skillArray[15]
     ],
     type: 'Solo Project',
     days: 3,
@@ -57,7 +57,7 @@ const projects = [
   {
     name: 'Prompt Saver Extension',
     techs: [
-      skillArray[0], skillArray[1], skillArray[2], skillArray[5], skillArray[6], skillArray[11], skillArray[18]
+      skillArray[1], skillArray[2], skillArray[5], skillArray[10], skillArray[11], skillArray[15], skillArray[17], skillArray[18]
     ],
     type: 'Solo Project',
     days: 5,
@@ -72,7 +72,7 @@ const projects = [
   {
     name: 'Byte+Bit Site',
     techs: [
-      skillArray[0], skillArray[1], skillArray[2], skillArray[5], skillArray[6], skillArray[12], skillArray[13], skillArray[15], skillArray[17], skillArray[19]
+      skillArray[1], skillArray[2], skillArray[3], skillArray[4], skillArray[5], skillArray[6], skillArray[8], skillArray[10], skillArray[11], skillArray[12], skillArray[17], skillArray[19]
     ],
     type: 'Solo Project',
     days: 10,
