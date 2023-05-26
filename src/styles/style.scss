@@ -624,15 +624,13 @@ main {
     flex-direction: column;
     padding: 2vh;
     .about-box {
-      margin: 2vh;
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
       .pt-one {
-        width: 15vw;
+        width: 10vw;
         min-width: 75px;
-        margin: 2vw;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -668,7 +666,7 @@ main {
         display: flex;
         justify-content: center;
         padding: 0;
-        margin: 0 3vw;
+        margin: 0 2vw;
         max-width: 500px;
         background-color: $davy-grey;
         .img-cont {
@@ -680,7 +678,7 @@ main {
         
       }
       .pt-three {
-        width: 15vw;
+        width: 20vw;
         div {
           display: flex;
           flex-direction: column;
@@ -735,7 +733,7 @@ main {
       .abs {
         pointer-events: none;
         position: absolute;
-        font-size: 3rem;
+        font-size: 8.7rem;
         color: $davy-grey;
         transition: 0.3s;
       }
