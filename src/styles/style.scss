@@ -642,7 +642,7 @@ main {
           align-items: stretch;
           justify-content: space-evenly;
           margin: 2vh 0;
-          width: 15vw;
+          width: 100%;
           min-width: 100px;
           .interest-tab.is-active {
             background-color:  $orange;
