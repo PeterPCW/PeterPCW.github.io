@@ -178,29 +178,23 @@ const Image = ({ image }: ImageProps) => {
   }
 
   return <div className="proj-img" >
-    <div
-      className="img-cont"
-    >
-      <div className="border">
-        {imageArr.map((image, i) => {
-          if (i !== imageIndex) {
-            return
-          } else {
-            return <div key={i}>
-              <img className='thumb' src={image.img} onClick={() => showImage()} />
-              {/*<div className="magnify">
-                <img src={magnify} alt="Magnify" />
-              </div>*/}
-            </div>
-          }
+    <div className="img-cont">
+      {imageArr.map((image, i) => {
+        if (i !== imageIndex) {
+          return
+        } else {
+          return <div className="border" key={i}>
+            <img className='thumb' src={image.img} onClick={() => showImage()} />
+            {/*<div className="magnify">
+              <img src={magnify} alt="Magnify" />
+            </div>*/}
+          </div>
+        }
 
-        })}
-      </div>
+      })}
       {lightboxDisplay ?
         <div id="lightbox" >
-          <div
-            className="lightbox-cont" onClick={hideLightBox}
-          >
+          <div className="lightbox-cont" onClick={hideLightBox}>
             {imageArr.map((image, i) => {
               if (i !== imageIndex) {
                 return
@@ -223,7 +217,6 @@ const Image = ({ image }: ImageProps) => {
           </div>
         </div>
         : ''}
-
     </div>
     <div className="descbar">
       <button onClick={handleLeftButton} ><span className="orange">&#60;&#60;</span></button>

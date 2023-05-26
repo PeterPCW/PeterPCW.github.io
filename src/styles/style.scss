@@ -42,18 +42,17 @@ main {
 }
 
 .content {
-  max-width: 87vw;
+  max-width: 100%;
 }
 
 #intro {
-  .content {
-    width: 87vw;
-    max-width: 87vw;
-  }
   height: 90vh;
   min-height: 400px;
   background: url(../images/svg-bgs/HoneycombPage01.svg) no-repeat center center, linear-gradient(0deg, #797979 0%, $ash-grey 100%);;
   background-size: cover, auto;
+  .content {
+    max-width: 87vw;
+  }
   .image-container {
     width: 33vw;
     height: 33vw;
@@ -571,7 +570,7 @@ main {
             justify-content: center;
             .logo {
               background-color: $davy-grey;
-              border-radius: 3vh;
+              border-radius: 2vw;
               height: min(20vh, 12vw);
               width: min(20vh, 12vw);
               padding: 1vh;
@@ -786,16 +785,22 @@ main {
     .project-box{
       width: 100%;
       .pt-one {
-        width: 80%;
+        width: 60%;
         justify-content: center;
         .proj-img {
-          width: 80%;
+          width: 60%;
           justify-content: center;
+        }
+        .project-skills.mapped-skills {
+          .skill-box {
+            width: 5vw;
+            height: 5vw;
+          }
         }
       }
       .pt-two {
         align-items: center;
-        width: 100%;
+        width: 40%;
         height: 20vh;
         .proj-text {
           font-size: .75rem;
@@ -828,6 +833,10 @@ main {
           .learning-skills {
             width:100%;
             max-width: none;
+            .skill-box {
+              width: 5vw;
+              height: 5vw;
+            }
           }
         }
       }
