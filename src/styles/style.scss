@@ -297,12 +297,13 @@ main {
         margin: 0 1vw;
         align-items: center;
         width: 40%;
-        height: 20vh;
+        height: 100%;
         .proj-text{
+          height: auto;
           flex: 8;
           align-self: center;
           justify-self: center;
-          padding: 15vh 0 0;
+          padding: 5vw 0 0;
           h3 {
             margin: 1vh 0;
             color: $orange;
