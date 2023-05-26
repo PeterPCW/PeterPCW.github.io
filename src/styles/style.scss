@@ -169,9 +169,14 @@ main {
   color: $ash-grey;
   font-weight: 700;
   font-size: 3rem;
-  .proj-tab {
-    font-size: 1.5rem;
-  }
+}
+.proj-tab {
+  background: none;
+  border: none;
+  width: 3vw;
+  color: $ash-grey;
+  font-weight: 700;
+  font-size: 1.75rem;
 }
 .proj-button:focus {
   outline: 0;
