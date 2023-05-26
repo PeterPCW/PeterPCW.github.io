@@ -31,7 +31,8 @@ main > .section {
 main {
   max-width: 100%;
   margin: auto;
-
+  border-left: solid $orange 1vh;
+  border-right: solid $orange 1vh;
 }
 
 .section, .content {
@@ -734,7 +735,7 @@ main {
       .abs {
         pointer-events: none;
         position: absolute;
-        font-size: 133px;
+        font-size: 3rem;
         color: $davy-grey;
         transition: 0.3s;
       }
@@ -772,7 +773,7 @@ main {
 }
 
 
-@media (max-width:1400px), (hover:none), (orientation: portrait) {
+@media (max-width:1000px), (hover:none), (orientation: portrait) {
   #nav {
     .content {
       .navbar {
@@ -929,13 +930,6 @@ main {
     min-height: 0%;
   }
   
-}
-
-@media (min-width: 1400px) {
-  main {
-    border-left: solid $orange 1vh;
-    border-right: solid $orange 1vh;
-  }
 }
 
 @media (hover:none) {
