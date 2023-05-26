@@ -4,7 +4,7 @@ import { TypeAnimation } from 'react-type-animation'
 
 function Intro() {
 
-  const h2style = { margin: '16.5px 16.5px 16.5px 60px', fontSize: '2em', fontWeight: 'bold', display: 'inline-block' }
+  const h2style = { margin: '1vw 1vw 1vw 4vw', fontSize: '1.75rem', fontWeight: 'bold', display: 'inline-block' }
 
   return <section className="section" id="intro">
     <section className="content">
