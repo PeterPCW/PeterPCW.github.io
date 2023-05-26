@@ -458,8 +458,8 @@ main {
             padding: 1vh;
             .name-container {
               position: absolute;
-              height: 9vh;
-              width: 9vh;
+              height: 100%;
+              width: 100%;
               visibility: hidden;
               opacity: 0;
               border-radius: 3vh;
@@ -511,8 +511,8 @@ main {
   padding: 1vh;
   .name-container {
     position: absolute;
-    height: 9vh;
-    width: 9vh;
+    height: 100%;
+    width: 100%;
     visibility: hidden;
     opacity: 0;
     border-radius: 3vh;
