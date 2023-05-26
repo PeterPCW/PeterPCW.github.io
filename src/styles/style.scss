@@ -733,7 +733,7 @@ main {
       .abs {
         pointer-events: none;
         position: absolute;
-        font-size: 8.7rem;
+        font-size: 6rem;
         color: $davy-grey;
         transition: 0.3s;
       }
@@ -833,16 +833,11 @@ main {
           margin: 2vw 1vw;
           max-width: none;
           h3 {
-            width: 15vw;
+            width: 100%;
           }
           .learning-skills {
             width:100%;
             max-width: none;
-            .skill-box {
-              width: 5vw;
-              height: 5vw;
-              padding: 1vw;
-            }
           }
         }
       }
