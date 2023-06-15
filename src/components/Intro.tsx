@@ -25,7 +25,7 @@ function Intro() {
         <TypeAnimation
           sequence={[
             1100, // Waits 1/3s
-            'Customer Support Champion',
+            'Automation Expert',
             () => {
               // console.log('Sequence completed'); Place optional callbacks anywhere in the array
             }
