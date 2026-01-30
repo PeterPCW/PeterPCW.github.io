@@ -2,13 +2,41 @@
 // Portfolio Site JavaScript
 // ==========================================
 
+const HOVER_COLORS = [
+    '#FF5700', // Orange
+    '#00FF00', // Green
+    '#8500FF', // Purple
+    '#FF0085', // Pink
+    '#0085FF'  // Blue
+];
+
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize all components
     initNavigation();
     initSmoothScroll();
     initScrollAnimations();
-    initContactForm();
+    initRandomButtonColors();
 });
+
+// ==========================================
+// Random Button Colors
+// ==========================================
+function initRandomButtonColors() {
+    const primaryButtons = document.querySelectorAll('.btn-primary');
+    
+    primaryButtons.forEach(btn => {
+        btn.addEventListener('mouseenter', () => {
+            const randomColor = HOVER_COLORS[Math.floor(Math.random() * HOVER_COLORS.length)];
+            btn.style.backgroundColor = randomColor;
+            btn.style.boxShadow = `0 10px 30px -10px ${randomColor}66`;
+        });
+        
+        btn.addEventListener('mouseleave', () => {
+            btn.style.backgroundColor = '#FF5700';
+            btn.style.boxShadow = '0 10px 30px -10px rgba(255, 87, 0, 0.4)';
+        });
+    });
+}
 
 // ==========================================
 // Navigation
@@ -31,16 +59,6 @@ function initNavigation() {
             });
         });
     }
-    
-    // Navbar background on scroll
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar?.classList.add('scrolled');
-        } else {
-            navbar?.classList.remove('scrolled');
-        }
-    });
 }
 
 // ==========================================
@@ -86,7 +104,7 @@ function initScrollAnimations() {
     
     // Observe elements
     const animateElements = document.querySelectorAll(
-        '.project-card, .philosophy-card, .stack-category, .section-title'
+        '.project-card, .philosophy-card, .section-title'
     );
     
     animateElements.forEach(el => {
@@ -105,79 +123,4 @@ function initScrollAnimations() {
         }
     `;
     document.head.appendChild(style);
-}
-
-// ==========================================
-// Contact Form
-// ==========================================
-function initContactForm() {
-    const form = document.getElementById('contact-form');
-    if (!form) return;
-    
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData);
-        
-        // Show loading state
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-        
-        // Simulate form submission (replace with actual endpoint)
-        try {
-            // In production, send to your form handler
-            // await fetch('/api/contact', {
-            //     method: 'POST',
-            //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify(data)
-            // });
-            
-            // For demo, just show success
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            
-            alert('Thanks for reaching out! I\'ll get back to you soon.');
-            form.reset();
-        } catch (error) {
-            console.error('Form submission error:', error);
-            alert('Something went wrong. Please try again.');
-        } finally {
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        }
-    });
-}
-
-// ==========================================
-// Utility Functions
-// ==========================================
-
-// Debounce function for performance
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Get current section based on scroll position
-function getCurrentSection() {
-    const sections = document.querySelectorAll('section[id]');
-    const scrollPos = window.scrollY + 100;
-    
-    for (const section of sections) {
-        const top = section.offsetTop;
-        const height = section.offsetHeight;
-        if (scrollPos >= top && scrollPos < top + height) {
-            return section.getAttribute('id');
-        }
-    }
-    return null;
 }
