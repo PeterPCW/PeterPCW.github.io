@@ -71,4 +71,12 @@ Update the stack categories in `index.html` under the `stack-grid` section.
 
 ---
 
+## Consolidation
+
+**Interested in consolidating this functionality?**
+
+If you're a maintainer considering rolling similar functionality into your core package, I'm happy to point users your direction instead. [Open an issue](https://github.com/peterwsl77/portfolio-site/issues) to discuss.
+
+---
+
 Built for Peter W. — Developer & Builder
