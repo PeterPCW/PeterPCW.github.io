@@ -29,7 +29,7 @@ portfolio-site/
 
 1. Push all files to your GitHub Pages repository (PeterPCW/PeterPCW.github.io)
 2. Ensure the repository is set to publish from `main` branch
-3. Site will be live at `https://peterpcw.github.io`
+3. Site will be live at https://peterpcw.github.io
 
 ## Customization
 
