@@ -36,31 +36,88 @@
                 <h1 class="hero-title">Peter W.</h1>
                 <p class="hero-subtitle">Building at the intersection of <span class="highlight">AI</span> and <span class="highlight">software development</span></p>
                 <p class="hero-description">Developer, automator, and open source maintainer. I ship code, embrace AI workflows, and revive abandoned but valuable tools for the modern era.</p>
-                <div class="hero-cta">
+                <div class="hero-cta glow-hover">
                     <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                    <a href="#contact" class="btn btn-secondary glow-hover">Get in Touch</a>
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="code-window">
-                    <div class="code-header">
-                        <span class="dot red"></span>
-                        <span class="dot yellow"></span>
-                        <span class="dot green"></span>
-                        <span class="code-title">developer.ts</span>
-                    </div>
-                    <pre class="code-content"><code><span class="keyword">import</span> { <span class="function">build</span>, <span class="function">automate</span>, <span class="function">ship</span> } <span class="keyword">from</span> <span class="string">'@peterw/ai-workflow'</span>;
+                <div class="terminal-wrapper">
+                    <div class="code-window" id="code-window">
+                        <div class="code-header">
+                            <div class="window-controls">
+                                <button class="window-btn btn-close" title="Close">
+                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <line x1="2" y1="2" x2="8" y2="8"/>
+                                        <line x1="8" y1="2" x2="2" y2="8"/>
+                                    </svg>
+                                </button>
+                                <button class="window-btn btn-minimize" title="Minimize">
+                                    <svg width="10" height="2" viewBox="0 0 10 2" fill="currentColor">
+                                        <rect width="10" height="2" rx="0.5"/>
+                                    </svg>
+                                </button>
+                                <button class="window-btn btn-maximize" title="Maximize">
+                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <rect x="1" y="1" width="8" height="8" rx="1"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="terminal-icon">
+                                <span class="terminal-emoji">&#128187;</span>
+                            </div>
+                            <span class="code-title">developer.ts</span>
+                            <span class="minimized-title">developer.ts</span>
+                        </div>
+                        <pre class="code-content"><code class="code-block-small"><span class="keyword">import</span> { <span class="function">build</span>, <span class="function">automate</span> } <span class="keyword">from</span> <span class="string">'@peterw/ai-workflow'</span>;
 
 <span class="keyword">const</span> peter = <span class="keyword">new</span> <span class="class-name">Developer</span>({
-  focus: [<span class="string">'AI Coding'</span>, <span class="string">'React Ecosystem'</span>, <span class="string">'Automation'</span>],
-  motto: <span class="string">'Experiment → Iterate → Automate'</span>,
+  focus: [<span class="string">'AI Coding'</span>, <span class="string">'Automation'</span>],
   status: <span class="string">'shipping'</span>
 });
 
-<span class="keyword">await</span> peter.<span class="function">useAI</span>(<span class="string">'claude'</span>);
-<span class="keyword">await</span> peter.<span class="function">maintainOpenSource</span>([<span class="string">'theme-studio'</span>, <span class="string">'shadcn-ui'</span>, <span class="string">'zustand'</span>]);
+<span class="comment">// Building the future...</span></code>
 
-<span class="comment">// Building the future, one commit at a time 🚀</span></code></pre>
+<code class="code-block-large"><span class="keyword">import</span> { <span class="function">createTool</span>, <span class="function">optimizeWorkflow</span> } <span class="keyword">from</span> <span class="string">'@peterw/utils'</span>;
+
+<span class="keyword">class</span> <span class="class-name">ProjectBuilder</span> {
+  <span class="keyword">private</span> tools: <span class="class-name">ToolCollection</span>;
+  <span class="keyword">private</span> speed: <span class="keyword">number</span> = 10;
+
+  <span class="keyword">async</span> <span class="function">shipFeature</span>(feature: <span class="class-name">Feature</span>): <span class="keyword">Promise</span>&lt;<span class="keyword">void</span>&gt; {
+    <span class="keyword">const</span> plan = <span class="keyword">await</span> <span class="keyword">this</span>.tools.<span class="function">plan</span>(feature);
+    <span class="keyword">const</span> code = <span class="keyword">await</span> <span class="keyword">this</span>.tools.<span class="function">generate</span>(plan);
+    <span class="keyword">await</span> <span class="keyword">this</span>.tools.<span class="function">test</span>(code);
+    <span class="keyword">await</span> <span class="keyword">this</span>.tools.<span class="function">deploy</span>(code);
+  }
+
+  <span class="keyword">async</span> <span class="function">automate</span>(workflow: <span class="class-name">Workflow</span>): <span class="keyword">Promise</span>&lt;<span class="class-name">Result</span>&gt; {
+    <span class="keyword">const</span> steps = <span class="keyword">await</span> <span class="keyword">this</span>.parse(workflow);
+    <span class="keyword">const</span> result = <span class="keyword">await</span> <span class="keyword">this</span>.execute(steps);
+    <span class="keyword">return</span> result.<span class="function">optimize</span>();
+  }
+
+  <span class="keyword">async</span> <span class="function">buildUI</span>(spec: <span class="class-name">UISpec</span>): <span class="keyword">Promise</span>&lt;<span class="class-name">Component</span>&gt; {
+    <span class="keyword">const</span> atoms = <span class="keyword">await</span> <span class="keyword">this</span>.extractAtoms(spec);
+    <span class="keyword">const</span> composed = <span class="keyword">await</span> <span class="keyword">this</span>.compose(atoms);
+    <span class="keyword">return</span> <span class="keyword">await</span> <span class="keyword">this</span>.render(composed);
+  }
+}
+
+<span class="keyword">const</span> builder = <span class="keyword">new</span> <span class="class-name">ProjectBuilder</span>();
+<span class="keyword">await</span> builder.<span class="function">shipFeature</span>({ name: <span class="string">'portfolio'</span> });
+<span class="keyword">await</span> builder.<span class="function">buildUI</span>({ theme: <span class="string">'dark'</span>, responsive: <span class="keyword">true</span> });
+
+<span class="comment">// Additional configuration options</span>
+<span class="keyword">const</span> config = {
+  ai: { model: <span class="string">'claude-sonnet-4'</span>, temperature: 0.7 },
+  build: { optimize: <span class="keyword">true</span>, minify: <span class="keyword">true</span> },
+  deploy: { platform: <span class="string">'github-pages'</span>, branch: <span class="string">'main'</span> }
+};
+
+<span class="comment">// Initialize AI-powered development workflow</span>
+<span class="keyword">await</span> <span class="keyword">new</span> <span class="class-name">AIWorkflow</span>(config).<span class="function">start</span>();</code></pre>
+                    </div>
                 </div>
             </div>
         </div>
@@ -71,9 +128,13 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about reveal">
         <div class="section-container">
-            <h2 class="section-title">About Me</h2>
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="section-title-text">About Me</span>
+                    <span class="section-title-glow">About Me</span>
+                </h2>
             <div class="about-content">
                 <div class="about-text">
                     <p>I'm a developer who's fully embraced the AI coding era. I use LLMs, agents, and intelligent workflows to build faster, ship more, and explore what's possible at the frontier of software development.</p>
@@ -108,10 +169,14 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <section id="projects" class="projects reveal">
         <div class="section-container">
-            <h2 class="section-title">Featured Projects</h2>
-            <p class="section-subtitle">Open source work and npm packages I've created or maintain</p>
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="section-title-text">Featured Projects</span>
+                    <span class="section-title-glow">Featured Projects</span>
+                </h2>
+                <p class="section-subtitle">Open source work and npm packages I've created or maintain</p>
             
             <div class="projects-grid">
                 <!-- Project Card 1 -->
@@ -294,10 +359,14 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact reveal">
         <div class="section-container">
-            <h2 class="section-title">Get in Touch</h2>
-            <p class="section-subtitle">Interested in collaborating or have a question?</p>
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="section-title-text">Get in Touch</span>
+                    <span class="section-title-glow">Get in Touch</span>
+                </h2>
+                <p class="section-subtitle">Interested in collaborating or have a question?</p>
             
             <div class="contact-content">
                 <div class="contact-info">
@@ -308,7 +377,10 @@
                             <span>LinkedIn</span>
                         </a>
                         <a href="mailto:peter@byteplusbit.com" class="contact-link">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h.875c.904 0 1.636-.732 1.636-1.636V5.457c0-.904-.732-1.636-1.636-1.636h-.875c-.904 0-1.636.732-1.636 1.636zM12 10.455c.904 0 1.636.732 1.636 1.636v5.455h-3.272V12.09c0-.904.732-1.636 1.636-1.636zm-8.182 4.909V12.09c0-.904.732-1.636 1.636-1.636h3.272v5.818H3.818c-.904 0-1.636.732-1.636 1.636zM.636 6.455c0-.904.732-1.636 1.636-1.636h12.728c.904 0 1.636.732 1.636 1.636v11.454c0 .904-.732 1.636-1.636 1.636H2.272c-.904 0-1.636-.732-1.636-1.636V6.455z"/></svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="16" rx="2" ry="2"></rect>
+                                <polyline points="3,4 12,13 21,4"></polyline>
+                            </svg>
                             <span>Email</span>
                         </a>
                         <a href="https://github.com/PeterPCW" target="_blank" class="contact-link">

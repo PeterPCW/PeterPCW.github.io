@@ -3,12 +3,14 @@
 // ==========================================
 
 const HOVER_COLORS = [
-    '#FF5700', // Orange
+    '#FF5700', // Orange - needs dark text
     '#00FF00', // Green
     '#8500FF', // Purple
-    '#FF0085', // Pink
+    '#FF0085', // Pink - needs dark text
     '#0085FF'  // Blue
 ];
+
+const DARK_TEXT_COLORS = ['#FF5700', '#FF0085']; // Colors needing dark button text
 
 // Terminal theme definitions for cycling
 const TERMINAL_THEMES = [
@@ -127,35 +129,227 @@ const TERMINAL_THEMES = [
 ];
 
 let currentThemeIndex = 0;
+let terminalState = 'normal';
+let themeCycleInterval;
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize all components
+    initMouseTracking();
     initNavigation();
     initSmoothScroll();
     initScrollAnimations();
-    initRandomButtonColors();
-    initTerminalThemeCycling();
+    initTerminalWindow();
+    initActiveNavOnScroll();
+    initGlowEffects();
 });
 
 // ==========================================
-// Terminal Theme Cycling
+// Mouse Tracking for Glow Effects
 // ==========================================
-function initTerminalThemeCycling() {
+function initMouseTracking() {
+    document.addEventListener('mousemove', (e) => {
+        const x = (e.clientX / window.innerWidth) * 100;
+        const y = (e.clientY / window.innerHeight) * 100;
+
+        document.documentElement.style.setProperty('--mouse-x', `${x}%`);
+        document.documentElement.style.setProperty('--mouse-y', `${y}%`);
+    });
+}
+
+// ==========================================
+// Glow Effects - Random color on hover
+// ==========================================
+function initGlowEffects() {
+    const glowElements = document.querySelectorAll('.philosophy-card, .project-card, .contact-form');
+
+    glowElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            const randomColor = HOVER_COLORS[Math.floor(Math.random() * HOVER_COLORS.length)];
+            el.style.setProperty('--glow-color', randomColor);
+        });
+    });
+
+    // Section titles glow with silhouette effect
+    const sectionTitles = document.querySelectorAll('.section-title');
+    sectionTitles.forEach(title => {
+        title.addEventListener('mouseenter', () => {
+            const randomColor = HOVER_COLORS[Math.floor(Math.random() * HOVER_COLORS.length)];
+            title.style.setProperty('--glow-color', randomColor);
+            title.setAttribute('data-glow-active', 'true');
+        });
+        title.addEventListener('mouseleave', () => {
+            title.setAttribute('data-glow-active', 'false');
+        });
+    });
+
+    // Contact links with silhouette effect
+    const contactLinks = document.querySelectorAll('.contact-link');
+    contactLinks.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            const randomColor = HOVER_COLORS[Math.floor(Math.random() * HOVER_COLORS.length)];
+            link.style.setProperty('--glow-color', randomColor);
+            link.setAttribute('data-glow-active', 'true');
+        });
+        link.addEventListener('mouseleave', () => {
+            link.setAttribute('data-glow-active', 'false');
+        });
+    });
+
+    // Buttons with color cycling
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(btn => {
+        btn.addEventListener('mouseenter', () => {
+            const randomColor = HOVER_COLORS[Math.floor(Math.random() * HOVER_COLORS.length)];
+            btn.style.setProperty('--glow-color', randomColor);
+
+            // Update button text color based on background
+            const needsDarkText = DARK_TEXT_COLORS.includes(randomColor);
+            btn.setAttribute('data-needs-dark-text', needsDarkText.toString());
+        });
+
+        btn.addEventListener('mouseleave', () => {
+            // Reset to default orange for primary buttons
+            if (btn.classList.contains('btn-primary')) {
+                btn.setAttribute('data-needs-dark-text', 'false');
+            }
+        });
+    });
+}
+
+// ==========================================
+// Active Navigation on Scroll
+// ==========================================
+function initActiveNavOnScroll() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    function updateActiveNav() {
+        const scrollPos = window.scrollY + 100;
+        const currentColor = document.documentElement.style.getPropertyValue('--glow-color') || '#FF5700';
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${sectionId}`) {
+                        link.classList.add('active');
+                        link.style.setProperty('--glow-color', currentColor);
+                    }
+                });
+            }
+        });
+    }
+
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    updateActiveNav();
+}
+
+// ==========================================
+// Terminal Window with Windows Controls
+// ==========================================
+function initTerminalWindow() {
     const codeWindow = document.querySelector('.code-window');
     if (!codeWindow) return;
 
-    const codeContent = codeWindow.querySelector('.code-content');
-    if (!codeContent) return;
+    const btnClose = codeWindow.querySelector('.btn-close');
+    const btnMinimize = codeWindow.querySelector('.btn-minimize');
+    const btnMaximize = codeWindow.querySelector('.btn-maximize');
 
-    // Apply initial theme
+    // Initial theme
     applyTheme(TERMINAL_THEMES[0]);
 
-    // Cycle theme every 5 seconds
-    setInterval(() => {
-        currentThemeIndex = (currentThemeIndex + 1) % TERMINAL_THEMES.length;
-        const theme = TERMINAL_THEMES[currentThemeIndex];
-        applyTheme(theme);
-    }, 5000);
+    // Auto-rotate theme every 8 seconds (only if not closed)
+    themeCycleInterval = setInterval(() => {
+        const now = Date.now();
+
+        // Only cycle theme if in normal state
+        if (terminalState === 'normal') {
+            currentThemeIndex = (currentThemeIndex + 1) % TERMINAL_THEMES.length;
+            applyTheme(TERMINAL_THEMES[currentThemeIndex]);
+        }
+    }, 8000);
+
+    // Close button - wobble and fade, stay closed for 5 seconds
+    btnClose?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeTerminal();
+    });
+
+    // Minimize button - taskbar style
+    btnMinimize?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        minimizeTerminal();
+    });
+
+    // Maximize button - expand left and down
+    btnMaximize?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (terminalState === 'maximized') {
+            // Restore to normal
+            codeWindow.classList.remove('maximized');
+            terminalState = 'normal';
+        } else {
+            // Maximize
+            terminalState = 'maximized';
+            codeWindow.classList.add('maximized');
+        }
+    });
+
+    // Click anywhere on minimized window to restore
+    codeWindow.addEventListener('click', (e) => {
+        // Restore from minimized or closed state on click
+        if (terminalState === 'minimized' || terminalState === 'closed' || terminalState === 'closing') {
+            restoreTerminal();
+            return;
+        }
+        // Cycle theme on click (not on buttons)
+        if (e.target.closest('.window-btn')) return;
+        // Allow cycling theme from any open state (normal or maximized)
+        if (terminalState === 'normal' || terminalState === 'maximized') {
+            currentThemeIndex = (currentThemeIndex + 1) % TERMINAL_THEMES.length;
+            applyTheme(TERMINAL_THEMES[currentThemeIndex]);
+        }
+    });
+
+    function closeTerminal() {
+        terminalState = 'closed';
+        codeWindow.classList.add('closing');
+        // Keep maximized class during wobble animation
+
+        // After wobble animation (2.5s), hide completely and silently restore to original size
+        setTimeout(() => {
+            codeWindow.classList.remove('closing', 'maximized');
+            codeWindow.classList.add('closed');
+        }, 2500);
+
+        // Restore after 5 seconds total (2.5s wobble + 2.5s hidden)
+        setTimeout(() => {
+            if (terminalState === 'closed') {
+                restoreTerminal();
+            }
+        }, 5000);
+    }
+
+    function minimizeTerminal() {
+        terminalState = 'minimized';
+        codeWindow.classList.add('minimized');
+        codeWindow.classList.remove('closed', 'maximized');
+
+        // Auto-restore after 5 seconds
+        setTimeout(() => {
+            if (terminalState === 'minimized') {
+                restoreTerminal();
+            }
+        }, 5000);
+    }
+
+    function restoreTerminal() {
+        codeWindow.classList.remove('closing', 'closed', 'minimized', 'maximized');
+        terminalState = 'normal';
+    }
 }
 
 function applyTheme(theme) {
@@ -200,28 +394,8 @@ function applyTheme(theme) {
     const allElements = [codeWindow, codeContent];
     allElements.forEach(el => {
         if (el) {
-            el.style.transition = 'background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease';
+            el.style.transition = 'background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease';
         }
-    });
-}
-
-// ==========================================
-// Random Button Colors
-// ==========================================
-function initRandomButtonColors() {
-    const primaryButtons = document.querySelectorAll('.btn-primary');
-    
-    primaryButtons.forEach(btn => {
-        btn.addEventListener('mouseenter', () => {
-            const randomColor = HOVER_COLORS[Math.floor(Math.random() * HOVER_COLORS.length)];
-            btn.style.backgroundColor = randomColor;
-            btn.style.boxShadow = `0 10px 30px -10px ${randomColor}66`;
-        });
-        
-        btn.addEventListener('mouseleave', () => {
-            btn.style.backgroundColor = '#FF5700';
-            btn.style.boxShadow = '0 10px 30px -10px rgba(255, 87, 0, 0.4)';
-        });
     });
 }
 
@@ -231,18 +405,33 @@ function initRandomButtonColors() {
 function initNavigation() {
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
-    
+
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
             navToggle.classList.toggle('active');
+            // Animate hamburger to X
+            const spans = navToggle.querySelectorAll('span');
+            if (navToggle.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
         });
-        
+
         // Close menu when clicking a link
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
                 navToggle.classList.remove('active');
+                const spans = navToggle.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
             });
         });
     }
@@ -260,7 +449,7 @@ function initSmoothScroll() {
                 const headerOffset = 80;
                 const elementPosition = target.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                
+
                 window.scrollTo({
                     top: offsetPosition,
                     behavior: 'smooth'
@@ -271,7 +460,7 @@ function initSmoothScroll() {
 }
 
 // ==========================================
-// Scroll Animations
+// Scroll Animations (Reveal on Scroll)
 // ==========================================
 function initScrollAnimations() {
     const observerOptions = {
@@ -279,34 +468,34 @@ function initScrollAnimations() {
         rootMargin: '0px',
         threshold: 0.1
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
+                entry.target.classList.add('active');
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
-    
-    // Observe elements
-    const animateElements = document.querySelectorAll(
-        '.project-card, .philosophy-card, .section-title'
-    );
-    
-    animateElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+
+    // Observe reveal elements
+    const revealElements = document.querySelectorAll('.reveal');
+    revealElements.forEach(el => {
         observer.observe(el);
     });
-    
+
     // Add animation CSS
     const style = document.createElement('style');
     style.textContent = `
-        .animate-in {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
     `;
     document.head.appendChild(style);
