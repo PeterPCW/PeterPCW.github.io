@@ -10,7 +10,7 @@ const HOVER_COLORS = [
     '#0085FF'  // Blue
 ];
 
-const DARK_TEXT_COLORS = ['#FF5700', '#FF0085']; // Colors needing dark button text
+const DARK_TEXT_COLORS = ['#FF5700', '#00FF00', '#FF0085']; // Colors needing dark button text
 
 // Terminal theme definitions for cycling
 const TERMINAL_THEMES = [
@@ -140,6 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTerminalWindow();
     initActiveNavOnScroll();
     initGlowEffects();
+    initParticleMorph();
 });
 
 // ==========================================
@@ -159,7 +160,7 @@ function initMouseTracking() {
 // Glow Effects - Random color on hover
 // ==========================================
 function initGlowEffects() {
-    const glowElements = document.querySelectorAll('.philosophy-card, .project-card, .contact-form');
+    const glowElements = document.querySelectorAll('.philosophy-card, .project-card, .contact-form, .btn-primary, .btn-secondary');
 
     glowElements.forEach(el => {
         el.addEventListener('mouseenter', () => {
@@ -499,4 +500,269 @@ function initScrollAnimations() {
         }
     `;
     document.head.appendChild(style);
+}
+
+// ==========================================
+// Particle Morph Effect for Hero Tagline
+// ==========================================
+function initParticleMorph() {
+    const container = document.getElementById('hero-particle-container');
+    if (!container) return;
+
+    // User's 5 chosen colors
+    const PARTICLE_COLORS = [
+        '#FF5700', // Orange
+        '#00FF00', // Green
+        '#8500FF', // Purple
+        '#FF0085', // Pink
+        '#0085FF'  // Blue
+    ];
+
+    // Full-screen overlay canvas
+    const canvas = document.createElement('canvas');
+    canvas.className = 'particle-canvas-overlay';
+    document.body.appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+
+    let words = [];
+    let particles = [];
+    let mouseX = 0;
+    let mouseY = 0;
+
+    // Resize canvas
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', () => {
+        resizeCanvas();
+        initWords();
+    });
+
+    // Initialize words
+    function initWords() {
+        words = [];
+        const wordEls = container.querySelectorAll('.particle-word');
+        wordEls.forEach((el, i) => {
+            const rect = el.getBoundingClientRect();
+            if (rect.width > 0) {
+                words.push({
+                    el: el,
+                    word: el.textContent,
+                    cx: rect.left + rect.width / 2,
+                    cy: rect.top + rect.height / 2,
+                    color: PARTICLE_COLORS[i % PARTICLE_COLORS.length],
+                    exploded: false,
+                    particles: []
+                });
+            }
+        });
+        console.log('Initialized', words.length, 'words');
+    }
+
+    // Particle class
+    class Particle {
+        constructor(x, y, color) {
+            this.originX = x;
+            this.originY = y;
+            this.x = x;
+            this.y = y;
+            this.color = color;
+            this.vx = 0;
+            this.vy = 0;
+            this.size = 12;
+            this.alpha = 1;
+            this.rotation = Math.random() * Math.PI * 2;
+            this.rotSpeed = (Math.random() - 0.5) * 0.1;
+            this.state = 'idle'; // idle, exploding, returning
+        }
+
+        explode(mx, my) {
+            this.state = 'exploding';
+            // Shoot in random direction for wider spread
+            const angle = Math.random() * Math.PI * 2;
+            const force = 15 + Math.random() * 20;
+            this.vx = Math.cos(angle) * force;
+            this.vy = Math.sin(angle) * force;
+        }
+
+        return() {
+            this.state = 'returning';
+        }
+
+        update() {
+            if (this.state === 'exploding') {
+                this.x += this.vx;
+                this.y += this.vy;
+                this.vx *= 0.97;
+                this.vy *= 0.97;
+                this.rotation += this.rotSpeed;
+
+                // Keep size constant during explosion
+                // Start returning after some time
+                if (Math.abs(this.vx) < 0.5 && Math.abs(this.vy) < 0.5) {
+                    this.return();
+                }
+            } else if (this.state === 'returning') {
+                const dx = this.originX - this.x;
+                const dy = this.originY - this.y;
+                // Very slow return - takes several seconds
+                this.x += dx * 0.015;
+                this.y += dy * 0.015;
+                this.rotation *= 0.96;
+
+                // Back to idle when close
+                if (Math.abs(dx) < 2 && Math.abs(dy) < 2) {
+                    this.x = this.originX;
+                    this.y = this.originY;
+                    this.state = 'idle';
+                }
+            }
+        }
+
+        draw(ctx) {
+            ctx.save();
+            ctx.translate(this.x, this.y);
+            ctx.rotate(this.rotation);
+            ctx.globalAlpha = this.alpha;
+            ctx.shadowBlur = 30;
+            ctx.shadowColor = this.color;
+            ctx.fillStyle = this.color;
+            ctx.font = 'bold 14px "Fira Code", monospace';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('O', 0, 0);
+            ctx.restore();
+        }
+    }
+
+    // Create particles for a word
+    function createParticles(wordObj) {
+        const ps = [];
+        // Get container bounds for wide spread
+        const containerRect = container.getBoundingClientRect();
+        const centerX = containerRect.left + containerRect.width / 2;
+        const centerY = containerRect.top + containerRect.height / 2;
+
+        for (let i = 0; i < 40; i++) {
+            // Start particles spread across the entire container area
+            const startX = containerRect.left + Math.random() * containerRect.width;
+            const startY = containerRect.top + Math.random() * containerRect.height;
+            ps.push(new Particle(startX, startY, wordObj.color));
+        }
+        return ps;
+    }
+
+    // Explode a word
+    function explodeWord(wordObj) {
+        if (wordObj.exploded) return;
+        wordObj.exploded = true;
+        wordObj.el.classList.add('exploded');
+        wordObj.el.style.visibility = 'hidden';
+        wordObj.particles = createParticles(wordObj);
+        // Trigger explosion on all particles
+        wordObj.particles.forEach(p => p.explode(p.x, p.y));
+        particles.push(...wordObj.particles);
+    }
+
+    // Return all words
+    function returnAllWords() {
+        words.forEach(w => {
+            if (w.exploded) {
+                w.particles.forEach(p => {
+                    if (p.state !== 'returning') p.return();
+                });
+            }
+        });
+    }
+
+    // Reset word to show text again
+    function resetWord(wordObj) {
+        wordObj.exploded = false;
+        wordObj.el.classList.remove('exploded');
+        wordObj.el.style.visibility = '';
+    }
+
+    // Check if all particles returned
+    function checkAllReturned() {
+        const allIdle = particles.every(p => p.state === 'idle');
+        if (allIdle && particles.length > 0) {
+            particles = [];
+            words.forEach(w => {
+                if (w.exploded) {
+                    resetWord(w);
+                }
+                w.particles = [];
+            });
+        }
+    }
+
+    // Animation loop
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => {
+            p.update();
+            p.draw(ctx);
+        });
+        checkAllReturned();
+        requestAnimationFrame(animate);
+    }
+
+    // Mouse move - explode words on touch
+    function onMouseMove(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        words.forEach(w => {
+            if (!w.exploded) {
+                // Check if mouse touches word (with buffer)
+                const rect = w.el.getBoundingClientRect();
+                if (mouseX >= rect.left - 15 && mouseX <= rect.right + 15 &&
+                    mouseY >= rect.top - 15 && mouseY <= rect.bottom + 15) {
+                    explodeWord(w);
+                }
+            }
+        });
+    }
+
+    // Mouse leave - return words
+    function onMouseLeave() {
+        setTimeout(returnAllWords, 200);
+    }
+
+    // Auto explode intro after 3s
+    function autoExplode() {
+        setTimeout(() => {
+            // Explode first 4 words (intro line)
+            for (let i = 0; i < Math.min(4, words.length); i++) {
+                setTimeout(() => {
+                    console.log('Auto exploding:', words[i].word);
+                    explodeWord(words[i]);
+                }, i * 120);
+            }
+        }, 3000);
+    }
+
+    // Start with small delay to ensure DOM is ready
+    setTimeout(() => {
+        initWords();
+        animate();
+
+        let mouseInHero = false;
+        const heroSection = document.querySelector('.hero');
+
+        heroSection?.addEventListener('mouseenter', () => { mouseInHero = true; });
+        heroSection?.addEventListener('mouseleave', () => {
+            mouseInHero = false;
+            returnAllWords();
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            onMouseMove(e);
+            mouseInHero = true;
+        });
+
+        autoExplode();
+    }, 100);
 }
