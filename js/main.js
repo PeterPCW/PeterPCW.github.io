@@ -571,18 +571,18 @@ function initParticleMorph() {
             this.color = color;
             this.vx = 0;
             this.vy = 0;
-            this.size = 12;
+            this.size = 8 + Math.random() * 6;
+            this.baseSize = this.size;
             this.alpha = 1;
             this.rotation = Math.random() * Math.PI * 2;
             this.rotSpeed = (Math.random() - 0.5) * 0.1;
-            this.state = 'idle'; // idle, exploding, returning
+            this.state = 'idle'; // idle, exploding, returning, fading
         }
 
         explode(mx, my) {
             this.state = 'exploding';
-            // Shoot in random direction for wider spread
             const angle = Math.random() * Math.PI * 2;
-            const force = 15 + Math.random() * 20;
+            const force = 12 + Math.random() * 18;
             this.vx = Math.cos(angle) * force;
             this.vy = Math.sin(angle) * force;
         }
@@ -591,48 +591,62 @@ function initParticleMorph() {
             this.state = 'returning';
         }
 
+        fadeOut() {
+            this.state = 'fading';
+        }
+
         update() {
             if (this.state === 'exploding') {
                 this.x += this.vx;
                 this.y += this.vy;
-                this.vx *= 0.97;
-                this.vy *= 0.97;
+                this.vx *= 0.96;
+                this.vy *= 0.96;
                 this.rotation += this.rotSpeed;
 
-                // Keep size constant during explosion
-                // Start returning after some time
                 if (Math.abs(this.vx) < 0.5 && Math.abs(this.vy) < 0.5) {
                     this.return();
                 }
             } else if (this.state === 'returning') {
                 const dx = this.originX - this.x;
                 const dy = this.originY - this.y;
-                // Very slow return - takes several seconds
-                this.x += dx * 0.015;
-                this.y += dy * 0.015;
-                this.rotation *= 0.96;
+                // Faster return - takes about 1-2 seconds
+                this.x += dx * 0.04;
+                this.y += dy * 0.04;
+                this.rotation *= 0.94;
 
-                // Back to idle when close
-                if (Math.abs(dx) < 2 && Math.abs(dy) < 2) {
-                    this.x = this.originX;
-                    this.y = this.originY;
-                    this.state = 'idle';
+                // Start fading when close
+                if (Math.abs(dx) < 15 && Math.abs(dy) < 15) {
+                    this.fadeOut();
+                }
+            } else if (this.state === 'fading') {
+                // Add jiggle during fade
+                this.x += (Math.random() - 0.5) * 4;
+                this.y += (Math.random() - 0.5) * 4;
+                this.alpha *= 0.9;
+                this.size *= 0.94;
+                this.rotation += 0.15;
+
+                if (this.alpha < 0.03) {
+                    this.state = 'done';
+                    this.alpha = 0;
                 }
             }
         }
 
         draw(ctx) {
+            if (this.alpha <= 0) return;
             ctx.save();
             ctx.translate(this.x, this.y);
             ctx.rotate(this.rotation);
             ctx.globalAlpha = this.alpha;
-            ctx.shadowBlur = 30;
+            ctx.shadowBlur = 20;
             ctx.shadowColor = this.color;
             ctx.fillStyle = this.color;
-            ctx.font = 'bold 14px "Fira Code", monospace';
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            ctx.fillText('O', 0, 0);
+
+            // Draw solid circle
+            ctx.beginPath();
+            ctx.arc(0, 0, this.size / 2, 0, Math.PI * 2);
+            ctx.fill();
             ctx.restore();
         }
     }
@@ -642,10 +656,8 @@ function initParticleMorph() {
         const ps = [];
         // Get container bounds for wide spread
         const containerRect = container.getBoundingClientRect();
-        const centerX = containerRect.left + containerRect.width / 2;
-        const centerY = containerRect.top + containerRect.height / 2;
 
-        for (let i = 0; i < 40; i++) {
+        for (let i = 0; i < 25; i++) {
             // Start particles spread across the entire container area
             const startX = containerRect.left + Math.random() * containerRect.width;
             const startY = containerRect.top + Math.random() * containerRect.height;
@@ -686,8 +698,8 @@ function initParticleMorph() {
 
     // Check if all particles returned
     function checkAllReturned() {
-        const allIdle = particles.every(p => p.state === 'idle');
-        if (allIdle && particles.length > 0) {
+        const allDone = particles.every(p => p.state === 'done');
+        if (allDone && particles.length > 0) {
             particles = [];
             words.forEach(w => {
                 if (w.exploded) {

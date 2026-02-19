@@ -191,7 +191,7 @@ body {
 
 .particle-word {
     display: inline-block;
-    transition: opacity 0.15s ease-out;
+    transition: opacity 0.4s ease-out, visibility 0.4s ease-out;
     color: var(--color-text-secondary);
     line-height: 1;
     white-space: nowrap;
