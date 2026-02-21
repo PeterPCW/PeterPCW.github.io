@@ -182,36 +182,43 @@ body {
 .hero-particle-container {
     position: relative;
     margin-bottom: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    align-items: center;
-    white-space: nowrap;
+    display: block;
 }
 
 .particle-word {
     display: inline-block;
+    margin-right: 0.6rem;
     transition: opacity 0.4s ease-out, visibility 0.4s ease-out;
     color: var(--color-text-secondary);
-    line-height: 1;
+    line-height: 1.8;
     white-space: nowrap;
     font-size: 1.6rem;
+}
+
+.hero-particle-container br {
+    display: block;
+    margin-bottom: 0.4rem;
+    content: "";
 }
 
 .particle-word.exploded {
     opacity: 0 !important;
     visibility: hidden;
+    transition: opacity 0.4s ease-out, visibility 0.4s ease-out !important;
 }
 
-/* First few words are the intro */
-.particle-word:nth-child(1) {
-    color: var(--color-primary);
-    font-weight: 500;
+ /*First few words are the intro*/
+.particle-word:nth-child(1),
+.particle-word:nth-child(2),
+.particle-word:nth-child(3),
+.particle-word:nth-child(4) {
+ /*   color: var(--color-primary);*/
+    font-size: 3.3rem;
 }
-
+ /*
 .particle-word:nth-child(2) {
     color: var(--color-primary);
-    font-weight: 500;
+    font-weight: 3.3rem;
 }
 
 .particle-word:nth-child(3),
@@ -219,7 +226,7 @@ body {
     color: var(--color-text);
     font-weight: 600;
     font-size: 1.8rem;
-}
+}*/
 
 .hero-tagline .highlight-ai {
     color: #FF5700;

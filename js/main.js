@@ -299,6 +299,30 @@ function initTerminalWindow() {
         }
     });
 
+    // Prevent page scroll when terminal is maximized and user is scrolling within it
+    const codeContent = codeWindow.querySelector('.code-content');
+    codeContent?.addEventListener('wheel', (e) => {
+        if (terminalState === 'maximized') {
+            // If terminal content can scroll, prevent page scroll
+            const { scrollTop, scrollHeight, clientHeight } = codeContent;
+            const canScrollUp = scrollTop > 0;
+            const canScrollDown = scrollTop + clientHeight < scrollHeight;
+
+            if ((e.deltaY < 0 && canScrollUp) || (e.deltaY > 0 && canScrollDown)) {
+                e.preventDefault();
+                codeContent.scrollTop += e.deltaY;
+            }
+        }
+    }, { passive: false });
+
+    // Click outside maximized terminal to restore
+    document.addEventListener('click', (e) => {
+        if (terminalState === 'maximized' && !codeWindow.contains(e.target)) {
+            codeWindow.classList.remove('maximized');
+            terminalState = 'normal';
+        }
+    });
+
     // Click anywhere on minimized window to restore
     codeWindow.addEventListener('click', (e) => {
         // Restore from minimized or closed state on click
@@ -614,9 +638,19 @@ function initParticleMorph() {
                 this.y += dy * 0.04;
                 this.rotation *= 0.94;
 
-                // Start fading when close
-                if (Math.abs(dx) < 15 && Math.abs(dy) < 15) {
-                    this.fadeOut();
+                // Start fading earlier and faster, overlapping with word reappearance
+                if (Math.abs(dx) < 50 && Math.abs(dy) < 50) {
+                    // Calculate progress (0 = far, 1 = at origin)
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    const progress = Math.max(0, 1 - dist / 50);
+
+                    // Fade out particles as we approach origin (particles at ~50%, word at ~50%)
+                    this.alpha = 1 - (progress * 0.6); // Particles fade to 0.4 at origin
+
+                    // Start fading state when very close
+                    if (Math.abs(dx) < 20 && Math.abs(dy) < 20) {
+                        this.fadeOut();
+                    }
                 }
             } else if (this.state === 'fading') {
                 // Add jiggle during fade
@@ -689,35 +723,58 @@ function initParticleMorph() {
         });
     }
 
-    // Reset word to show text again
+    // Reset word to show text again with fade-in effect
     function resetWord(wordObj) {
         wordObj.exploded = false;
         wordObj.el.classList.remove('exploded');
+        // Fade in the text
         wordObj.el.style.visibility = '';
+        wordObj.el.style.opacity = '0';
+        wordObj.el.style.transition = 'opacity 0.4s ease-out';
+
+        // Trigger reflow and fade in
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                wordObj.el.style.opacity = '1';
+            });
+        });
+
+        // Clear transition after fade completes
+        setTimeout(() => {
+            wordObj.el.style.transition = '';
+            wordObj.el.style.opacity = '';
+        }, 400);
+
+        // Remove this word's particles from the global array
+        particles = particles.filter(p => !wordObj.particles.includes(p));
+        wordObj.particles = [];
     }
 
-    // Check if all particles returned
-    function checkAllReturned() {
-        const allDone = particles.every(p => p.state === 'done');
-        if (allDone && particles.length > 0) {
-            particles = [];
-            words.forEach(w => {
-                if (w.exploded) {
-                    resetWord(w);
-                }
-                w.particles = [];
-            });
+    // Check if a word's particles are all done - reset word individually
+    function checkWordReturned(wordObj) {
+        if (!wordObj.exploded || wordObj.particles.length === 0) return;
+        const allDone = wordObj.particles.every(p => p.state === 'done');
+        if (allDone) {
+            resetWord(wordObj);
         }
     }
 
     // Animation loop
     function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Update and draw all particles, check each word individually
         particles.forEach(p => {
             p.update();
             p.draw(ctx);
         });
-        checkAllReturned();
+
+        // Check each exploded word independently
+        words.forEach(w => checkWordReturned(w));
+
+        // Clean up any particles that finished but weren't cleaned
+        particles = particles.filter(p => p.state !== 'done');
+
         requestAnimationFrame(animate);
     }
 
@@ -725,6 +782,16 @@ function initParticleMorph() {
     function onMouseMove(e) {
         mouseX = e.clientX;
         mouseY = e.clientY;
+
+        // Check if mouse is over the maximized terminal - if so, don't explode words
+        const codeWindow = document.querySelector('.code-window');
+        if (terminalState === 'maximized' && codeWindow) {
+            const rect = codeWindow.getBoundingClientRect();
+            if (mouseX >= rect.left && mouseX <= rect.right &&
+                mouseY >= rect.top && mouseY <= rect.bottom) {
+                return; // Mouse is within terminal, skip explosion
+            }
+        }
 
         words.forEach(w => {
             if (!w.exploded) {
