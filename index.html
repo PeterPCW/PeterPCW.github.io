@@ -16,6 +16,13 @@
         <div class="nav-container">
             <a href="#" class="nav-logo">PeterPCW</a>
             <ul class="nav-menu">
+                <li class="nav-locks">
+                    <span class="find-these">Find These:</span>
+                    <span class="lock" data-lock="particles" title="Explode">🔒</span>
+                    <span class="lock" data-lock="terminal" title="Maximize">🔒</span>
+                    <span class="lock" data-lock="cards" title="Click Order">🔒</span>
+                    <span class="lock" data-lock="hey" title="Say 'hey'">🔒</span>
+                </li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -33,21 +40,27 @@
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-particle-container" id="hero-particle-container">
-                    <span class="particle-word">Hey,</span>
-                    <span class="particle-word">I'm</span>
-                    <span class="particle-word">Peter</span>
-                    <span class="particle-word">👋</span>
-                    <br>
-                    <span class="particle-word">I</span>
-                    <span class="particle-word">make</span>
-                    <span class="particle-word">AI</span>
-                    <span class="particle-word">make</span>
-                    <span class="particle-word">you</span>
-                    <span class="particle-word">SW</span>
-                    <br>
-                    <span class="particle-word">Orchestrator,</span>
-                    <span class="particle-word">Automator,</span>
-                    <span class="particle-word">OSS-or</span>
+                    <div class="particle-line">
+                        <span class="particle-word">Hey,</span>
+                        <span class="particle-word">I'm</span>
+                        <span class="particle-word">Peter</span>
+                        <span class="particle-word">👋</span>
+                    </div>
+                    <div class="particle-line">
+                        <span class="particle-word">I</span>
+                        <span class="particle-word">make</span>
+                        <span class="particle-word">AI</span>
+                        <span class="particle-word">make</span>
+                        <span class="particle-word">you</span>
+                        <span class="particle-word">SW</span>
+                    </div>
+                    <div class="particle-line">
+                        <span class="particle-word">Orchestrator</span>
+						<span class="particle-word"> - </span>
+                        <span class="particle-word">Automator</span>
+                        <span class="particle-word"> - </span>
+						<span class="particle-word">OSS-or</span>
+                    </div>
                 </div>
                 <div class="hero-cta">
                     <a href="#projects" class="btn btn-primary">Projects</a>
@@ -82,54 +95,59 @@
                             <span class="code-title">developer.ts</span>
                             <span class="minimized-title">developer.ts</span>
                         </div>
-                        <pre class="code-content"><code class="code-block-small"><span class="keyword">import</span> { <span class="function">build</span>, <span class="function">automate</span> } <span class="keyword">from</span> <span class="string">'@peterw/ai-workflow'</span>;
+                        <pre class="code-content"><code class="code-block-small"><span class="keyword">import</span> { <span class="function">orchestrate</span> } <span class="keyword">from</span> <span class="string">'@peterw/attune'</span>;
 
-<span class="keyword">const</span> peter = <span class="keyword">new</span> <span class="class-name">Developer</span>({
-  focus: [<span class="string">'AI Coding'</span>, <span class="string">'Automation'</span>],
-  status: <span class="string">'shipping'</span>
+<span class="keyword">const</span> peter = <span class="keyword">new</span> <span class="class-name">AIOrchestrator</span>({
+  focus: [<span class="string">'AI Workflows'</span>, <span class="string">'Extreme Design'</span>],
+  mode: <span class="string">'shipping'</span>
 });
 
-<span class="comment">// Building the future...</span></code>
+<span class="comment">// Exploring edges...</span></code>
 
-<code class="code-block-large"><span class="keyword">import</span> { <span class="function">createTool</span>, <span class="function">optimizeWorkflow</span> } <span class="keyword">from</span> <span class="string">'@peterw/utils'</span>;
+<code class="code-block-large"><span class="keyword">import</span> { <span class="function">attune</span>, <span class="function">experiment</span> } <span class="keyword">from</span> <span class="string">'@peterw/cli-tools'</span>;
 
-<span class="keyword">class</span> <span class="class-name">ProjectBuilder</span> {
-  <span class="keyword">private</span> tools: <span class="class-name">ToolCollection</span>;
-  <span class="keyword">private</span> speed: <span class="keyword">number</span> = 10;
+<span class="comment">// PS: There are easter eggs on this site.
+   //    Try: particles | maximize | clicking cards | typing "hey"</span>
 
-  <span class="keyword">async</span> <span class="function">shipFeature</span>(feature: <span class="class-name">Feature</span>): <span class="keyword">Promise</span>&lt;<span class="keyword">void</span>&gt; {
-    <span class="keyword">const</span> plan = <span class="keyword">await</span> <span class="keyword">this</span>.tools.<span class="function">plan</span>(feature);
-    <span class="keyword">const</span> code = <span class="keyword">await</span> <span class="keyword">this</span>.tools.<span class="function">generate</span>(plan);
-    <span class="keyword">await</span> <span class="keyword">this</span>.tools.<span class="function">test</span>(code);
-    <span class="keyword">await</span> <span class="keyword">this</span>.tools.<span class="function">deploy</span>(code);
+<span class="keyword">class</span> <span class="class-name">AIManager</span> {
+  <span class="keyword">private</span> projects: <span class="class-name">Project</span>[];
+  <span class="keyword">private</span> chaos: <span class="keyword">number</span> = 1;
+
+  <span class="keyword">async</span> <span class="function">shipAttune</span>(): <span class="keyword">Promise</span>&lt;<span class="keyword">void</span>&gt; {
+    <span class="keyword">const</span> spec = <span class="keyword">await</span> <span class="function">attune</span>(<span class="string">'slop-to-ship'</span>);
+    <span class="keyword">return</span> <span class="function">publish</span>(spec);
   }
 
-  <span class="keyword">async</span> <span class="function">automate</span>(workflow: <span class="class-name">Workflow</span>): <span class="keyword">Promise</span>&lt;<span class="class-name">Result</span>&gt; {
-    <span class="keyword">const</span> steps = <span class="keyword">await</span> <span class="keyword">this</span>.parse(workflow);
-    <span class="keyword">const</span> result = <span class="keyword">await</span> <span class="keyword">this</span>.execute(steps);
-    <span class="keyword">return</span> result.<span class="function">optimize</span>();
+  <span class="keyword">async</span> <span class="function">pushThemeStudio</span>(): <span class="keyword">Promise</span>&lt;<span class="class-name">Component</span>&gt; {
+    <span class="keyword">const</span> extremes = [<span class="string">'pixel-perfect'</span>, <span class="string">'glitch'</span>, <span class="string">'particle'</span>];
+    <span class="keyword">return</span> <span class="function">compose</span>(extremes);
   }
 
-  <span class="keyword">async</span> <span class="function">buildUI</span>(spec: <span class="class-name">UISpec</span>): <span class="keyword">Promise</span>&lt;<span class="class-name">Component</span>&gt; {
-    <span class="keyword">const</span> atoms = <span class="keyword">await</span> <span class="keyword">this</span>.extractAtoms(spec);
-    <span class="keyword">const</span> composed = <span class="keyword">await</span> <span class="keyword">this</span>.compose(atoms);
-    <span class="keyword">return</span> <span class="keyword">await</span> <span class="keyword">this</span>.render(composed);
+  <span class="comment">// After hours: perfecting carbonara technique 🍝</span>
+  <span class="keyword">async</span> <span class="function">chefMode</span>(): <span class="keyword">Promise</span>&lt;<span class="class-name">Meal</span>&gt; {
+    <span class="keyword">const</span> guanciale = <span class="function">crisp</span>(<span class="string">'extra'</span>);
+    <span class="keyword">const</span> pecorino = <span class="function">age</span>(<span class="number">36</span>, <span class="string">'months'</span>);
+    <span class="keyword">return</span> <span class="function">combine</span>(guanciale, pecorino, <span class="function">dance</span>());
+  }
+
+  <span class="comment">// Family time: 3 kids, 1 wife, infinite joy ❤️</span>
+  <span class="keyword">async</span> <span class="function">familyMode</span>(): <span class="keyword">Promise</span>&lt;<span class="class-name">Life</span>&gt; {
+    <span class="keyword">return</span> { kids: <span class="number">3</span>, wife: <span class="number">1</span>, joy: <span class="string">'infinite'</span> };
   }
 }
 
-<span class="keyword">const</span> builder = <span class="keyword">new</span> <span class="class-name">ProjectBuilder</span>();
-<span class="keyword">await</span> builder.<span class="function">shipFeature</span>({ name: <span class="string">'portfolio'</span> });
-<span class="keyword">await</span> builder.<span class="function">buildUI</span>({ theme: <span class="string">'dark'</span>, responsive: <span class="keyword">true</span> });
+<span class="keyword">const</span> peter = <span class="keyword">new</span> <span class="class-name">AIManager</span>();
+<span class="keyword">await</span> peter.<span class="function">shipAttune</span>();
+<span class="keyword">await</span> peter.<span class="function">pushThemeStudio</span>();
 
-<span class="comment">// Additional configuration options</span>
+<span class="comment">// Philosophy: Experiment → Iterate → Automate</span>
 <span class="keyword">const</span> config = {
-  ai: { model: <span class="string">'claude-sonnet-4'</span>, temperature: 0.7 },
-  build: { optimize: <span class="keyword">true</span>, minify: <span class="keyword">true</span> },
-  deploy: { platform: <span class="string">'github-pages'</span>, branch: <span class="string">'main'</span> }
+  orchestrator: { model: <span class="string">'claude-sonnet-4'</span>, loops: <span class="number">10</span> },
+  automation: { level: <span class="string">'maximum'</span>, humanInLoop: <span class="keyword">true</span> },
+  output: { platform: <span class="string">'github-pages'</span>, branch: <span class="string">'main'</span> }
 };
 
-<span class="comment">// Initialize AI-powered development workflow</span>
-<span class="keyword">await</span> <span class="keyword">new</span> <span class="class-name">AIWorkflow</span>(config).<span class="function">start</span>();</code></pre>
+<span class="keyword">await</span> <span class="function">orchestrate</span>(config).<span class="function">start</span>();</code></pre>
                     </div>
                 </div>
             </div>
@@ -148,34 +166,35 @@
                     <span class="section-title-text">About</span>
                     <span class="section-title-glow">About</span>
                 </h2>
+                <p class="section-subtitle"></p>
             <div class="about-content">
                 <div class="about-text">
                     <p>I've given up on coding. I learned a lot, it was fun, now it's the AI's turn.</p>
 					<p>But I'm not rolling over or moving to a cabin in the woods. I'll be right here orchestrating the AI as the 'effort' layer. Applying human taste and system design to the 'average of the whole internet' slop. And inventing unique exciting user experiences for all kinds of humans (and maybe some agents, we'll see).</p>
-                    <p>My approach is simple: <strong>Experiment → Iterate → Automate</strong>. This philosophy drives everything I do, from small utilities to published packages and beyond.</p>
+                    <p>My approach is simple: <strong>Experiment → Iterate → Automate</strong>. This philosophy drives everything I do, from small scripts to published packages and beyond.</p>
                     <p>Currently focused on:</p>
                     <ul class="focus-list">
                         <li><span class="highlight">AI Orchestration</span> — You didn't get that yet?</li>
-                        <li><span class="highlight">Extreme, Accessible Design</span> — What is possible at the very edges of UI and UI?</li>
-                        <li><span class="highlight">Attune: Slop To Ship</span> — A lightning fast comprehensive 'rough code' CLI tool that gives you(r AI) the details to make your code production ready. Does this bullet need to end with a question?</li>
-                        <li><span class="highlight">Many more projects coming soon</span> — CLIs, tools, workflows, platforms,...companies?</li>
+                        <li><span class="highlight">Extreme Design</span> — What is possible at the very edges of UI and UI?</li>
+                        <li><span class="highlight">Slop To Ship</span> — How can we make AI code into reliable products?</li>
+                        <li><span class="highlight">What's Next</span> — CLIs, tools, workflows, products,...companies?</li>
                     </ul>
                 </div>
                 <div class="about-philosophy">
                     <div class="philosophy-card">
                         <span class="philosophy-icon">🔬</span>
                         <h3>Experiment</h3>
-                        <p>Try new ideas, tools, patterns, prompts → embrace emergence</p>
+                        <p>Try new ideas, tools, patterns: embrace emergence</p>
                     </div>
                     <div class="philosophy-card">
                         <span class="philosophy-icon">🔄</span>
                         <h3>Iterate</h3>
-                        <p>Refine based on results → invoke improvement</p>
+                        <p>Refine based on results: invoke improvement</p>
                     </div>
                     <div class="philosophy-card">
                         <span class="philosophy-icon">⚡</span>
                         <h3>Automate</h3>
-                        <p>Get the "me" out of it → achieve ascention</p>
+                        <p>Get the "me" out of it: achieve ascention</p>
                     </div>
                 </div>
             </div>
@@ -198,9 +217,7 @@
                     <div class="project-header">
                         <span class="project-type">npm Package</span>
                         <div class="project-links">
-                            <a href="https://www.npmjs.com/package/git-hooks-cli" target="_blank" aria-label="npm">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M2 2h20v20H2V2zm18 18H4V4h16v16z"/></svg>
-                            </a>
+                            <a href="https://www.npmjs.com/package/git-hooks-cli" target="_blank" aria-label="npm"><span class="project-icon">🎣</span></a>
                         </div>
                     </div>
                     <h3 class="project-title">git-hooks-cli</h3>
@@ -219,9 +236,7 @@
                     <div class="project-header">
                         <span class="project-type">npm Package</span>
                         <div class="project-links">
-                            <a href="https://github.com/juliencrn/usehooks-ts/pull/713" target="_blank" aria-label="github">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M2 2h20v20H2V2zm18 18H4V4h16v16z"/></svg>
-                            </a>
+                            <a href="https://github.com/juliencrn/usehooks-ts/pull/713" target="_blank" aria-label="github"><span class="project-icon">⌨️</span></a>
                         </div>
                     </div>
                     <h3 class="project-title">hotkey hooks</h3>
@@ -240,9 +255,7 @@
                     <div class="project-header">
                         <span class="project-type">npm Package</span>
                         <div class="project-links">
-                            <a href="https://www.npmjs.com/package/cli-table-modern" target="_blank" aria-label="npm">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M2 2h20v20H2V2zm18 18H4V4h16v16z"/></svg>
-                            </a>
+                            <a href="https://www.npmjs.com/package/cli-table-modern" target="_blank" aria-label="npm"><span class="project-icon">🗠</span></a>
                         </div>
                     </div>
                     <h3 class="project-title">cli-table-modern</h3>
@@ -262,8 +275,7 @@
                         <span class="project-type">npm Package</span>
                         <div class="project-links">
                             <a href="https://www.npmjs.com/package/attune" target="_blank" aria-label="npm">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M2 2h20v20H2V2zm18 18H4V4h16v16z"/></svg>
-                            </a>
+                                <span class="project-icon">🎶</span></a>
                         </div>
                     </div>
                     <h3 class="project-title">attune</h3>
@@ -277,14 +289,12 @@
                         <span class="project-stat">🔄 Active</span>
                     </div>
                 </div>
-				<!-- Project Card 4 -->
+				<!-- Project Card 5 -->
                 <div class="project-card">
                     <div class="project-header">
                         <span class="project-type">Demo Site/Tool</span>
                         <div class="project-links">
-                            <a href="https://www.byteplusbit.com/theme-studio" target="_blank" aria-label="site">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M2 2h20v20H2V2zm18 18H4V4h16v16z"/></svg>
-                            </a>
+                            <a href="https://www.byteplusbit.com/theme-studio" target="_blank" aria-label="site"><span class="project-icon">🖼️</span></a>
                         </div>
                     </div>
                     <h3 class="project-title">theme-studio</h3>
@@ -298,14 +308,13 @@
                         <span class="project-stat">🔄 Active</span>
                     </div>
                 </div>
-				<!-- Project Card 4 -->
+				<!-- Project Card 6 -->
                 <div class="project-card">
                     <div class="project-header">
                         <span class="project-type">npm Package</span>
                         <div class="project-links">
                             <a href="https://www.npmjs.com/package/TBD" target="_blank" aria-label="site">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M2 2h20v20H2V2zm18 18H4V4h16v16z"/></svg>
-                            </a>
+                                <span class="project-icon">🛳️</span></a>
                         </div>
                     </div>
                     <h3 class="project-title">onboarding-designer</h3>
@@ -332,7 +341,6 @@
                     <span class="section-title-glow">Contact</span>
                 </h2>
                 <p class="section-subtitle"></p>
-            
             <div class="contact-content">
                 <div class="contact-info">
                     <p>I'm always open to brainstorm projects, take pitches for collaborations, or just say hey. Hope you enjoyed playing around on this site!</p>
@@ -355,7 +363,10 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contact-form">
+                    <form id="contact-form" action="https://formsubmit.co/peter@byteplusbit.com" method="POST">
+                        <input type="hidden" name="_subject" value="New Portfolio Contact!">
+                        <input type="hidden" name="_next" value="#contact">
+                        <input type="text" name="_honey" style="display:none">
                         <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 1rem;">Messages sent here go directly to my email.</p>
                         <div class="form-group">
                             <label for="name">Name</label>

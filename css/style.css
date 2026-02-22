@@ -20,8 +20,8 @@
     --font-mono: 'Fira Code', 'SF Mono', Consolas, monospace;
 
     /* Spacing */
-    --section-padding: 6rem 2rem;
-    --container-max: 1200px;
+    --section-padding: 8rem 2rem;
+    --container-max: 1400px;
 
     /* Transitions */
     --transition-fast: 150ms ease;
@@ -102,6 +102,48 @@ body {
     color: var(--color-text);
 }
 
+/* Lock System */
+.nav-locks {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
+}
+
+.find-these {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    margin-right: 0.5rem;
+}
+
+.lock {
+    font-size: 1.5rem;
+    cursor: default;
+    transition: all 0.3s ease;
+    filter: grayscale(0);
+    opacity: 0.6;
+}
+
+.lock.unlocked {
+    opacity: 1;
+    animation: lock-dance 0.5s ease;
+}
+
+.lock.dancing {
+    animation: lock-dance 0.5s ease infinite;
+}
+
+@keyframes lock-dance {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.2) rotate(-10deg); }
+    75% { transform: scale(1.2) rotate(10deg); }
+}
+
 /* Active indicator dot */
 .nav-link.active::after {
     content: '';
@@ -155,8 +197,8 @@ body {
     max-width: var(--container-max);
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 6rem;
     align-items: center;
 }
 
@@ -182,12 +224,21 @@ body {
 .hero-particle-container {
     position: relative;
     margin-bottom: 2rem;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    width: 100%;
+}
+
+.particle-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .particle-word {
     display: inline-block;
-    margin-right: 0.6rem;
     transition: opacity 0.4s ease-out, visibility 0.4s ease-out;
     color: var(--color-text-secondary);
     line-height: 1.8;
@@ -195,38 +246,17 @@ body {
     font-size: 1.6rem;
 }
 
-.hero-particle-container br {
-    display: block;
-    margin-bottom: 0.4rem;
-    content: "";
-}
-
 .particle-word.exploded {
     opacity: 0 !important;
     visibility: hidden;
     transition: opacity 0.4s ease-out, visibility 0.4s ease-out !important;
+    transition: opacity 0.4s ease-out, visibility 0.4s ease-out !important;
 }
 
- /*First few words are the intro*/
-.particle-word:nth-child(1),
-.particle-word:nth-child(2),
-.particle-word:nth-child(3),
-.particle-word:nth-child(4) {
- /*   color: var(--color-primary);*/
-    font-size: 3.3rem;
+/*First few words are the intro - target first line children*/
+.particle-line:first-child .particle-word {
+    font-size: 2.87rem;
 }
- /*
-.particle-word:nth-child(2) {
-    color: var(--color-primary);
-    font-weight: 3.3rem;
-}
-
-.particle-word:nth-child(3),
-.particle-word:nth-child(4) {
-    color: var(--color-text);
-    font-weight: 600;
-    font-size: 1.8rem;
-}*/
 
 .hero-tagline .highlight-ai {
     color: #FF5700;
@@ -275,7 +305,7 @@ body {
     border-radius: 4px;
     overflow: hidden;
     width: 100%;
-    max-width: 500px;
+    max-width: 550px;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5),
                 0 0 30px -8px rgba(255, 87, 0, 0.3);
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -337,11 +367,11 @@ body {
 .code-window.maximized {
     position: fixed;
     top: 50%;
-    left: auto;
-    right: 5vw;
-    transform: translateY(-50%) scale(1.05);
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%) scale(1.05);
     width: 60vw;
-    max-width: none;
+    max-width: 900px;
     max-height: 80vh;
     z-index: 1000;
     box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.8),
@@ -628,7 +658,6 @@ body {
 
 .section-header {
     text-align: center;
-    margin-bottom: 3rem;
     isolation: isolate;
 }
 
@@ -674,29 +703,10 @@ body {
     opacity: 1;
 }
 
-/* TEMPORARILY DISABLED - Black silhouette layer
-.section-title::after {
-    content: attr(data-text);
-    position: absolute;
-    left: 0;
-    top: 0;
-    white-space: nowrap;
-    z-index: 1;
-    color: var(--color-bg);
-    -webkit-text-fill-color: var(--color-bg);
-    opacity: 0;
-    transition: opacity 0.1s ease;
-    pointer-events: none;
-}
-
-.section-title[data-glow-active="true"]::after {
-    opacity: 1;
-}
-*/
-
 .section-subtitle {
     color: var(--color-text-secondary);
     font-size: 1.1rem;
+    margin-bottom: 5rem;
 }
 
 /* ==========================================
@@ -715,27 +725,32 @@ body {
 .about-text p {
     font-size: 1.1rem;
     color: var(--color-text-secondary);
-    margin-bottom: 1.5rem;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
     line-height: 1.8;
+    text-align: left;
 }
 
 .focus-list {
     list-style: none;
     margin-top: 1rem;
+    padding-left: 1rem;
 }
 
 .focus-list li {
     margin-bottom: 0.75rem;
-    padding-left: 1.5rem;
+    padding-left: 1.25rem;
     position: relative;
     color: var(--color-text-secondary);
+    text-align: left;
 }
 
 .focus-list li::before {
-    content: '→';
+    content: '•';
     position: absolute;
     left: 0;
     color: var(--color-primary);
+    font-size: 1.2em;
 }
 
 .focus-list .highlight {
@@ -761,6 +776,23 @@ body {
     border-color: var(--glow-color);
     box-shadow: 0 0 25px -8px var(--glow-color);
     transform: translateX(4px);
+}
+
+/* Philosophy card sequence states */
+.philosophy-card.sequence-active {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 25px -8px var(--color-primary);
+}
+
+.philosophy-card.sequence-complete {
+    animation: philosophy-dance 0.5s ease infinite;
+}
+
+@keyframes philosophy-dance {
+    0%, 100% { transform: scale(1) rotate(0deg); border-color: #FF5700; }
+    25% { transform: scale(1.02) rotate(-2deg); border-color: #00FF00; }
+    50% { transform: scale(1.05) rotate(0deg); border-color: #8500FF; }
+    75% { transform: scale(1.02) rotate(2deg); border-color: #FF0085; }
 }
 
 .philosophy-icon {
@@ -835,6 +867,10 @@ body {
 
 .project-links a:hover {
     color: var(--color-text);
+}
+
+.project-icon {
+	font-size: 2rem
 }
 
 .project-title {
@@ -1151,7 +1187,7 @@ body {
 
 @media (max-width: 768px) {
     :root {
-        --section-padding: 4rem 1.5rem;
+        --section-padding: 6rem 1.5rem;
     }
 
     .nav-menu {
@@ -1169,6 +1205,25 @@ body {
 
     .nav-menu.active {
         display: flex;
+    }
+
+    .nav-locks {
+        border-left: none;
+        margin-left: 0;
+        padding-left: 0;
+        padding-top: 1rem;
+        margin-top: 0.5rem;
+        border-top: 1px solid var(--color-border);
+        justify-content: center;
+        order: -1;
+    }
+
+    .find-these {
+        font-size: 0.8rem;
+    }
+
+    .lock {
+        font-size: 1.3rem;
     }
 
     .nav-link {
@@ -1197,9 +1252,9 @@ body {
     }
 
     .code-window.maximized {
-        width: 95vw;
-        left: 2.5vw;
-        right: 2.5vw;
-        transform: translateY(-50%) scale(1);
+        width: 90vw;
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, -50%) scale(1);
     }
 }

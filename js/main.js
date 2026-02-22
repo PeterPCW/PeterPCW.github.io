@@ -132,6 +132,222 @@ let currentThemeIndex = 0;
 let terminalState = 'normal';
 let themeCycleInterval;
 
+// ==========================================
+// Easter Egg Lock System
+// ==========================================
+const easterEggState = {
+    locks: {
+        particles: { unlocked: false, icon: '💥' },
+        terminal: { unlocked: false, icon: '↕️' },
+        cards: { unlocked: false, icon: '🐁' },
+        hey: { unlocked: false, icon: '⌨️' }
+    },
+    philosophySequence: [],
+    philosophyShown: false,
+    heyTyping: '',
+    heyAnimating: false
+};
+
+function unlockLock(lockName) {
+    if (easterEggState.locks[lockName].unlocked) return;
+
+    easterEggState.locks[lockName].unlocked = true;
+    const lockEl = document.querySelector(`.lock[data-lock="${lockName}"]`);
+    if (lockEl) {
+        lockEl.textContent = easterEggState.locks[lockName].icon;
+        lockEl.classList.add('unlocked');
+
+        // Dance briefly then stop
+        setTimeout(() => {
+            lockEl.classList.remove('unlocked');
+        }, 500);
+    }
+}
+
+// Philosophy card sequence
+function initPhilosophyCards() {
+    const cards = document.querySelectorAll('.philosophy-card');
+    const cardOrder = ['experiment', 'iterate', 'automate'];
+
+    cards.forEach((card, index) => {
+        const cardName = card.querySelector('h3')?.textContent?.toLowerCase();
+        card.dataset.sequencename = cardName;
+
+        card.addEventListener('click', () => {
+            const clickedName = card.dataset.sequencename;
+            if (!clickedName) return;
+
+            // Check if this card is already active
+            if (card.classList.contains('sequence-active')) return;
+
+            // Check if this is the correct next card
+            const expectedName = cardOrder[easterEggState.philosophySequence.length];
+            if (clickedName === expectedName) {
+                easterEggState.philosophySequence.push(clickedName);
+                card.classList.add('sequence-active');
+
+                // If we got all 3 in order
+                if (easterEggState.philosophySequence.length === 3) {
+                    // Unlock the lock
+                    unlockLock('cards');
+
+                    // Trigger 5s light show on all cards
+                    cards.forEach(c => c.classList.add('sequence-complete'));
+
+                    // After 5s, reset the cards but keep lock unlocked
+                    setTimeout(() => {
+                        easterEggState.philosophySequence = [];
+                        cards.forEach(c => {
+                            c.classList.remove('sequence-active');
+                            c.classList.remove('sequence-complete');
+                        });
+                    }, 5000);
+                }
+            } else {
+                // Wrong order - reset
+                easterEggState.philosophySequence = [];
+                cards.forEach(c => {
+                    c.classList.remove('sequence-active');
+                    c.classList.remove('sequence-complete');
+                });
+            }
+        });
+    });
+}
+
+// "Hey" keyboard easter egg
+function initHeyEasterEgg() {
+    document.addEventListener('keydown', (e) => {
+        // Don't trigger in certain inputs
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+            return;
+        }
+
+        const key = e.key.toLowerCase();
+
+        // Reset if not a letter
+        if (!/[a-z]/.test(key)) {
+            easterEggState.heyTyping = '';
+            return;
+        }
+
+        easterEggState.heyTyping += key;
+
+        // Keep only last 3 chars
+        if (easterEggState.heyTyping.length > 3) {
+            easterEggState.heyTyping = easterEggState.heyTyping.slice(-3);
+        }
+
+        if (easterEggState.heyTyping.endsWith('hey')) {
+            triggerHeyAnimation();
+        }
+    });
+
+    // Also listen in input fields
+    document.addEventListener('input', (e) => {
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+            const val = e.target.value.toLowerCase();
+            if (val.endsWith('hey')) {
+                triggerHeyAnimation();
+            }
+        }
+    });
+}
+
+function triggerHeyAnimation() {
+    if (easterEggState.heyAnimating) return;
+
+    easterEggState.heyAnimating = true;
+    unlockLock('hey');
+
+    // Create the hey animation elements
+    createHeyElements();
+
+    // Run animation loop
+    let iteration = 0;
+    const maxIterations = 10;
+    const stepSize = 100;
+
+    function animateHey() {
+        if (iteration >= maxIterations) {
+            // Clean up
+            cleanupHeyElements();
+            easterEggState.heyAnimating = false;
+            return;
+        }
+
+        const mouthImg = document.getElementById('hey-mouth');
+        const headImg = document.getElementById('hey-head');
+
+        if (!mouthImg || !headImg) {
+            cleanupHeyElements();
+            easterEggState.heyAnimating = false;
+            return;
+        }
+
+        // Even iterations: mouth moves, play audio
+        if (iteration % 2 === 0) {
+            const currentTop = parseInt(mouthImg.style.top) || 50;
+            mouthImg.style.top = (currentTop + stepSize) + 'px';
+
+            // Play hey sound
+            playHeySound();
+
+            setTimeout(() => {
+                iteration++;
+                animateHey();
+            }, 1000);
+        }
+        // Odd iterations: head moves, pause
+        else {
+            const currentTop = parseInt(headImg.style.top) || 50;
+            headImg.style.top = (currentTop + stepSize) + 'px';
+
+            setTimeout(() => {
+                iteration++;
+                animateHey();
+            }, 1000);
+        }
+    }
+
+    animateHey();
+}
+
+function createHeyElements() {
+    // Remove any existing
+    cleanupHeyElements();
+
+    // Create head image (background)
+    const headImg = document.createElement('img');
+    headImg.id = 'hey-head';
+    headImg.src = 'assets/heyyy-head.png';
+    headImg.alt = '';
+    headImg.style.cssText = 'position:fixed;left:50%;transform:translateX(-50%);top:50px;z-index:99999;pointer-events:none;width:300px;display:block;';
+
+    // Create mouth image
+    const mouthImg = document.createElement('img');
+    mouthImg.id = 'hey-mouth';
+    mouthImg.src = 'assets/heyyy-mouth.png';
+    mouthImg.alt = '';
+    mouthImg.style.cssText = 'position:fixed;left:50%;transform:translateX(-50%);top:50px;z-index:100000;pointer-events:none;width:300px;display:block;';
+
+    document.body.appendChild(headImg);
+    document.body.appendChild(mouthImg);
+}
+
+function cleanupHeyElements() {
+    const headImg = document.getElementById('hey-head');
+    const mouthImg = document.getElementById('hey-mouth');
+    if (headImg) headImg.remove();
+    if (mouthImg) mouthImg.remove();
+}
+
+function playHeySound() {
+    const audio = new Audio('assets/hey.mp3');
+    audio.volume = 0.5;
+    audio.play().catch(() => {}); // Ignore errors
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     initMouseTracking();
     initNavigation();
@@ -141,6 +357,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initActiveNavOnScroll();
     initGlowEffects();
     initParticleMorph();
+    initPhilosophyCards();
+    initHeyEasterEgg();
 });
 
 // ==========================================
@@ -296,6 +514,8 @@ function initTerminalWindow() {
             // Maximize
             terminalState = 'maximized';
             codeWindow.classList.add('maximized');
+            // Unlock the terminal lock
+            unlockLock('terminal');
         }
     });
 
@@ -601,10 +821,12 @@ function initParticleMorph() {
             this.rotation = Math.random() * Math.PI * 2;
             this.rotSpeed = (Math.random() - 0.5) * 0.1;
             this.state = 'idle'; // idle, exploding, returning, fading
+            this.explodeTime = 0; // timestamp when exploded
         }
 
         explode(mx, my) {
             this.state = 'exploding';
+            this.explodeTime = Date.now();
             const angle = Math.random() * Math.PI * 2;
             const force = 12 + Math.random() * 18;
             this.vx = Math.cos(angle) * force;
@@ -751,10 +973,16 @@ function initParticleMorph() {
     }
 
     // Check if a word's particles are all done - reset word individually
+    // Also includes timeout fallback to prevent stuck words
     function checkWordReturned(wordObj) {
         if (!wordObj.exploded || wordObj.particles.length === 0) return;
+
+        // Check if there's a timestamp for when this word was exploded
+        const explodeTime = wordObj.particles[0]?.explodeTime || 0;
         const allDone = wordObj.particles.every(p => p.state === 'done');
-        if (allDone) {
+        const isStuck = explodeTime > 0 && (Date.now() - explodeTime > 10000); // 10 second timeout
+
+        if (allDone || isStuck) {
             resetWord(wordObj);
         }
     }
@@ -813,6 +1041,9 @@ function initParticleMorph() {
     // Auto explode intro after 3s
     function autoExplode() {
         setTimeout(() => {
+            // Unlock the particles lock
+            unlockLock('particles');
+
             // Explode first 4 words (intro line)
             for (let i = 0; i < Math.min(4, words.length); i++) {
                 setTimeout(() => {
